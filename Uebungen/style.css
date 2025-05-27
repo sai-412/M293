@@ -1,0 +1,71 @@
+@media (max-width: 1400px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+
+@media (max-width: 1300px) {
+    body {
+        background-color: green;
+    }
+}
+
+@media (max-width: 1250px) {
+    body {
+        background-color: coral;
+    }
+}
+
+@media (max-width: 1120px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media (max-width: 1040px) {
+    body {
+        background-color: pink;
+    }
+}
+
+@media (max-width: 960px) {
+    body {
+        background-color: gray;
+    }
+}
+
+@media (max-width: 880px) {
+    body {
+        background-color: salmon;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        background-color: seagreen;
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        background-color: steelblue;
+    }
+}
+
+@media (max-width: 660px) {
+    body {
+        background-color: cyan;
+    }
+}
+
+@media (max-width: 580px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background-color: yellowgreen;
+    }
+}

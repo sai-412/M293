@@ -1,0 +1,53 @@
+.ber-mich {
+  height: 100%;
+  gap: 56px;
+  background-color: var(--black_900);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (max-width: 550px) {
+    gap: 28px;
+  }
+}
+
+.about {
+  gap: 36px;
+  display: flex;
+  width: 88%;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.about__content {
+  gap: 79px;
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-end;
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+  }
+}
+
+.about__description {
+  text-align: center;
+  width: 44%;
+  line-height: 38px;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.about__image {
+  height: 516px;
+  width: 44%;
+  object-fit: contain;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}

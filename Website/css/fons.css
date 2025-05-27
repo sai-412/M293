@@ -1,0 +1,132 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Button CSS
+2. Input CSS
+3. Text CSS
+4. Container CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Button CSS
+--------------------------------------*/
+.ui.button.round {
+  border-radius: var(--radius-xs);
+}
+
+.ui.button.size-5xl {
+  height: 74px;
+  padding-left: 34px;
+  padding-right: 34px;
+  font-size: 40px;
+}
+
+.ui.button.fill.white_a700 {
+  background-color: var(--white_a700);
+  color: var(--black_900);
+}
+
+.ui.button {
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--black_900);
+  font-size: 40px;
+  background-color: var(--white_a700);
+  align-self: stretch;
+  border-radius: var(--radius-xs);
+  @media only screen and (max-width: 1050px) {
+    font-size: 38px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/*-------------------------------------
+  2. Input CSS
+--------------------------------------*/
+.ui.input.square {
+  border-radius: 0px;
+}
+
+.ui.input.size-5xl {
+  height: 74px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 40px;
+}
+
+.ui.input.underline.white_a700_cc {
+  color: var(--white_a700);
+  border-bottom: 1px solid var(--white_a700_cc);
+}
+
+.ui.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: text;
+  color: var(--white_a700);
+  font-size: 40px;
+  border-bottom: 1px solid var(--white_a700_cc);
+}
+
+/*-------------------------------------
+  3. Text CSS
+--------------------------------------*/
+.ui.text.size-text6xl {
+  font-size: 30px;
+  font-weight: 400;
+  @media only screen and (max-width: 1050px) {
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 26px;
+  }
+}
+
+.ui.text.size-text8xl {
+  font-size: 40px;
+  font-weight: 400;
+  @media only screen and (max-width: 1050px) {
+    font-size: 38px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+  }
+}
+
+.ui.text.size-text9xl {
+  font-size: 56px;
+  font-weight: 400;
+  @media only screen and (max-width: 1050px) {
+    font-size: 48px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 42px;
+  }
+}
+
+.ui.text {
+  color: var(--white_a700);
+  font-family: Joan;
+}
+
+/*-------------------------------------
+  4. Container CSS
+--------------------------------------*/
+.container-xs {
+  max-width: 1320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

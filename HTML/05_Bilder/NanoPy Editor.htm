@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en" style="--vh: 10.26px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="NanoPy%20Editor_files/google-analytics.js"></script><script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js', });
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_auth=&gtm_preview=&gtm_cookies_win=x';
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N2BXL2D');</script>
+    <script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = '/*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "/monacoeditorwork/editor.worker.bundle.js",
+  "css": "/monacoeditorwork/css.worker.bundle.js",
+  "html": "/monacoeditorwork/html.worker.bundle.js",
+  "json": "/monacoeditorwork/json.worker.bundle.js",
+  "typescript": "/monacoeditorwork/ts.worker.bundle.js",
+  "javascript": "/monacoeditorwork/ts.worker.bundle.js",
+  "less": "/monacoeditorwork/css.worker.bundle.js",
+  "scss": "/monacoeditorwork/css.worker.bundle.js",
+  "handlebars": "/monacoeditorwork/html.worker.bundle.js",
+  "razor": "/monacoeditorwork/html.worker.bundle.js"
+});</script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="https://editor.nanopy.io/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Code - Test - Run">
+    <link rel="apple-touch-icon" href="https://editor.nanopy.io/logo192.png">
+    <link rel="manifest" href="https://editor.nanopy.io/manifest.json">
+
+    <script defer="defer" data-domain="editor.nanopy.io" src="NanoPy%20Editor_files/script.file-downloads.hash.outbound-links.js"></script>
+
+    <title>NanoPy Editor</title>
+    <script type="module" crossorigin="" src="NanoPy%20Editor_files/index-p1xfcKeK.js"></script>
+    <link rel="stylesheet" crossorigin="" href="NanoPy%20Editor_files/index-BjG5UlC3.css">
+  <style data-styled="active" data-styled-version="6.1.14"></style><style id="react-tooltip-core-styles" type="text/css">:root{--rt-color-white:#fff;--rt-color-dark:#222;--rt-color-success:#8dc572;--rt-color-error:#be6464;--rt-color-warning:#f0ad4e;--rt-color-info:#337ab7;--rt-opacity:0.9;--rt-transition-show-delay:0.15s;--rt-transition-closing-delay:0.15s}.core-styles-module_tooltip__3vRRp{position:absolute;top:0;left:0;pointer-events:none;opacity:0;will-change:opacity}.core-styles-module_fixed__pcSol{position:fixed}.core-styles-module_arrow__cvMwQ{position:absolute;background:inherit}.core-styles-module_noArrow__xock6{display:none}.core-styles-module_clickable__ZuTTB{pointer-events:auto}.core-styles-module_show__Nt9eE{opacity:var(--rt-opacity);transition:opacity var(--rt-transition-show-delay)ease-out}.core-styles-module_closing__sGnxF{opacity:0;transition:opacity var(--rt-transition-closing-delay)ease-in}</style><style id="react-tooltip-base-styles" type="text/css">
+.styles-module_tooltip__mnnfp{padding:8px 16px;border-radius:3px;font-size:90%;width:max-content}.styles-module_arrow__K0L3T{width:8px;height:8px}[class*='react-tooltip__place-top']>.styles-module_arrow__K0L3T{transform:rotate(45deg)}[class*='react-tooltip__place-right']>.styles-module_arrow__K0L3T{transform:rotate(135deg)}[class*='react-tooltip__place-bottom']>.styles-module_arrow__K0L3T{transform:rotate(225deg)}[class*='react-tooltip__place-left']>.styles-module_arrow__K0L3T{transform:rotate(315deg)}.styles-module_dark__xNqje{background:var(--rt-color-dark);color:var(--rt-color-white)}.styles-module_light__Z6W-X{background-color:var(--rt-color-white);color:var(--rt-color-dark)}.styles-module_success__A2AKt{background-color:var(--rt-color-success);color:var(--rt-color-white)}.styles-module_warning__SCK0X{background-color:var(--rt-color-warning);color:var(--rt-color-white)}.styles-module_error__JvumD{background-color:var(--rt-color-error);color:var(--rt-color-white)}.styles-module_info__BWdHW{background-color:var(--rt-color-info);color:var(--rt-color-white)}</style><style type="text/css" media="screen" class="monaco-colors">.codicon-add:before { content: '\ea60'; }
+.codicon-plus:before { content: '\ea60'; }
+.codicon-gist-new:before { content: '\ea60'; }
+.codicon-repo-create:before { content: '\ea60'; }
+.codicon-lightbulb:before { content: '\ea61'; }
+.codicon-light-bulb:before { content: '\ea61'; }
+.codicon-repo:before { content: '\ea62'; }
+.codicon-repo-delete:before { content: '\ea62'; }
+.codicon-gist-fork:before { content: '\ea63'; }
+.codicon-repo-forked:before { content: '\ea63'; }
+.codicon-git-pull-request:before { content: '\ea64'; }
+.codicon-git-pull-request-abandoned:before { content: '\ea64'; }
+.codicon-record-keys:before { content: '\ea65'; }
+.codicon-keyboard:before { content: '\ea65'; }
+.codicon-tag:before { content: '\ea66'; }
+.codicon-git-pull-request-label:before { content: '\ea66'; }
+.codicon-tag-add:before { content: '\ea66'; }
+.codicon-tag-remove:before { content: '\ea66'; }
+.codicon-person:before { content: '\ea67'; }
+.codicon-person-follow:before { content: '\ea67'; }
+.codicon-person-outline:before { content: '\ea67'; }
+.codicon-person-filled:before { content: '\ea67'; }
+.codicon-git-branch:before { content: '\ea68'; }
+.codicon-git-branch-create:before { content: '\ea68'; }
+.codicon-git-branch-delete:before { content: '\ea68'; }
+.codicon-source-control:before { content: '\ea68'; }
+.codicon-mirror:before { content: '\ea69'; }
+.codicon-mirror-public:before { content: '\ea69'; }
+.codicon-star:before { content: '\ea6a'; }
+.codicon-star-add:before { content: '\ea6a'; }
+.codicon-star-delete:before { content: '\ea6a'; }
+.codicon-star-empty:before { content: '\ea6a'; }
+.codicon-comment:before { content: '\ea6b'; }
+.codicon-comment-add:before { content: '\ea6b'; }
+.codicon-alert:before { content: '\ea6c'; }
+.codicon-warning:before { content: '\ea6c'; }
+.codicon-search:before { content: '\ea6d'; }
+.codicon-search-save:before { content: '\ea6d'; }
+.codicon-log-out:before { content: '\ea6e'; }
+.codicon-sign-out:before { content: '\ea6e'; }
+.codicon-log-in:before { content: '\ea6f'; }
+.codicon-sign-in:before { content: '\ea6f'; }
+.codicon-eye:before { content: '\ea70'; }
+.codicon-eye-unwatch:before { content: '\ea70'; }
+.codicon-eye-watch:before { content: '\ea70'; }
+.codicon-circle-filled:before { content: '\ea71'; }
+.codicon-primitive-dot:before { content: '\ea71'; }
+.codicon-close-dirty:before { content: '\ea71'; }
+.codicon-debug-breakpoint:before { content: '\ea71'; }
+.codicon-debug-breakpoint-disabled:before { content: '\ea71'; }
+.codicon-debug-hint:before { content: '\ea71'; }
+.codicon-terminal-decoration-success:before { content: '\ea71'; }
+.codicon-primitive-square:before { content: '\ea72'; }
+.codicon-edit:before { content: '\ea73'; }
+.codicon-pencil:before { content: '\ea73'; }
+.codicon-info:before { content: '\ea74'; }
+.codicon-issue-opened:before { content: '\ea74'; }
+.codicon-gist-private:before { content: '\ea75'; }
+.codicon-git-fork-private:before { content: '\ea75'; }
+.codicon-lock:before { content: '\ea75'; }
+.codicon-mirror-private:before { content: '\ea75'; }
+.codicon-close:before { content: '\ea76'; }
+.codicon-remove-close:before { content: '\ea76'; }
+.codicon-x:before { content: '\ea76'; }
+.codicon-repo-sync:before { content: '\ea77'; }
+.codicon-sync:before { content: '\ea77'; }
+.codicon-clone:before { content: '\ea78'; }
+.codicon-desktop-download:before { content: '\ea78'; }
+.codicon-beaker:before { content: '\ea79'; }
+.codicon-microscope:before { content: '\ea79'; }
+.codicon-vm:before { content: '\ea7a'; }
+.codicon-device-desktop:before { content: '\ea7a'; }
+.codicon-file:before { content: '\ea7b'; }
+.codicon-file-text:before { content: '\ea7b'; }
+.codicon-more:before { content: '\ea7c'; }
+.codicon-ellipsis:before { content: '\ea7c'; }
+.codicon-kebab-horizontal:before { content: '\ea7c'; }
+.codicon-mail-reply:before { content: '\ea7d'; }
+.codicon-reply:before { content: '\ea7d'; }
+.codicon-organization:before { content: '\ea7e'; }
+.codicon-organization-filled:before { content: '\ea7e'; }
+.codicon-organization-outline:before { content: '\ea7e'; }
+.codicon-new-file:before { content: '\ea7f'; }
+.codicon-file-add:before { content: '\ea7f'; }
+.codicon-new-folder:before { content: '\ea80'; }
+.codicon-file-directory-create:before { content: '\ea80'; }
+.codicon-trash:before { content: '\ea81'; }
+.codicon-trashcan:before { content: '\ea81'; }
+.codicon-history:before { content: '\ea82'; }
+.codicon-clock:before { content: '\ea82'; }
+.codicon-folder:before { content: '\ea83'; }
+.codicon-file-directory:before { content: '\ea83'; }
+.codicon-symbol-folder:before { content: '\ea83'; }
+.codicon-logo-github:before { content: '\ea84'; }
+.codicon-mark-github:before { content: '\ea84'; }
+.codicon-github:before { content: '\ea84'; }
+.codicon-terminal:before { content: '\ea85'; }
+.codicon-console:before { content: '\ea85'; }
+.codicon-repl:before { content: '\ea85'; }
+.codicon-zap:before { content: '\ea86'; }
+.codicon-symbol-event:before { content: '\ea86'; }
+.codicon-error:before { content: '\ea87'; }
+.codicon-stop:before { content: '\ea87'; }
+.codicon-variable:before { content: '\ea88'; }
+.codicon-symbol-variable:before { content: '\ea88'; }
+.codicon-array:before { content: '\ea8a'; }
+.codicon-symbol-array:before { content: '\ea8a'; }
+.codicon-symbol-module:before { content: '\ea8b'; }
+.codicon-symbol-package:before { content: '\ea8b'; }
+.codicon-symbol-namespace:before { content: '\ea8b'; }
+.codicon-symbol-object:before { content: '\ea8b'; }
+.codicon-symbol-method:before { content: '\ea8c'; }
+.codicon-symbol-function:before { content: '\ea8c'; }
+.codicon-symbol-constructor:before { content: '\ea8c'; }
+.codicon-symbol-boolean:before { content: '\ea8f'; }
+.codicon-symbol-null:before { content: '\ea8f'; }
+.codicon-symbol-numeric:before { content: '\ea90'; }
+.codicon-symbol-number:before { content: '\ea90'; }
+.codicon-symbol-structure:before { content: '\ea91'; }
+.codicon-symbol-struct:before { content: '\ea91'; }
+.codicon-symbol-parameter:before { content: '\ea92'; }
+.codicon-symbol-type-parameter:before { content: '\ea92'; }
+.codicon-symbol-key:before { content: '\ea93'; }
+.codicon-symbol-text:before { content: '\ea93'; }
+.codicon-symbol-reference:before { content: '\ea94'; }
+.codicon-go-to-file:before { content: '\ea94'; }
+.codicon-symbol-enum:before { content: '\ea95'; }
+.codicon-symbol-value:before { content: '\ea95'; }
+.codicon-symbol-ruler:before { content: '\ea96'; }
+.codicon-symbol-unit:before { content: '\ea96'; }
+.codicon-activate-breakpoints:before { content: '\ea97'; }
+.codicon-archive:before { content: '\ea98'; }
+.codicon-arrow-both:before { content: '\ea99'; }
+.codicon-arrow-down:before { content: '\ea9a'; }
+.codicon-arrow-left:before { content: '\ea9b'; }
+.codicon-arrow-right:before { content: '\ea9c'; }
+.codicon-arrow-small-down:before { content: '\ea9d'; }
+.codicon-arrow-small-left:before { content: '\ea9e'; }
+.codicon-arrow-small-right:before { content: '\ea9f'; }
+.codicon-arrow-small-up:before { content: '\eaa0'; }
+.codicon-arrow-up:before { content: '\eaa1'; }
+.codicon-bell:before { content: '\eaa2'; }
+.codicon-bold:before { content: '\eaa3'; }
+.codicon-book:before { content: '\eaa4'; }
+.codicon-bookmark:before { content: '\eaa5'; }
+.codicon-debug-breakpoint-conditional-unverified:before { content: '\eaa6'; }
+.codicon-debug-breakpoint-conditional:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-conditional-disabled:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-data-unverified:before { content: '\eaa8'; }
+.codicon-debug-breakpoint-data:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-data-disabled:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-log-unverified:before { content: '\eaaa'; }
+.codicon-debug-breakpoint-log:before { content: '\eaab'; }
+.codicon-debug-breakpoint-log-disabled:before { content: '\eaab'; }
+.codicon-briefcase:before { content: '\eaac'; }
+.codicon-broadcast:before { content: '\eaad'; }
+.codicon-browser:before { content: '\eaae'; }
+.codicon-bug:before { content: '\eaaf'; }
+.codicon-calendar:before { content: '\eab0'; }
+.codicon-case-sensitive:before { content: '\eab1'; }
+.codicon-check:before { content: '\eab2'; }
+.codicon-checklist:before { content: '\eab3'; }
+.codicon-chevron-down:before { content: '\eab4'; }
+.codicon-chevron-left:before { content: '\eab5'; }
+.codicon-chevron-right:before { content: '\eab6'; }
+.codicon-chevron-up:before { content: '\eab7'; }
+.codicon-chrome-close:before { content: '\eab8'; }
+.codicon-chrome-maximize:before { content: '\eab9'; }
+.codicon-chrome-minimize:before { content: '\eaba'; }
+.codicon-chrome-restore:before { content: '\eabb'; }
+.codicon-circle-outline:before { content: '\eabc'; }
+.codicon-circle:before { content: '\eabc'; }
+.codicon-debug-breakpoint-unverified:before { content: '\eabc'; }
+.codicon-terminal-decoration-incomplete:before { content: '\eabc'; }
+.codicon-circle-slash:before { content: '\eabd'; }
+.codicon-circuit-board:before { content: '\eabe'; }
+.codicon-clear-all:before { content: '\eabf'; }
+.codicon-clippy:before { content: '\eac0'; }
+.codicon-close-all:before { content: '\eac1'; }
+.codicon-cloud-download:before { content: '\eac2'; }
+.codicon-cloud-upload:before { content: '\eac3'; }
+.codicon-code:before { content: '\eac4'; }
+.codicon-collapse-all:before { content: '\eac5'; }
+.codicon-color-mode:before { content: '\eac6'; }
+.codicon-comment-discussion:before { content: '\eac7'; }
+.codicon-credit-card:before { content: '\eac9'; }
+.codicon-dash:before { content: '\eacc'; }
+.codicon-dashboard:before { content: '\eacd'; }
+.codicon-database:before { content: '\eace'; }
+.codicon-debug-continue:before { content: '\eacf'; }
+.codicon-debug-disconnect:before { content: '\ead0'; }
+.codicon-debug-pause:before { content: '\ead1'; }
+.codicon-debug-restart:before { content: '\ead2'; }
+.codicon-debug-start:before { content: '\ead3'; }
+.codicon-debug-step-into:before { content: '\ead4'; }
+.codicon-debug-step-out:before { content: '\ead5'; }
+.codicon-debug-step-over:before { content: '\ead6'; }
+.codicon-debug-stop:before { content: '\ead7'; }
+.codicon-debug:before { content: '\ead8'; }
+.codicon-device-camera-video:before { content: '\ead9'; }
+.codicon-device-camera:before { content: '\eada'; }
+.codicon-device-mobile:before { content: '\eadb'; }
+.codicon-diff-added:before { content: '\eadc'; }
+.codicon-diff-ignored:before { content: '\eadd'; }
+.codicon-diff-modified:before { content: '\eade'; }
+.codicon-diff-removed:before { content: '\eadf'; }
+.codicon-diff-renamed:before { content: '\eae0'; }
+.codicon-diff:before { content: '\eae1'; }
+.codicon-diff-sidebyside:before { content: '\eae1'; }
+.codicon-discard:before { content: '\eae2'; }
+.codicon-editor-layout:before { content: '\eae3'; }
+.codicon-empty-window:before { content: '\eae4'; }
+.codicon-exclude:before { content: '\eae5'; }
+.codicon-extensions:before { content: '\eae6'; }
+.codicon-eye-closed:before { content: '\eae7'; }
+.codicon-file-binary:before { content: '\eae8'; }
+.codicon-file-code:before { content: '\eae9'; }
+.codicon-file-media:before { content: '\eaea'; }
+.codicon-file-pdf:before { content: '\eaeb'; }
+.codicon-file-submodule:before { content: '\eaec'; }
+.codicon-file-symlink-directory:before { content: '\eaed'; }
+.codicon-file-symlink-file:before { content: '\eaee'; }
+.codicon-file-zip:before { content: '\eaef'; }
+.codicon-files:before { content: '\eaf0'; }
+.codicon-filter:before { content: '\eaf1'; }
+.codicon-flame:before { content: '\eaf2'; }
+.codicon-fold-down:before { content: '\eaf3'; }
+.codicon-fold-up:before { content: '\eaf4'; }
+.codicon-fold:before { content: '\eaf5'; }
+.codicon-folder-active:before { content: '\eaf6'; }
+.codicon-folder-opened:before { content: '\eaf7'; }
+.codicon-gear:before { content: '\eaf8'; }
+.codicon-gift:before { content: '\eaf9'; }
+.codicon-gist-secret:before { content: '\eafa'; }
+.codicon-gist:before { content: '\eafb'; }
+.codicon-git-commit:before { content: '\eafc'; }
+.codicon-git-compare:before { content: '\eafd'; }
+.codicon-compare-changes:before { content: '\eafd'; }
+.codicon-git-merge:before { content: '\eafe'; }
+.codicon-github-action:before { content: '\eaff'; }
+.codicon-github-alt:before { content: '\eb00'; }
+.codicon-globe:before { content: '\eb01'; }
+.codicon-grabber:before { content: '\eb02'; }
+.codicon-graph:before { content: '\eb03'; }
+.codicon-gripper:before { content: '\eb04'; }
+.codicon-heart:before { content: '\eb05'; }
+.codicon-home:before { content: '\eb06'; }
+.codicon-horizontal-rule:before { content: '\eb07'; }
+.codicon-hubot:before { content: '\eb08'; }
+.codicon-inbox:before { content: '\eb09'; }
+.codicon-issue-reopened:before { content: '\eb0b'; }
+.codicon-issues:before { content: '\eb0c'; }
+.codicon-italic:before { content: '\eb0d'; }
+.codicon-jersey:before { content: '\eb0e'; }
+.codicon-json:before { content: '\eb0f'; }
+.codicon-kebab-vertical:before { content: '\eb10'; }
+.codicon-key:before { content: '\eb11'; }
+.codicon-law:before { content: '\eb12'; }
+.codicon-lightbulb-autofix:before { content: '\eb13'; }
+.codicon-link-external:before { content: '\eb14'; }
+.codicon-link:before { content: '\eb15'; }
+.codicon-list-ordered:before { content: '\eb16'; }
+.codicon-list-unordered:before { content: '\eb17'; }
+.codicon-live-share:before { content: '\eb18'; }
+.codicon-loading:before { content: '\eb19'; }
+.codicon-location:before { content: '\eb1a'; }
+.codicon-mail-read:before { content: '\eb1b'; }
+.codicon-mail:before { content: '\eb1c'; }
+.codicon-markdown:before { content: '\eb1d'; }
+.codicon-megaphone:before { content: '\eb1e'; }
+.codicon-mention:before { content: '\eb1f'; }
+.codicon-milestone:before { content: '\eb20'; }
+.codicon-git-pull-request-milestone:before { content: '\eb20'; }
+.codicon-mortar-board:before { content: '\eb21'; }
+.codicon-move:before { content: '\eb22'; }
+.codicon-multiple-windows:before { content: '\eb23'; }
+.codicon-mute:before { content: '\eb24'; }
+.codicon-no-newline:before { content: '\eb25'; }
+.codicon-note:before { content: '\eb26'; }
+.codicon-octoface:before { content: '\eb27'; }
+.codicon-open-preview:before { content: '\eb28'; }
+.codicon-package:before { content: '\eb29'; }
+.codicon-paintcan:before { content: '\eb2a'; }
+.codicon-pin:before { content: '\eb2b'; }
+.codicon-play:before { content: '\eb2c'; }
+.codicon-run:before { content: '\eb2c'; }
+.codicon-plug:before { content: '\eb2d'; }
+.codicon-preserve-case:before { content: '\eb2e'; }
+.codicon-preview:before { content: '\eb2f'; }
+.codicon-project:before { content: '\eb30'; }
+.codicon-pulse:before { content: '\eb31'; }
+.codicon-question:before { content: '\eb32'; }
+.codicon-quote:before { content: '\eb33'; }
+.codicon-radio-tower:before { content: '\eb34'; }
+.codicon-reactions:before { content: '\eb35'; }
+.codicon-references:before { content: '\eb36'; }
+.codicon-refresh:before { content: '\eb37'; }
+.codicon-regex:before { content: '\eb38'; }
+.codicon-remote-explorer:before { content: '\eb39'; }
+.codicon-remote:before { content: '\eb3a'; }
+.codicon-remove:before { content: '\eb3b'; }
+.codicon-replace-all:before { content: '\eb3c'; }
+.codicon-replace:before { content: '\eb3d'; }
+.codicon-repo-clone:before { content: '\eb3e'; }
+.codicon-repo-force-push:before { content: '\eb3f'; }
+.codicon-repo-pull:before { content: '\eb40'; }
+.codicon-repo-push:before { content: '\eb41'; }
+.codicon-report:before { content: '\eb42'; }
+.codicon-request-changes:before { content: '\eb43'; }
+.codicon-rocket:before { content: '\eb44'; }
+.codicon-root-folder-opened:before { content: '\eb45'; }
+.codicon-root-folder:before { content: '\eb46'; }
+.codicon-rss:before { content: '\eb47'; }
+.codicon-ruby:before { content: '\eb48'; }
+.codicon-save-all:before { content: '\eb49'; }
+.codicon-save-as:before { content: '\eb4a'; }
+.codicon-save:before { content: '\eb4b'; }
+.codicon-screen-full:before { content: '\eb4c'; }
+.codicon-screen-normal:before { content: '\eb4d'; }
+.codicon-search-stop:before { content: '\eb4e'; }
+.codicon-server:before { content: '\eb50'; }
+.codicon-settings-gear:before { content: '\eb51'; }
+.codicon-settings:before { content: '\eb52'; }
+.codicon-shield:before { content: '\eb53'; }
+.codicon-smiley:before { content: '\eb54'; }
+.codicon-sort-precedence:before { content: '\eb55'; }
+.codicon-split-horizontal:before { content: '\eb56'; }
+.codicon-split-vertical:before { content: '\eb57'; }
+.codicon-squirrel:before { content: '\eb58'; }
+.codicon-star-full:before { content: '\eb59'; }
+.codicon-star-half:before { content: '\eb5a'; }
+.codicon-symbol-class:before { content: '\eb5b'; }
+.codicon-symbol-color:before { content: '\eb5c'; }
+.codicon-symbol-constant:before { content: '\eb5d'; }
+.codicon-symbol-enum-member:before { content: '\eb5e'; }
+.codicon-symbol-field:before { content: '\eb5f'; }
+.codicon-symbol-file:before { content: '\eb60'; }
+.codicon-symbol-interface:before { content: '\eb61'; }
+.codicon-symbol-keyword:before { content: '\eb62'; }
+.codicon-symbol-misc:before { content: '\eb63'; }
+.codicon-symbol-operator:before { content: '\eb64'; }
+.codicon-symbol-property:before { content: '\eb65'; }
+.codicon-wrench:before { content: '\eb65'; }
+.codicon-wrench-subaction:before { content: '\eb65'; }
+.codicon-symbol-snippet:before { content: '\eb66'; }
+.codicon-tasklist:before { content: '\eb67'; }
+.codicon-telescope:before { content: '\eb68'; }
+.codicon-text-size:before { content: '\eb69'; }
+.codicon-three-bars:before { content: '\eb6a'; }
+.codicon-thumbsdown:before { content: '\eb6b'; }
+.codicon-thumbsup:before { content: '\eb6c'; }
+.codicon-tools:before { content: '\eb6d'; }
+.codicon-triangle-down:before { content: '\eb6e'; }
+.codicon-triangle-left:before { content: '\eb6f'; }
+.codicon-triangle-right:before { content: '\eb70'; }
+.codicon-triangle-up:before { content: '\eb71'; }
+.codicon-twitter:before { content: '\eb72'; }
+.codicon-unfold:before { content: '\eb73'; }
+.codicon-unlock:before { content: '\eb74'; }
+.codicon-unmute:before { content: '\eb75'; }
+.codicon-unverified:before { content: '\eb76'; }
+.codicon-verified:before { content: '\eb77'; }
+.codicon-versions:before { content: '\eb78'; }
+.codicon-vm-active:before { content: '\eb79'; }
+.codicon-vm-outline:before { content: '\eb7a'; }
+.codicon-vm-running:before { content: '\eb7b'; }
+.codicon-watch:before { content: '\eb7c'; }
+.codicon-whitespace:before { content: '\eb7d'; }
+.codicon-whole-word:before { content: '\eb7e'; }
+.codicon-window:before { content: '\eb7f'; }
+.codicon-word-wrap:before { content: '\eb80'; }
+.codicon-zoom-in:before { content: '\eb81'; }
+.codicon-zoom-out:before { content: '\eb82'; }
+.codicon-list-filter:before { content: '\eb83'; }
+.codicon-list-flat:before { content: '\eb84'; }
+.codicon-list-selection:before { content: '\eb85'; }
+.codicon-selection:before { content: '\eb85'; }
+.codicon-list-tree:before { content: '\eb86'; }
+.codicon-debug-breakpoint-function-unverified:before { content: '\eb87'; }
+.codicon-debug-breakpoint-function:before { content: '\eb88'; }
+.codicon-debug-breakpoint-function-disabled:before { content: '\eb88'; }
+.codicon-debug-stackframe-active:before { content: '\eb89'; }
+.codicon-circle-small-filled:before { content: '\eb8a'; }
+.codicon-debug-stackframe-dot:before { content: '\eb8a'; }
+.codicon-terminal-decoration-mark:before { content: '\eb8a'; }
+.codicon-debug-stackframe:before { content: '\eb8b'; }
+.codicon-debug-stackframe-focused:before { content: '\eb8b'; }
+.codicon-debug-breakpoint-unsupported:before { content: '\eb8c'; }
+.codicon-symbol-string:before { content: '\eb8d'; }
+.codicon-debug-reverse-continue:before { content: '\eb8e'; }
+.codicon-debug-step-back:before { content: '\eb8f'; }
+.codicon-debug-restart-frame:before { content: '\eb90'; }
+.codicon-debug-alt:before { content: '\eb91'; }
+.codicon-call-incoming:before { content: '\eb92'; }
+.codicon-call-outgoing:before { content: '\eb93'; }
+.codicon-menu:before { content: '\eb94'; }
+.codicon-expand-all:before { content: '\eb95'; }
+.codicon-feedback:before { content: '\eb96'; }
+.codicon-git-pull-request-reviewer:before { content: '\eb96'; }
+.codicon-group-by-ref-type:before { content: '\eb97'; }
+.codicon-ungroup-by-ref-type:before { content: '\eb98'; }
+.codicon-account:before { content: '\eb99'; }
+.codicon-git-pull-request-assignee:before { content: '\eb99'; }
+.codicon-bell-dot:before { content: '\eb9a'; }
+.codicon-debug-console:before { content: '\eb9b'; }
+.codicon-library:before { content: '\eb9c'; }
+.codicon-output:before { content: '\eb9d'; }
+.codicon-run-all:before { content: '\eb9e'; }
+.codicon-sync-ignored:before { content: '\eb9f'; }
+.codicon-pinned:before { content: '\eba0'; }
+.codicon-github-inverted:before { content: '\eba1'; }
+.codicon-server-process:before { content: '\eba2'; }
+.codicon-server-environment:before { content: '\eba3'; }
+.codicon-pass:before { content: '\eba4'; }
+.codicon-issue-closed:before { content: '\eba4'; }
+.codicon-stop-circle:before { content: '\eba5'; }
+.codicon-play-circle:before { content: '\eba6'; }
+.codicon-record:before { content: '\eba7'; }
+.codicon-debug-alt-small:before { content: '\eba8'; }
+.codicon-vm-connect:before { content: '\eba9'; }
+.codicon-cloud:before { content: '\ebaa'; }
+.codicon-merge:before { content: '\ebab'; }
+.codicon-export:before { content: '\ebac'; }
+.codicon-graph-left:before { content: '\ebad'; }
+.codicon-magnet:before { content: '\ebae'; }
+.codicon-notebook:before { content: '\ebaf'; }
+.codicon-redo:before { content: '\ebb0'; }
+.codicon-check-all:before { content: '\ebb1'; }
+.codicon-pinned-dirty:before { content: '\ebb2'; }
+.codicon-pass-filled:before { content: '\ebb3'; }
+.codicon-circle-large-filled:before { content: '\ebb4'; }
+.codicon-circle-large:before { content: '\ebb5'; }
+.codicon-circle-large-outline:before { content: '\ebb5'; }
+.codicon-combine:before { content: '\ebb6'; }
+.codicon-gather:before { content: '\ebb6'; }
+.codicon-table:before { content: '\ebb7'; }
+.codicon-variable-group:before { content: '\ebb8'; }
+.codicon-type-hierarchy:before { content: '\ebb9'; }
+.codicon-type-hierarchy-sub:before { content: '\ebba'; }
+.codicon-type-hierarchy-super:before { content: '\ebbb'; }
+.codicon-git-pull-request-create:before { content: '\ebbc'; }
+.codicon-run-above:before { content: '\ebbd'; }
+.codicon-run-below:before { content: '\ebbe'; }
+.codicon-notebook-template:before { content: '\ebbf'; }
+.codicon-debug-rerun:before { content: '\ebc0'; }
+.codicon-workspace-trusted:before { content: '\ebc1'; }
+.codicon-workspace-untrusted:before { content: '\ebc2'; }
+.codicon-workspace-unknown:before { content: '\ebc3'; }
+.codicon-terminal-cmd:before { content: '\ebc4'; }
+.codicon-terminal-debian:before { content: '\ebc5'; }
+.codicon-terminal-linux:before { content: '\ebc6'; }
+.codicon-terminal-powershell:before { content: '\ebc7'; }
+.codicon-terminal-tmux:before { content: '\ebc8'; }
+.codicon-terminal-ubuntu:before { content: '\ebc9'; }
+.codicon-terminal-bash:before { content: '\ebca'; }
+.codicon-arrow-swap:before { content: '\ebcb'; }
+.codicon-copy:before { content: '\ebcc'; }
+.codicon-person-add:before { content: '\ebcd'; }
+.codicon-filter-filled:before { content: '\ebce'; }
+.codicon-wand:before { content: '\ebcf'; }
+.codicon-debug-line-by-line:before { content: '\ebd0'; }
+.codicon-inspect:before { content: '\ebd1'; }
+.codicon-layers:before { content: '\ebd2'; }
+.codicon-layers-dot:before { content: '\ebd3'; }
+.codicon-layers-active:before { content: '\ebd4'; }
+.codicon-compass:before { content: '\ebd5'; }
+.codicon-compass-dot:before { content: '\ebd6'; }
+.codicon-compass-active:before { content: '\ebd7'; }
+.codicon-azure:before { content: '\ebd8'; }
+.codicon-issue-draft:before { content: '\ebd9'; }
+.codicon-git-pull-request-closed:before { content: '\ebda'; }
+.codicon-git-pull-request-draft:before { content: '\ebdb'; }
+.codicon-debug-all:before { content: '\ebdc'; }
+.codicon-debug-coverage:before { content: '\ebdd'; }
+.codicon-run-errors:before { content: '\ebde'; }
+.codicon-folder-library:before { content: '\ebdf'; }
+.codicon-debug-continue-small:before { content: '\ebe0'; }
+.codicon-beaker-stop:before { content: '\ebe1'; }
+.codicon-graph-line:before { content: '\ebe2'; }
+.codicon-graph-scatter:before { content: '\ebe3'; }
+.codicon-pie-chart:before { content: '\ebe4'; }
+.codicon-bracket:before { content: '\eb0f'; }
+.codicon-bracket-dot:before { content: '\ebe5'; }
+.codicon-bracket-error:before { content: '\ebe6'; }
+.codicon-lock-small:before { content: '\ebe7'; }
+.codicon-azure-devops:before { content: '\ebe8'; }
+.codicon-verified-filled:before { content: '\ebe9'; }
+.codicon-newline:before { content: '\ebea'; }
+.codicon-layout:before { content: '\ebeb'; }
+.codicon-layout-activitybar-left:before { content: '\ebec'; }
+.codicon-layout-activitybar-right:before { content: '\ebed'; }
+.codicon-layout-panel-left:before { content: '\ebee'; }
+.codicon-layout-panel-center:before { content: '\ebef'; }
+.codicon-layout-panel-justify:before { content: '\ebf0'; }
+.codicon-layout-panel-right:before { content: '\ebf1'; }
+.codicon-layout-panel:before { content: '\ebf2'; }
+.codicon-layout-sidebar-left:before { content: '\ebf3'; }
+.codicon-layout-sidebar-right:before { content: '\ebf4'; }
+.codicon-layout-statusbar:before { content: '\ebf5'; }
+.codicon-layout-menubar:before { content: '\ebf6'; }
+.codicon-layout-centered:before { content: '\ebf7'; }
+.codicon-target:before { content: '\ebf8'; }
+.codicon-indent:before { content: '\ebf9'; }
+.codicon-record-small:before { content: '\ebfa'; }
+.codicon-error-small:before { content: '\ebfb'; }
+.codicon-terminal-decoration-error:before { content: '\ebfb'; }
+.codicon-arrow-circle-down:before { content: '\ebfc'; }
+.codicon-arrow-circle-left:before { content: '\ebfd'; }
+.codicon-arrow-circle-right:before { content: '\ebfe'; }
+.codicon-arrow-circle-up:before { content: '\ebff'; }
+.codicon-layout-sidebar-right-off:before { content: '\ec00'; }
+.codicon-layout-panel-off:before { content: '\ec01'; }
+.codicon-layout-sidebar-left-off:before { content: '\ec02'; }
+.codicon-blank:before { content: '\ec03'; }
+.codicon-heart-filled:before { content: '\ec04'; }
+.codicon-map:before { content: '\ec05'; }
+.codicon-map-horizontal:before { content: '\ec05'; }
+.codicon-fold-horizontal:before { content: '\ec05'; }
+.codicon-map-filled:before { content: '\ec06'; }
+.codicon-map-horizontal-filled:before { content: '\ec06'; }
+.codicon-fold-horizontal-filled:before { content: '\ec06'; }
+.codicon-circle-small:before { content: '\ec07'; }
+.codicon-bell-slash:before { content: '\ec08'; }
+.codicon-bell-slash-dot:before { content: '\ec09'; }
+.codicon-comment-unresolved:before { content: '\ec0a'; }
+.codicon-git-pull-request-go-to-changes:before { content: '\ec0b'; }
+.codicon-git-pull-request-new-changes:before { content: '\ec0c'; }
+.codicon-search-fuzzy:before { content: '\ec0d'; }
+.codicon-comment-draft:before { content: '\ec0e'; }
+.codicon-send:before { content: '\ec0f'; }
+.codicon-sparkle:before { content: '\ec10'; }
+.codicon-insert:before { content: '\ec11'; }
+.codicon-mic:before { content: '\ec12'; }
+.codicon-thumbsdown-filled:before { content: '\ec13'; }
+.codicon-thumbsup-filled:before { content: '\ec14'; }
+.codicon-coffee:before { content: '\ec15'; }
+.codicon-snake:before { content: '\ec16'; }
+.codicon-game:before { content: '\ec17'; }
+.codicon-vr:before { content: '\ec18'; }
+.codicon-chip:before { content: '\ec19'; }
+.codicon-piano:before { content: '\ec1a'; }
+.codicon-music:before { content: '\ec1b'; }
+.codicon-mic-filled:before { content: '\ec1c'; }
+.codicon-repo-fetch:before { content: '\ec1d'; }
+.codicon-copilot:before { content: '\ec1e'; }
+.codicon-lightbulb-sparkle:before { content: '\ec1f'; }
+.codicon-robot:before { content: '\ec20'; }
+.codicon-sparkle-filled:before { content: '\ec21'; }
+.codicon-diff-single:before { content: '\ec22'; }
+.codicon-diff-multiple:before { content: '\ec23'; }
+.codicon-surround-with:before { content: '\ec24'; }
+.codicon-share:before { content: '\ec25'; }
+.codicon-git-stash:before { content: '\ec26'; }
+.codicon-git-stash-apply:before { content: '\ec27'; }
+.codicon-git-stash-pop:before { content: '\ec28'; }
+.codicon-vscode:before { content: '\ec29'; }
+.codicon-vscode-insiders:before { content: '\ec2a'; }
+.codicon-code-oss:before { content: '\ec2b'; }
+.codicon-run-coverage:before { content: '\ec2c'; }
+.codicon-run-all-coverage:before { content: '\ec2d'; }
+.codicon-coverage:before { content: '\ec2e'; }
+.codicon-github-project:before { content: '\ec2f'; }
+.codicon-map-vertical:before { content: '\ec30'; }
+.codicon-fold-vertical:before { content: '\ec30'; }
+.codicon-map-vertical-filled:before { content: '\ec31'; }
+.codicon-fold-vertical-filled:before { content: '\ec31'; }
+.codicon-go-to-search:before { content: '\ec32'; }
+.codicon-percentage:before { content: '\ec33'; }
+.codicon-sort-percentage:before { content: '\ec33'; }
+.codicon-attach:before { content: '\ec34'; }
+.codicon-dialog-error:before { content: '\ea87'; }
+.codicon-dialog-warning:before { content: '\ea6c'; }
+.codicon-dialog-info:before { content: '\ea74'; }
+.codicon-dialog-close:before { content: '\ea76'; }
+.codicon-tree-item-expanded:before { content: '\eab4'; }
+.codicon-tree-filter-on-type-on:before { content: '\eb83'; }
+.codicon-tree-filter-on-type-off:before { content: '\eb85'; }
+.codicon-tree-filter-clear:before { content: '\ea76'; }
+.codicon-tree-item-loading:before { content: '\eb19'; }
+.codicon-menu-selection:before { content: '\eab2'; }
+.codicon-menu-submenu:before { content: '\eab6'; }
+.codicon-menubar-more:before { content: '\ea7c'; }
+.codicon-scrollbar-button-left:before { content: '\eb6f'; }
+.codicon-scrollbar-button-right:before { content: '\eb70'; }
+.codicon-scrollbar-button-up:before { content: '\eb71'; }
+.codicon-scrollbar-button-down:before { content: '\eb6e'; }
+.codicon-toolbar-more:before { content: '\ea7c'; }
+.codicon-quick-input-back:before { content: '\ea9b'; }
+.codicon-drop-down-button:before { content: '\eab4'; }
+.codicon-symbol-customcolor:before { content: '\eb5c'; }
+.codicon-workspace-unspecified:before { content: '\ebc3'; }
+.codicon-git-fetch:before { content: '\ec1d'; }
+.codicon-lightbulb-sparkle-autofix:before { content: '\ec1f'; }
+.codicon-debug-breakpoint-pending:before { content: '\ebd9'; }
+.codicon-widget-close:before { content: '\ea76'; }
+.codicon-goto-previous-location:before { content: '\eaa1'; }
+.codicon-goto-next-location:before { content: '\ea9a'; }
+.codicon-diff-review-insert:before { content: '\ea60'; }
+.codicon-diff-review-remove:before { content: '\eb3b'; }
+.codicon-diff-review-close:before { content: '\ea76'; }
+.codicon-diff-insert:before { content: '\ea60'; }
+.codicon-diff-remove:before { content: '\eb3b'; }
+.codicon-gutter-lightbulb:before { content: '\ea61'; }
+.codicon-gutter-lightbulb-auto-fix:before { content: '\eb13'; }
+.codicon-gutter-lightbulb-sparkle:before { content: '\ec1f'; }
+.codicon-gutter-lightbulb-aifix-auto-fix:before { content: '\ec1f'; }
+.codicon-gutter-lightbulb-sparkle-filled:before { content: '\ec21'; }
+.codicon-inline-suggestion-hints-next:before { content: '\eab6'; }
+.codicon-inline-suggestion-hints-previous:before { content: '\eab5'; }
+.codicon-hover-increase-verbosity:before { content: '\ea60'; }
+.codicon-hover-decrease-verbosity:before { content: '\eb3b'; }
+.codicon-find-collapsed:before { content: '\eab6'; }
+.codicon-find-expanded:before { content: '\eab4'; }
+.codicon-find-selection:before { content: '\eb85'; }
+.codicon-find-replace:before { content: '\eb3d'; }
+.codicon-find-replace-all:before { content: '\eb3c'; }
+.codicon-find-previous-match:before { content: '\eaa1'; }
+.codicon-find-next-match:before { content: '\ea9a'; }
+.codicon-folding-expanded:before { content: '\eab4'; }
+.codicon-folding-collapsed:before { content: '\eab6'; }
+.codicon-folding-manual-collapsed:before { content: '\eab6'; }
+.codicon-folding-manual-expanded:before { content: '\eab4'; }
+.codicon-suggest-more-info:before { content: '\eab6'; }
+.codicon-marker-navigation-next:before { content: '\ea9a'; }
+.codicon-marker-navigation-previous:before { content: '\eaa1'; }
+.codicon-parameter-hints-next:before { content: '\eab4'; }
+.codicon-parameter-hints-previous:before { content: '\eab7'; }
+.codicon-extensions-warning-message:before { content: '\ea6c'; }
+:root { --vscode-icon-add-content: '\ea60'; --vscode-icon-add-font-family: 'codicon'; --vscode-icon-plus-content: '\ea60'; --vscode-icon-plus-font-family: 'codicon'; --vscode-icon-gist-new-content: '\ea60'; --vscode-icon-gist-new-font-family: 'codicon'; --vscode-icon-repo-create-content: '\ea60'; --vscode-icon-repo-create-font-family: 'codicon'; --vscode-icon-lightbulb-content: '\ea61'; --vscode-icon-lightbulb-font-family: 'codicon'; --vscode-icon-light-bulb-content: '\ea61'; --vscode-icon-light-bulb-font-family: 'codicon'; --vscode-icon-repo-content: '\ea62'; --vscode-icon-repo-font-family: 'codicon'; --vscode-icon-repo-delete-content: '\ea62'; --vscode-icon-repo-delete-font-family: 'codicon'; --vscode-icon-gist-fork-content: '\ea63'; --vscode-icon-gist-fork-font-family: 'codicon'; --vscode-icon-repo-forked-content: '\ea63'; --vscode-icon-repo-forked-font-family: 'codicon'; --vscode-icon-git-pull-request-content: '\ea64'; --vscode-icon-git-pull-request-font-family: 'codicon'; --vscode-icon-git-pull-request-abandoned-content: '\ea64'; --vscode-icon-git-pull-request-abandoned-font-family: 'codicon'; --vscode-icon-record-keys-content: '\ea65'; --vscode-icon-record-keys-font-family: 'codicon'; --vscode-icon-keyboard-content: '\ea65'; --vscode-icon-keyboard-font-family: 'codicon'; --vscode-icon-tag-content: '\ea66'; --vscode-icon-tag-font-family: 'codicon'; --vscode-icon-git-pull-request-label-content: '\ea66'; --vscode-icon-git-pull-request-label-font-family: 'codicon'; --vscode-icon-tag-add-content: '\ea66'; --vscode-icon-tag-add-font-family: 'codicon'; --vscode-icon-tag-remove-content: '\ea66'; --vscode-icon-tag-remove-font-family: 'codicon'; --vscode-icon-person-content: '\ea67'; --vscode-icon-person-font-family: 'codicon'; --vscode-icon-person-follow-content: '\ea67'; --vscode-icon-person-follow-font-family: 'codicon'; --vscode-icon-person-outline-content: '\ea67'; --vscode-icon-person-outline-font-family: 'codicon'; --vscode-icon-person-filled-content: '\ea67'; --vscode-icon-person-filled-font-family: 'codicon'; --vscode-icon-git-branch-content: '\ea68'; --vscode-icon-git-branch-font-family: 'codicon'; --vscode-icon-git-branch-create-content: '\ea68'; --vscode-icon-git-branch-create-font-family: 'codicon'; --vscode-icon-git-branch-delete-content: '\ea68'; --vscode-icon-git-branch-delete-font-family: 'codicon'; --vscode-icon-source-control-content: '\ea68'; --vscode-icon-source-control-font-family: 'codicon'; --vscode-icon-mirror-content: '\ea69'; --vscode-icon-mirror-font-family: 'codicon'; --vscode-icon-mirror-public-content: '\ea69'; --vscode-icon-mirror-public-font-family: 'codicon'; --vscode-icon-star-content: '\ea6a'; --vscode-icon-star-font-family: 'codicon'; --vscode-icon-star-add-content: '\ea6a'; --vscode-icon-star-add-font-family: 'codicon'; --vscode-icon-star-delete-content: '\ea6a'; --vscode-icon-star-delete-font-family: 'codicon'; --vscode-icon-star-empty-content: '\ea6a'; --vscode-icon-star-empty-font-family: 'codicon'; --vscode-icon-comment-content: '\ea6b'; --vscode-icon-comment-font-family: 'codicon'; --vscode-icon-comment-add-content: '\ea6b'; --vscode-icon-comment-add-font-family: 'codicon'; --vscode-icon-alert-content: '\ea6c'; --vscode-icon-alert-font-family: 'codicon'; --vscode-icon-warning-content: '\ea6c'; --vscode-icon-warning-font-family: 'codicon'; --vscode-icon-search-content: '\ea6d'; --vscode-icon-search-font-family: 'codicon'; --vscode-icon-search-save-content: '\ea6d'; --vscode-icon-search-save-font-family: 'codicon'; --vscode-icon-log-out-content: '\ea6e'; --vscode-icon-log-out-font-family: 'codicon'; --vscode-icon-sign-out-content: '\ea6e'; --vscode-icon-sign-out-font-family: 'codicon'; --vscode-icon-log-in-content: '\ea6f'; --vscode-icon-log-in-font-family: 'codicon'; --vscode-icon-sign-in-content: '\ea6f'; --vscode-icon-sign-in-font-family: 'codicon'; --vscode-icon-eye-content: '\ea70'; --vscode-icon-eye-font-family: 'codicon'; --vscode-icon-eye-unwatch-content: '\ea70'; --vscode-icon-eye-unwatch-font-family: 'codicon'; --vscode-icon-eye-watch-content: '\ea70'; --vscode-icon-eye-watch-font-family: 'codicon'; --vscode-icon-circle-filled-content: '\ea71'; --vscode-icon-circle-filled-font-family: 'codicon'; --vscode-icon-primitive-dot-content: '\ea71'; --vscode-icon-primitive-dot-font-family: 'codicon'; --vscode-icon-close-dirty-content: '\ea71'; --vscode-icon-close-dirty-font-family: 'codicon'; --vscode-icon-debug-breakpoint-content: '\ea71'; --vscode-icon-debug-breakpoint-font-family: 'codicon'; --vscode-icon-debug-breakpoint-disabled-content: '\ea71'; --vscode-icon-debug-breakpoint-disabled-font-family: 'codicon'; --vscode-icon-debug-hint-content: '\ea71'; --vscode-icon-debug-hint-font-family: 'codicon'; --vscode-icon-terminal-decoration-success-content: '\ea71'; --vscode-icon-terminal-decoration-success-font-family: 'codicon'; --vscode-icon-primitive-square-content: '\ea72'; --vscode-icon-primitive-square-font-family: 'codicon'; --vscode-icon-edit-content: '\ea73'; --vscode-icon-edit-font-family: 'codicon'; --vscode-icon-pencil-content: '\ea73'; --vscode-icon-pencil-font-family: 'codicon'; --vscode-icon-info-content: '\ea74'; --vscode-icon-info-font-family: 'codicon'; --vscode-icon-issue-opened-content: '\ea74'; --vscode-icon-issue-opened-font-family: 'codicon'; --vscode-icon-gist-private-content: '\ea75'; --vscode-icon-gist-private-font-family: 'codicon'; --vscode-icon-git-fork-private-content: '\ea75'; --vscode-icon-git-fork-private-font-family: 'codicon'; --vscode-icon-lock-content: '\ea75'; --vscode-icon-lock-font-family: 'codicon'; --vscode-icon-mirror-private-content: '\ea75'; --vscode-icon-mirror-private-font-family: 'codicon'; --vscode-icon-close-content: '\ea76'; --vscode-icon-close-font-family: 'codicon'; --vscode-icon-remove-close-content: '\ea76'; --vscode-icon-remove-close-font-family: 'codicon'; --vscode-icon-x-content: '\ea76'; --vscode-icon-x-font-family: 'codicon'; --vscode-icon-repo-sync-content: '\ea77'; --vscode-icon-repo-sync-font-family: 'codicon'; --vscode-icon-sync-content: '\ea77'; --vscode-icon-sync-font-family: 'codicon'; --vscode-icon-clone-content: '\ea78'; --vscode-icon-clone-font-family: 'codicon'; --vscode-icon-desktop-download-content: '\ea78'; --vscode-icon-desktop-download-font-family: 'codicon'; --vscode-icon-beaker-content: '\ea79'; --vscode-icon-beaker-font-family: 'codicon'; --vscode-icon-microscope-content: '\ea79'; --vscode-icon-microscope-font-family: 'codicon'; --vscode-icon-vm-content: '\ea7a'; --vscode-icon-vm-font-family: 'codicon'; --vscode-icon-device-desktop-content: '\ea7a'; --vscode-icon-device-desktop-font-family: 'codicon'; --vscode-icon-file-content: '\ea7b'; --vscode-icon-file-font-family: 'codicon'; --vscode-icon-file-text-content: '\ea7b'; --vscode-icon-file-text-font-family: 'codicon'; --vscode-icon-more-content: '\ea7c'; --vscode-icon-more-font-family: 'codicon'; --vscode-icon-ellipsis-content: '\ea7c'; --vscode-icon-ellipsis-font-family: 'codicon'; --vscode-icon-kebab-horizontal-content: '\ea7c'; --vscode-icon-kebab-horizontal-font-family: 'codicon'; --vscode-icon-mail-reply-content: '\ea7d'; --vscode-icon-mail-reply-font-family: 'codicon'; --vscode-icon-reply-content: '\ea7d'; --vscode-icon-reply-font-family: 'codicon'; --vscode-icon-organization-content: '\ea7e'; --vscode-icon-organization-font-family: 'codicon'; --vscode-icon-organization-filled-content: '\ea7e'; --vscode-icon-organization-filled-font-family: 'codicon'; --vscode-icon-organization-outline-content: '\ea7e'; --vscode-icon-organization-outline-font-family: 'codicon'; --vscode-icon-new-file-content: '\ea7f'; --vscode-icon-new-file-font-family: 'codicon'; --vscode-icon-file-add-content: '\ea7f'; --vscode-icon-file-add-font-family: 'codicon'; --vscode-icon-new-folder-content: '\ea80'; --vscode-icon-new-folder-font-family: 'codicon'; --vscode-icon-file-directory-create-content: '\ea80'; --vscode-icon-file-directory-create-font-family: 'codicon'; --vscode-icon-trash-content: '\ea81'; --vscode-icon-trash-font-family: 'codicon'; --vscode-icon-trashcan-content: '\ea81'; --vscode-icon-trashcan-font-family: 'codicon'; --vscode-icon-history-content: '\ea82'; --vscode-icon-history-font-family: 'codicon'; --vscode-icon-clock-content: '\ea82'; --vscode-icon-clock-font-family: 'codicon'; --vscode-icon-folder-content: '\ea83'; --vscode-icon-folder-font-family: 'codicon'; --vscode-icon-file-directory-content: '\ea83'; --vscode-icon-file-directory-font-family: 'codicon'; --vscode-icon-symbol-folder-content: '\ea83'; --vscode-icon-symbol-folder-font-family: 'codicon'; --vscode-icon-logo-github-content: '\ea84'; --vscode-icon-logo-github-font-family: 'codicon'; --vscode-icon-mark-github-content: '\ea84'; --vscode-icon-mark-github-font-family: 'codicon'; --vscode-icon-github-content: '\ea84'; --vscode-icon-github-font-family: 'codicon'; --vscode-icon-terminal-content: '\ea85'; --vscode-icon-terminal-font-family: 'codicon'; --vscode-icon-console-content: '\ea85'; --vscode-icon-console-font-family: 'codicon'; --vscode-icon-repl-content: '\ea85'; --vscode-icon-repl-font-family: 'codicon'; --vscode-icon-zap-content: '\ea86'; --vscode-icon-zap-font-family: 'codicon'; --vscode-icon-symbol-event-content: '\ea86'; --vscode-icon-symbol-event-font-family: 'codicon'; --vscode-icon-error-content: '\ea87'; --vscode-icon-error-font-family: 'codicon'; --vscode-icon-stop-content: '\ea87'; --vscode-icon-stop-font-family: 'codicon'; --vscode-icon-variable-content: '\ea88'; --vscode-icon-variable-font-family: 'codicon'; --vscode-icon-symbol-variable-content: '\ea88'; --vscode-icon-symbol-variable-font-family: 'codicon'; --vscode-icon-array-content: '\ea8a'; --vscode-icon-array-font-family: 'codicon'; --vscode-icon-symbol-array-content: '\ea8a'; --vscode-icon-symbol-array-font-family: 'codicon'; --vscode-icon-symbol-module-content: '\ea8b'; --vscode-icon-symbol-module-font-family: 'codicon'; --vscode-icon-symbol-package-content: '\ea8b'; --vscode-icon-symbol-package-font-family: 'codicon'; --vscode-icon-symbol-namespace-content: '\ea8b'; --vscode-icon-symbol-namespace-font-family: 'codicon'; --vscode-icon-symbol-object-content: '\ea8b'; --vscode-icon-symbol-object-font-family: 'codicon'; --vscode-icon-symbol-method-content: '\ea8c'; --vscode-icon-symbol-method-font-family: 'codicon'; --vscode-icon-symbol-function-content: '\ea8c'; --vscode-icon-symbol-function-font-family: 'codicon'; --vscode-icon-symbol-constructor-content: '\ea8c'; --vscode-icon-symbol-constructor-font-family: 'codicon'; --vscode-icon-symbol-boolean-content: '\ea8f'; --vscode-icon-symbol-boolean-font-family: 'codicon'; --vscode-icon-symbol-null-content: '\ea8f'; --vscode-icon-symbol-null-font-family: 'codicon'; --vscode-icon-symbol-numeric-content: '\ea90'; --vscode-icon-symbol-numeric-font-family: 'codicon'; --vscode-icon-symbol-number-content: '\ea90'; --vscode-icon-symbol-number-font-family: 'codicon'; --vscode-icon-symbol-structure-content: '\ea91'; --vscode-icon-symbol-structure-font-family: 'codicon'; --vscode-icon-symbol-struct-content: '\ea91'; --vscode-icon-symbol-struct-font-family: 'codicon'; --vscode-icon-symbol-parameter-content: '\ea92'; --vscode-icon-symbol-parameter-font-family: 'codicon'; --vscode-icon-symbol-type-parameter-content: '\ea92'; --vscode-icon-symbol-type-parameter-font-family: 'codicon'; --vscode-icon-symbol-key-content: '\ea93'; --vscode-icon-symbol-key-font-family: 'codicon'; --vscode-icon-symbol-text-content: '\ea93'; --vscode-icon-symbol-text-font-family: 'codicon'; --vscode-icon-symbol-reference-content: '\ea94'; --vscode-icon-symbol-reference-font-family: 'codicon'; --vscode-icon-go-to-file-content: '\ea94'; --vscode-icon-go-to-file-font-family: 'codicon'; --vscode-icon-symbol-enum-content: '\ea95'; --vscode-icon-symbol-enum-font-family: 'codicon'; --vscode-icon-symbol-value-content: '\ea95'; --vscode-icon-symbol-value-font-family: 'codicon'; --vscode-icon-symbol-ruler-content: '\ea96'; --vscode-icon-symbol-ruler-font-family: 'codicon'; --vscode-icon-symbol-unit-content: '\ea96'; --vscode-icon-symbol-unit-font-family: 'codicon'; --vscode-icon-activate-breakpoints-content: '\ea97'; --vscode-icon-activate-breakpoints-font-family: 'codicon'; --vscode-icon-archive-content: '\ea98'; --vscode-icon-archive-font-family: 'codicon'; --vscode-icon-arrow-both-content: '\ea99'; --vscode-icon-arrow-both-font-family: 'codicon'; --vscode-icon-arrow-down-content: '\ea9a'; --vscode-icon-arrow-down-font-family: 'codicon'; --vscode-icon-arrow-left-content: '\ea9b'; --vscode-icon-arrow-left-font-family: 'codicon'; --vscode-icon-arrow-right-content: '\ea9c'; --vscode-icon-arrow-right-font-family: 'codicon'; --vscode-icon-arrow-small-down-content: '\ea9d'; --vscode-icon-arrow-small-down-font-family: 'codicon'; --vscode-icon-arrow-small-left-content: '\ea9e'; --vscode-icon-arrow-small-left-font-family: 'codicon'; --vscode-icon-arrow-small-right-content: '\ea9f'; --vscode-icon-arrow-small-right-font-family: 'codicon'; --vscode-icon-arrow-small-up-content: '\eaa0'; --vscode-icon-arrow-small-up-font-family: 'codicon'; --vscode-icon-arrow-up-content: '\eaa1'; --vscode-icon-arrow-up-font-family: 'codicon'; --vscode-icon-bell-content: '\eaa2'; --vscode-icon-bell-font-family: 'codicon'; --vscode-icon-bold-content: '\eaa3'; --vscode-icon-bold-font-family: 'codicon'; --vscode-icon-book-content: '\eaa4'; --vscode-icon-book-font-family: 'codicon'; --vscode-icon-bookmark-content: '\eaa5'; --vscode-icon-bookmark-font-family: 'codicon'; --vscode-icon-debug-breakpoint-conditional-unverified-content: '\eaa6'; --vscode-icon-debug-breakpoint-conditional-unverified-font-family: 'codicon'; --vscode-icon-debug-breakpoint-conditional-content: '\eaa7'; --vscode-icon-debug-breakpoint-conditional-font-family: 'codicon'; --vscode-icon-debug-breakpoint-conditional-disabled-content: '\eaa7'; --vscode-icon-debug-breakpoint-conditional-disabled-font-family: 'codicon'; --vscode-icon-debug-breakpoint-data-unverified-content: '\eaa8'; --vscode-icon-debug-breakpoint-data-unverified-font-family: 'codicon'; --vscode-icon-debug-breakpoint-data-content: '\eaa9'; --vscode-icon-debug-breakpoint-data-font-family: 'codicon'; --vscode-icon-debug-breakpoint-data-disabled-content: '\eaa9'; --vscode-icon-debug-breakpoint-data-disabled-font-family: 'codicon'; --vscode-icon-debug-breakpoint-log-unverified-content: '\eaaa'; --vscode-icon-debug-breakpoint-log-unverified-font-family: 'codicon'; --vscode-icon-debug-breakpoint-log-content: '\eaab'; --vscode-icon-debug-breakpoint-log-font-family: 'codicon'; --vscode-icon-debug-breakpoint-log-disabled-content: '\eaab'; --vscode-icon-debug-breakpoint-log-disabled-font-family: 'codicon'; --vscode-icon-briefcase-content: '\eaac'; --vscode-icon-briefcase-font-family: 'codicon'; --vscode-icon-broadcast-content: '\eaad'; --vscode-icon-broadcast-font-family: 'codicon'; --vscode-icon-browser-content: '\eaae'; --vscode-icon-browser-font-family: 'codicon'; --vscode-icon-bug-content: '\eaaf'; --vscode-icon-bug-font-family: 'codicon'; --vscode-icon-calendar-content: '\eab0'; --vscode-icon-calendar-font-family: 'codicon'; --vscode-icon-case-sensitive-content: '\eab1'; --vscode-icon-case-sensitive-font-family: 'codicon'; --vscode-icon-check-content: '\eab2'; --vscode-icon-check-font-family: 'codicon'; --vscode-icon-checklist-content: '\eab3'; --vscode-icon-checklist-font-family: 'codicon'; --vscode-icon-chevron-down-content: '\eab4'; --vscode-icon-chevron-down-font-family: 'codicon'; --vscode-icon-chevron-left-content: '\eab5'; --vscode-icon-chevron-left-font-family: 'codicon'; --vscode-icon-chevron-right-content: '\eab6'; --vscode-icon-chevron-right-font-family: 'codicon'; --vscode-icon-chevron-up-content: '\eab7'; --vscode-icon-chevron-up-font-family: 'codicon'; --vscode-icon-chrome-close-content: '\eab8'; --vscode-icon-chrome-close-font-family: 'codicon'; --vscode-icon-chrome-maximize-content: '\eab9'; --vscode-icon-chrome-maximize-font-family: 'codicon'; --vscode-icon-chrome-minimize-content: '\eaba'; --vscode-icon-chrome-minimize-font-family: 'codicon'; --vscode-icon-chrome-restore-content: '\eabb'; --vscode-icon-chrome-restore-font-family: 'codicon'; --vscode-icon-circle-outline-content: '\eabc'; --vscode-icon-circle-outline-font-family: 'codicon'; --vscode-icon-circle-content: '\eabc'; --vscode-icon-circle-font-family: 'codicon'; --vscode-icon-debug-breakpoint-unverified-content: '\eabc'; --vscode-icon-debug-breakpoint-unverified-font-family: 'codicon'; --vscode-icon-terminal-decoration-incomplete-content: '\eabc'; --vscode-icon-terminal-decoration-incomplete-font-family: 'codicon'; --vscode-icon-circle-slash-content: '\eabd'; --vscode-icon-circle-slash-font-family: 'codicon'; --vscode-icon-circuit-board-content: '\eabe'; --vscode-icon-circuit-board-font-family: 'codicon'; --vscode-icon-clear-all-content: '\eabf'; --vscode-icon-clear-all-font-family: 'codicon'; --vscode-icon-clippy-content: '\eac0'; --vscode-icon-clippy-font-family: 'codicon'; --vscode-icon-close-all-content: '\eac1'; --vscode-icon-close-all-font-family: 'codicon'; --vscode-icon-cloud-download-content: '\eac2'; --vscode-icon-cloud-download-font-family: 'codicon'; --vscode-icon-cloud-upload-content: '\eac3'; --vscode-icon-cloud-upload-font-family: 'codicon'; --vscode-icon-code-content: '\eac4'; --vscode-icon-code-font-family: 'codicon'; --vscode-icon-collapse-all-content: '\eac5'; --vscode-icon-collapse-all-font-family: 'codicon'; --vscode-icon-color-mode-content: '\eac6'; --vscode-icon-color-mode-font-family: 'codicon'; --vscode-icon-comment-discussion-content: '\eac7'; --vscode-icon-comment-discussion-font-family: 'codicon'; --vscode-icon-credit-card-content: '\eac9'; --vscode-icon-credit-card-font-family: 'codicon'; --vscode-icon-dash-content: '\eacc'; --vscode-icon-dash-font-family: 'codicon'; --vscode-icon-dashboard-content: '\eacd'; --vscode-icon-dashboard-font-family: 'codicon'; --vscode-icon-database-content: '\eace'; --vscode-icon-database-font-family: 'codicon'; --vscode-icon-debug-continue-content: '\eacf'; --vscode-icon-debug-continue-font-family: 'codicon'; --vscode-icon-debug-disconnect-content: '\ead0'; --vscode-icon-debug-disconnect-font-family: 'codicon'; --vscode-icon-debug-pause-content: '\ead1'; --vscode-icon-debug-pause-font-family: 'codicon'; --vscode-icon-debug-restart-content: '\ead2'; --vscode-icon-debug-restart-font-family: 'codicon'; --vscode-icon-debug-start-content: '\ead3'; --vscode-icon-debug-start-font-family: 'codicon'; --vscode-icon-debug-step-into-content: '\ead4'; --vscode-icon-debug-step-into-font-family: 'codicon'; --vscode-icon-debug-step-out-content: '\ead5'; --vscode-icon-debug-step-out-font-family: 'codicon'; --vscode-icon-debug-step-over-content: '\ead6'; --vscode-icon-debug-step-over-font-family: 'codicon'; --vscode-icon-debug-stop-content: '\ead7'; --vscode-icon-debug-stop-font-family: 'codicon'; --vscode-icon-debug-content: '\ead8'; --vscode-icon-debug-font-family: 'codicon'; --vscode-icon-device-camera-video-content: '\ead9'; --vscode-icon-device-camera-video-font-family: 'codicon'; --vscode-icon-device-camera-content: '\eada'; --vscode-icon-device-camera-font-family: 'codicon'; --vscode-icon-device-mobile-content: '\eadb'; --vscode-icon-device-mobile-font-family: 'codicon'; --vscode-icon-diff-added-content: '\eadc'; --vscode-icon-diff-added-font-family: 'codicon'; --vscode-icon-diff-ignored-content: '\eadd'; --vscode-icon-diff-ignored-font-family: 'codicon'; --vscode-icon-diff-modified-content: '\eade'; --vscode-icon-diff-modified-font-family: 'codicon'; --vscode-icon-diff-removed-content: '\eadf'; --vscode-icon-diff-removed-font-family: 'codicon'; --vscode-icon-diff-renamed-content: '\eae0'; --vscode-icon-diff-renamed-font-family: 'codicon'; --vscode-icon-diff-content: '\eae1'; --vscode-icon-diff-font-family: 'codicon'; --vscode-icon-diff-sidebyside-content: '\eae1'; --vscode-icon-diff-sidebyside-font-family: 'codicon'; --vscode-icon-discard-content: '\eae2'; --vscode-icon-discard-font-family: 'codicon'; --vscode-icon-editor-layout-content: '\eae3'; --vscode-icon-editor-layout-font-family: 'codicon'; --vscode-icon-empty-window-content: '\eae4'; --vscode-icon-empty-window-font-family: 'codicon'; --vscode-icon-exclude-content: '\eae5'; --vscode-icon-exclude-font-family: 'codicon'; --vscode-icon-extensions-content: '\eae6'; --vscode-icon-extensions-font-family: 'codicon'; --vscode-icon-eye-closed-content: '\eae7'; --vscode-icon-eye-closed-font-family: 'codicon'; --vscode-icon-file-binary-content: '\eae8'; --vscode-icon-file-binary-font-family: 'codicon'; --vscode-icon-file-code-content: '\eae9'; --vscode-icon-file-code-font-family: 'codicon'; --vscode-icon-file-media-content: '\eaea'; --vscode-icon-file-media-font-family: 'codicon'; --vscode-icon-file-pdf-content: '\eaeb'; --vscode-icon-file-pdf-font-family: 'codicon'; --vscode-icon-file-submodule-content: '\eaec'; --vscode-icon-file-submodule-font-family: 'codicon'; --vscode-icon-file-symlink-directory-content: '\eaed'; --vscode-icon-file-symlink-directory-font-family: 'codicon'; --vscode-icon-file-symlink-file-content: '\eaee'; --vscode-icon-file-symlink-file-font-family: 'codicon'; --vscode-icon-file-zip-content: '\eaef'; --vscode-icon-file-zip-font-family: 'codicon'; --vscode-icon-files-content: '\eaf0'; --vscode-icon-files-font-family: 'codicon'; --vscode-icon-filter-content: '\eaf1'; --vscode-icon-filter-font-family: 'codicon'; --vscode-icon-flame-content: '\eaf2'; --vscode-icon-flame-font-family: 'codicon'; --vscode-icon-fold-down-content: '\eaf3'; --vscode-icon-fold-down-font-family: 'codicon'; --vscode-icon-fold-up-content: '\eaf4'; --vscode-icon-fold-up-font-family: 'codicon'; --vscode-icon-fold-content: '\eaf5'; --vscode-icon-fold-font-family: 'codicon'; --vscode-icon-folder-active-content: '\eaf6'; --vscode-icon-folder-active-font-family: 'codicon'; --vscode-icon-folder-opened-content: '\eaf7'; --vscode-icon-folder-opened-font-family: 'codicon'; --vscode-icon-gear-content: '\eaf8'; --vscode-icon-gear-font-family: 'codicon'; --vscode-icon-gift-content: '\eaf9'; --vscode-icon-gift-font-family: 'codicon'; --vscode-icon-gist-secret-content: '\eafa'; --vscode-icon-gist-secret-font-family: 'codicon'; --vscode-icon-gist-content: '\eafb'; --vscode-icon-gist-font-family: 'codicon'; --vscode-icon-git-commit-content: '\eafc'; --vscode-icon-git-commit-font-family: 'codicon'; --vscode-icon-git-compare-content: '\eafd'; --vscode-icon-git-compare-font-family: 'codicon'; --vscode-icon-compare-changes-content: '\eafd'; --vscode-icon-compare-changes-font-family: 'codicon'; --vscode-icon-git-merge-content: '\eafe'; --vscode-icon-git-merge-font-family: 'codicon'; --vscode-icon-github-action-content: '\eaff'; --vscode-icon-github-action-font-family: 'codicon'; --vscode-icon-github-alt-content: '\eb00'; --vscode-icon-github-alt-font-family: 'codicon'; --vscode-icon-globe-content: '\eb01'; --vscode-icon-globe-font-family: 'codicon'; --vscode-icon-grabber-content: '\eb02'; --vscode-icon-grabber-font-family: 'codicon'; --vscode-icon-graph-content: '\eb03'; --vscode-icon-graph-font-family: 'codicon'; --vscode-icon-gripper-content: '\eb04'; --vscode-icon-gripper-font-family: 'codicon'; --vscode-icon-heart-content: '\eb05'; --vscode-icon-heart-font-family: 'codicon'; --vscode-icon-home-content: '\eb06'; --vscode-icon-home-font-family: 'codicon'; --vscode-icon-horizontal-rule-content: '\eb07'; --vscode-icon-horizontal-rule-font-family: 'codicon'; --vscode-icon-hubot-content: '\eb08'; --vscode-icon-hubot-font-family: 'codicon'; --vscode-icon-inbox-content: '\eb09'; --vscode-icon-inbox-font-family: 'codicon'; --vscode-icon-issue-reopened-content: '\eb0b'; --vscode-icon-issue-reopened-font-family: 'codicon'; --vscode-icon-issues-content: '\eb0c'; --vscode-icon-issues-font-family: 'codicon'; --vscode-icon-italic-content: '\eb0d'; --vscode-icon-italic-font-family: 'codicon'; --vscode-icon-jersey-content: '\eb0e'; --vscode-icon-jersey-font-family: 'codicon'; --vscode-icon-json-content: '\eb0f'; --vscode-icon-json-font-family: 'codicon'; --vscode-icon-kebab-vertical-content: '\eb10'; --vscode-icon-kebab-vertical-font-family: 'codicon'; --vscode-icon-key-content: '\eb11'; --vscode-icon-key-font-family: 'codicon'; --vscode-icon-law-content: '\eb12'; --vscode-icon-law-font-family: 'codicon'; --vscode-icon-lightbulb-autofix-content: '\eb13'; --vscode-icon-lightbulb-autofix-font-family: 'codicon'; --vscode-icon-link-external-content: '\eb14'; --vscode-icon-link-external-font-family: 'codicon'; --vscode-icon-link-content: '\eb15'; --vscode-icon-link-font-family: 'codicon'; --vscode-icon-list-ordered-content: '\eb16'; --vscode-icon-list-ordered-font-family: 'codicon'; --vscode-icon-list-unordered-content: '\eb17'; --vscode-icon-list-unordered-font-family: 'codicon'; --vscode-icon-live-share-content: '\eb18'; --vscode-icon-live-share-font-family: 'codicon'; --vscode-icon-loading-content: '\eb19'; --vscode-icon-loading-font-family: 'codicon'; --vscode-icon-location-content: '\eb1a'; --vscode-icon-location-font-family: 'codicon'; --vscode-icon-mail-read-content: '\eb1b'; --vscode-icon-mail-read-font-family: 'codicon'; --vscode-icon-mail-content: '\eb1c'; --vscode-icon-mail-font-family: 'codicon'; --vscode-icon-markdown-content: '\eb1d'; --vscode-icon-markdown-font-family: 'codicon'; --vscode-icon-megaphone-content: '\eb1e'; --vscode-icon-megaphone-font-family: 'codicon'; --vscode-icon-mention-content: '\eb1f'; --vscode-icon-mention-font-family: 'codicon'; --vscode-icon-milestone-content: '\eb20'; --vscode-icon-milestone-font-family: 'codicon'; --vscode-icon-git-pull-request-milestone-content: '\eb20'; --vscode-icon-git-pull-request-milestone-font-family: 'codicon'; --vscode-icon-mortar-board-content: '\eb21'; --vscode-icon-mortar-board-font-family: 'codicon'; --vscode-icon-move-content: '\eb22'; --vscode-icon-move-font-family: 'codicon'; --vscode-icon-multiple-windows-content: '\eb23'; --vscode-icon-multiple-windows-font-family: 'codicon'; --vscode-icon-mute-content: '\eb24'; --vscode-icon-mute-font-family: 'codicon'; --vscode-icon-no-newline-content: '\eb25'; --vscode-icon-no-newline-font-family: 'codicon'; --vscode-icon-note-content: '\eb26'; --vscode-icon-note-font-family: 'codicon'; --vscode-icon-octoface-content: '\eb27'; --vscode-icon-octoface-font-family: 'codicon'; --vscode-icon-open-preview-content: '\eb28'; --vscode-icon-open-preview-font-family: 'codicon'; --vscode-icon-package-content: '\eb29'; --vscode-icon-package-font-family: 'codicon'; --vscode-icon-paintcan-content: '\eb2a'; --vscode-icon-paintcan-font-family: 'codicon'; --vscode-icon-pin-content: '\eb2b'; --vscode-icon-pin-font-family: 'codicon'; --vscode-icon-play-content: '\eb2c'; --vscode-icon-play-font-family: 'codicon'; --vscode-icon-run-content: '\eb2c'; --vscode-icon-run-font-family: 'codicon'; --vscode-icon-plug-content: '\eb2d'; --vscode-icon-plug-font-family: 'codicon'; --vscode-icon-preserve-case-content: '\eb2e'; --vscode-icon-preserve-case-font-family: 'codicon'; --vscode-icon-preview-content: '\eb2f'; --vscode-icon-preview-font-family: 'codicon'; --vscode-icon-project-content: '\eb30'; --vscode-icon-project-font-family: 'codicon'; --vscode-icon-pulse-content: '\eb31'; --vscode-icon-pulse-font-family: 'codicon'; --vscode-icon-question-content: '\eb32'; --vscode-icon-question-font-family: 'codicon'; --vscode-icon-quote-content: '\eb33'; --vscode-icon-quote-font-family: 'codicon'; --vscode-icon-radio-tower-content: '\eb34'; --vscode-icon-radio-tower-font-family: 'codicon'; --vscode-icon-reactions-content: '\eb35'; --vscode-icon-reactions-font-family: 'codicon'; --vscode-icon-references-content: '\eb36'; --vscode-icon-references-font-family: 'codicon'; --vscode-icon-refresh-content: '\eb37'; --vscode-icon-refresh-font-family: 'codicon'; --vscode-icon-regex-content: '\eb38'; --vscode-icon-regex-font-family: 'codicon'; --vscode-icon-remote-explorer-content: '\eb39'; --vscode-icon-remote-explorer-font-family: 'codicon'; --vscode-icon-remote-content: '\eb3a'; --vscode-icon-remote-font-family: 'codicon'; --vscode-icon-remove-content: '\eb3b'; --vscode-icon-remove-font-family: 'codicon'; --vscode-icon-replace-all-content: '\eb3c'; --vscode-icon-replace-all-font-family: 'codicon'; --vscode-icon-replace-content: '\eb3d'; --vscode-icon-replace-font-family: 'codicon'; --vscode-icon-repo-clone-content: '\eb3e'; --vscode-icon-repo-clone-font-family: 'codicon'; --vscode-icon-repo-force-push-content: '\eb3f'; --vscode-icon-repo-force-push-font-family: 'codicon'; --vscode-icon-repo-pull-content: '\eb40'; --vscode-icon-repo-pull-font-family: 'codicon'; --vscode-icon-repo-push-content: '\eb41'; --vscode-icon-repo-push-font-family: 'codicon'; --vscode-icon-report-content: '\eb42'; --vscode-icon-report-font-family: 'codicon'; --vscode-icon-request-changes-content: '\eb43'; --vscode-icon-request-changes-font-family: 'codicon'; --vscode-icon-rocket-content: '\eb44'; --vscode-icon-rocket-font-family: 'codicon'; --vscode-icon-root-folder-opened-content: '\eb45'; --vscode-icon-root-folder-opened-font-family: 'codicon'; --vscode-icon-root-folder-content: '\eb46'; --vscode-icon-root-folder-font-family: 'codicon'; --vscode-icon-rss-content: '\eb47'; --vscode-icon-rss-font-family: 'codicon'; --vscode-icon-ruby-content: '\eb48'; --vscode-icon-ruby-font-family: 'codicon'; --vscode-icon-save-all-content: '\eb49'; --vscode-icon-save-all-font-family: 'codicon'; --vscode-icon-save-as-content: '\eb4a'; --vscode-icon-save-as-font-family: 'codicon'; --vscode-icon-save-content: '\eb4b'; --vscode-icon-save-font-family: 'codicon'; --vscode-icon-screen-full-content: '\eb4c'; --vscode-icon-screen-full-font-family: 'codicon'; --vscode-icon-screen-normal-content: '\eb4d'; --vscode-icon-screen-normal-font-family: 'codicon'; --vscode-icon-search-stop-content: '\eb4e'; --vscode-icon-search-stop-font-family: 'codicon'; --vscode-icon-server-content: '\eb50'; --vscode-icon-server-font-family: 'codicon'; --vscode-icon-settings-gear-content: '\eb51'; --vscode-icon-settings-gear-font-family: 'codicon'; --vscode-icon-settings-content: '\eb52'; --vscode-icon-settings-font-family: 'codicon'; --vscode-icon-shield-content: '\eb53'; --vscode-icon-shield-font-family: 'codicon'; --vscode-icon-smiley-content: '\eb54'; --vscode-icon-smiley-font-family: 'codicon'; --vscode-icon-sort-precedence-content: '\eb55'; --vscode-icon-sort-precedence-font-family: 'codicon'; --vscode-icon-split-horizontal-content: '\eb56'; --vscode-icon-split-horizontal-font-family: 'codicon'; --vscode-icon-split-vertical-content: '\eb57'; --vscode-icon-split-vertical-font-family: 'codicon'; --vscode-icon-squirrel-content: '\eb58'; --vscode-icon-squirrel-font-family: 'codicon'; --vscode-icon-star-full-content: '\eb59'; --vscode-icon-star-full-font-family: 'codicon'; --vscode-icon-star-half-content: '\eb5a'; --vscode-icon-star-half-font-family: 'codicon'; --vscode-icon-symbol-class-content: '\eb5b'; --vscode-icon-symbol-class-font-family: 'codicon'; --vscode-icon-symbol-color-content: '\eb5c'; --vscode-icon-symbol-color-font-family: 'codicon'; --vscode-icon-symbol-constant-content: '\eb5d'; --vscode-icon-symbol-constant-font-family: 'codicon'; --vscode-icon-symbol-enum-member-content: '\eb5e'; --vscode-icon-symbol-enum-member-font-family: 'codicon'; --vscode-icon-symbol-field-content: '\eb5f'; --vscode-icon-symbol-field-font-family: 'codicon'; --vscode-icon-symbol-file-content: '\eb60'; --vscode-icon-symbol-file-font-family: 'codicon'; --vscode-icon-symbol-interface-content: '\eb61'; --vscode-icon-symbol-interface-font-family: 'codicon'; --vscode-icon-symbol-keyword-content: '\eb62'; --vscode-icon-symbol-keyword-font-family: 'codicon'; --vscode-icon-symbol-misc-content: '\eb63'; --vscode-icon-symbol-misc-font-family: 'codicon'; --vscode-icon-symbol-operator-content: '\eb64'; --vscode-icon-symbol-operator-font-family: 'codicon'; --vscode-icon-symbol-property-content: '\eb65'; --vscode-icon-symbol-property-font-family: 'codicon'; --vscode-icon-wrench-content: '\eb65'; --vscode-icon-wrench-font-family: 'codicon'; --vscode-icon-wrench-subaction-content: '\eb65'; --vscode-icon-wrench-subaction-font-family: 'codicon'; --vscode-icon-symbol-snippet-content: '\eb66'; --vscode-icon-symbol-snippet-font-family: 'codicon'; --vscode-icon-tasklist-content: '\eb67'; --vscode-icon-tasklist-font-family: 'codicon'; --vscode-icon-telescope-content: '\eb68'; --vscode-icon-telescope-font-family: 'codicon'; --vscode-icon-text-size-content: '\eb69'; --vscode-icon-text-size-font-family: 'codicon'; --vscode-icon-three-bars-content: '\eb6a'; --vscode-icon-three-bars-font-family: 'codicon'; --vscode-icon-thumbsdown-content: '\eb6b'; --vscode-icon-thumbsdown-font-family: 'codicon'; --vscode-icon-thumbsup-content: '\eb6c'; --vscode-icon-thumbsup-font-family: 'codicon'; --vscode-icon-tools-content: '\eb6d'; --vscode-icon-tools-font-family: 'codicon'; --vscode-icon-triangle-down-content: '\eb6e'; --vscode-icon-triangle-down-font-family: 'codicon'; --vscode-icon-triangle-left-content: '\eb6f'; --vscode-icon-triangle-left-font-family: 'codicon'; --vscode-icon-triangle-right-content: '\eb70'; --vscode-icon-triangle-right-font-family: 'codicon'; --vscode-icon-triangle-up-content: '\eb71'; --vscode-icon-triangle-up-font-family: 'codicon'; --vscode-icon-twitter-content: '\eb72'; --vscode-icon-twitter-font-family: 'codicon'; --vscode-icon-unfold-content: '\eb73'; --vscode-icon-unfold-font-family: 'codicon'; --vscode-icon-unlock-content: '\eb74'; --vscode-icon-unlock-font-family: 'codicon'; --vscode-icon-unmute-content: '\eb75'; --vscode-icon-unmute-font-family: 'codicon'; --vscode-icon-unverified-content: '\eb76'; --vscode-icon-unverified-font-family: 'codicon'; --vscode-icon-verified-content: '\eb77'; --vscode-icon-verified-font-family: 'codicon'; --vscode-icon-versions-content: '\eb78'; --vscode-icon-versions-font-family: 'codicon'; --vscode-icon-vm-active-content: '\eb79'; --vscode-icon-vm-active-font-family: 'codicon'; --vscode-icon-vm-outline-content: '\eb7a'; --vscode-icon-vm-outline-font-family: 'codicon'; --vscode-icon-vm-running-content: '\eb7b'; --vscode-icon-vm-running-font-family: 'codicon'; --vscode-icon-watch-content: '\eb7c'; --vscode-icon-watch-font-family: 'codicon'; --vscode-icon-whitespace-content: '\eb7d'; --vscode-icon-whitespace-font-family: 'codicon'; --vscode-icon-whole-word-content: '\eb7e'; --vscode-icon-whole-word-font-family: 'codicon'; --vscode-icon-window-content: '\eb7f'; --vscode-icon-window-font-family: 'codicon'; --vscode-icon-word-wrap-content: '\eb80'; --vscode-icon-word-wrap-font-family: 'codicon'; --vscode-icon-zoom-in-content: '\eb81'; --vscode-icon-zoom-in-font-family: 'codicon'; --vscode-icon-zoom-out-content: '\eb82'; --vscode-icon-zoom-out-font-family: 'codicon'; --vscode-icon-list-filter-content: '\eb83'; --vscode-icon-list-filter-font-family: 'codicon'; --vscode-icon-list-flat-content: '\eb84'; --vscode-icon-list-flat-font-family: 'codicon'; --vscode-icon-list-selection-content: '\eb85'; --vscode-icon-list-selection-font-family: 'codicon'; --vscode-icon-selection-content: '\eb85'; --vscode-icon-selection-font-family: 'codicon'; --vscode-icon-list-tree-content: '\eb86'; --vscode-icon-list-tree-font-family: 'codicon'; --vscode-icon-debug-breakpoint-function-unverified-content: '\eb87'; --vscode-icon-debug-breakpoint-function-unverified-font-family: 'codicon'; --vscode-icon-debug-breakpoint-function-content: '\eb88'; --vscode-icon-debug-breakpoint-function-font-family: 'codicon'; --vscode-icon-debug-breakpoint-function-disabled-content: '\eb88'; --vscode-icon-debug-breakpoint-function-disabled-font-family: 'codicon'; --vscode-icon-debug-stackframe-active-content: '\eb89'; --vscode-icon-debug-stackframe-active-font-family: 'codicon'; --vscode-icon-circle-small-filled-content: '\eb8a'; --vscode-icon-circle-small-filled-font-family: 'codicon'; --vscode-icon-debug-stackframe-dot-content: '\eb8a'; --vscode-icon-debug-stackframe-dot-font-family: 'codicon'; --vscode-icon-terminal-decoration-mark-content: '\eb8a'; --vscode-icon-terminal-decoration-mark-font-family: 'codicon'; --vscode-icon-debug-stackframe-content: '\eb8b'; --vscode-icon-debug-stackframe-font-family: 'codicon'; --vscode-icon-debug-stackframe-focused-content: '\eb8b'; --vscode-icon-debug-stackframe-focused-font-family: 'codicon'; --vscode-icon-debug-breakpoint-unsupported-content: '\eb8c'; --vscode-icon-debug-breakpoint-unsupported-font-family: 'codicon'; --vscode-icon-symbol-string-content: '\eb8d'; --vscode-icon-symbol-string-font-family: 'codicon'; --vscode-icon-debug-reverse-continue-content: '\eb8e'; --vscode-icon-debug-reverse-continue-font-family: 'codicon'; --vscode-icon-debug-step-back-content: '\eb8f'; --vscode-icon-debug-step-back-font-family: 'codicon'; --vscode-icon-debug-restart-frame-content: '\eb90'; --vscode-icon-debug-restart-frame-font-family: 'codicon'; --vscode-icon-debug-alt-content: '\eb91'; --vscode-icon-debug-alt-font-family: 'codicon'; --vscode-icon-call-incoming-content: '\eb92'; --vscode-icon-call-incoming-font-family: 'codicon'; --vscode-icon-call-outgoing-content: '\eb93'; --vscode-icon-call-outgoing-font-family: 'codicon'; --vscode-icon-menu-content: '\eb94'; --vscode-icon-menu-font-family: 'codicon'; --vscode-icon-expand-all-content: '\eb95'; --vscode-icon-expand-all-font-family: 'codicon'; --vscode-icon-feedback-content: '\eb96'; --vscode-icon-feedback-font-family: 'codicon'; --vscode-icon-git-pull-request-reviewer-content: '\eb96'; --vscode-icon-git-pull-request-reviewer-font-family: 'codicon'; --vscode-icon-group-by-ref-type-content: '\eb97'; --vscode-icon-group-by-ref-type-font-family: 'codicon'; --vscode-icon-ungroup-by-ref-type-content: '\eb98'; --vscode-icon-ungroup-by-ref-type-font-family: 'codicon'; --vscode-icon-account-content: '\eb99'; --vscode-icon-account-font-family: 'codicon'; --vscode-icon-git-pull-request-assignee-content: '\eb99'; --vscode-icon-git-pull-request-assignee-font-family: 'codicon'; --vscode-icon-bell-dot-content: '\eb9a'; --vscode-icon-bell-dot-font-family: 'codicon'; --vscode-icon-debug-console-content: '\eb9b'; --vscode-icon-debug-console-font-family: 'codicon'; --vscode-icon-library-content: '\eb9c'; --vscode-icon-library-font-family: 'codicon'; --vscode-icon-output-content: '\eb9d'; --vscode-icon-output-font-family: 'codicon'; --vscode-icon-run-all-content: '\eb9e'; --vscode-icon-run-all-font-family: 'codicon'; --vscode-icon-sync-ignored-content: '\eb9f'; --vscode-icon-sync-ignored-font-family: 'codicon'; --vscode-icon-pinned-content: '\eba0'; --vscode-icon-pinned-font-family: 'codicon'; --vscode-icon-github-inverted-content: '\eba1'; --vscode-icon-github-inverted-font-family: 'codicon'; --vscode-icon-server-process-content: '\eba2'; --vscode-icon-server-process-font-family: 'codicon'; --vscode-icon-server-environment-content: '\eba3'; --vscode-icon-server-environment-font-family: 'codicon'; --vscode-icon-pass-content: '\eba4'; --vscode-icon-pass-font-family: 'codicon'; --vscode-icon-issue-closed-content: '\eba4'; --vscode-icon-issue-closed-font-family: 'codicon'; --vscode-icon-stop-circle-content: '\eba5'; --vscode-icon-stop-circle-font-family: 'codicon'; --vscode-icon-play-circle-content: '\eba6'; --vscode-icon-play-circle-font-family: 'codicon'; --vscode-icon-record-content: '\eba7'; --vscode-icon-record-font-family: 'codicon'; --vscode-icon-debug-alt-small-content: '\eba8'; --vscode-icon-debug-alt-small-font-family: 'codicon'; --vscode-icon-vm-connect-content: '\eba9'; --vscode-icon-vm-connect-font-family: 'codicon'; --vscode-icon-cloud-content: '\ebaa'; --vscode-icon-cloud-font-family: 'codicon'; --vscode-icon-merge-content: '\ebab'; --vscode-icon-merge-font-family: 'codicon'; --vscode-icon-export-content: '\ebac'; --vscode-icon-export-font-family: 'codicon'; --vscode-icon-graph-left-content: '\ebad'; --vscode-icon-graph-left-font-family: 'codicon'; --vscode-icon-magnet-content: '\ebae'; --vscode-icon-magnet-font-family: 'codicon'; --vscode-icon-notebook-content: '\ebaf'; --vscode-icon-notebook-font-family: 'codicon'; --vscode-icon-redo-content: '\ebb0'; --vscode-icon-redo-font-family: 'codicon'; --vscode-icon-check-all-content: '\ebb1'; --vscode-icon-check-all-font-family: 'codicon'; --vscode-icon-pinned-dirty-content: '\ebb2'; --vscode-icon-pinned-dirty-font-family: 'codicon'; --vscode-icon-pass-filled-content: '\ebb3'; --vscode-icon-pass-filled-font-family: 'codicon'; --vscode-icon-circle-large-filled-content: '\ebb4'; --vscode-icon-circle-large-filled-font-family: 'codicon'; --vscode-icon-circle-large-content: '\ebb5'; --vscode-icon-circle-large-font-family: 'codicon'; --vscode-icon-circle-large-outline-content: '\ebb5'; --vscode-icon-circle-large-outline-font-family: 'codicon'; --vscode-icon-combine-content: '\ebb6'; --vscode-icon-combine-font-family: 'codicon'; --vscode-icon-gather-content: '\ebb6'; --vscode-icon-gather-font-family: 'codicon'; --vscode-icon-table-content: '\ebb7'; --vscode-icon-table-font-family: 'codicon'; --vscode-icon-variable-group-content: '\ebb8'; --vscode-icon-variable-group-font-family: 'codicon'; --vscode-icon-type-hierarchy-content: '\ebb9'; --vscode-icon-type-hierarchy-font-family: 'codicon'; --vscode-icon-type-hierarchy-sub-content: '\ebba'; --vscode-icon-type-hierarchy-sub-font-family: 'codicon'; --vscode-icon-type-hierarchy-super-content: '\ebbb'; --vscode-icon-type-hierarchy-super-font-family: 'codicon'; --vscode-icon-git-pull-request-create-content: '\ebbc'; --vscode-icon-git-pull-request-create-font-family: 'codicon'; --vscode-icon-run-above-content: '\ebbd'; --vscode-icon-run-above-font-family: 'codicon'; --vscode-icon-run-below-content: '\ebbe'; --vscode-icon-run-below-font-family: 'codicon'; --vscode-icon-notebook-template-content: '\ebbf'; --vscode-icon-notebook-template-font-family: 'codicon'; --vscode-icon-debug-rerun-content: '\ebc0'; --vscode-icon-debug-rerun-font-family: 'codicon'; --vscode-icon-workspace-trusted-content: '\ebc1'; --vscode-icon-workspace-trusted-font-family: 'codicon'; --vscode-icon-workspace-untrusted-content: '\ebc2'; --vscode-icon-workspace-untrusted-font-family: 'codicon'; --vscode-icon-workspace-unknown-content: '\ebc3'; --vscode-icon-workspace-unknown-font-family: 'codicon'; --vscode-icon-terminal-cmd-content: '\ebc4'; --vscode-icon-terminal-cmd-font-family: 'codicon'; --vscode-icon-terminal-debian-content: '\ebc5'; --vscode-icon-terminal-debian-font-family: 'codicon'; --vscode-icon-terminal-linux-content: '\ebc6'; --vscode-icon-terminal-linux-font-family: 'codicon'; --vscode-icon-terminal-powershell-content: '\ebc7'; --vscode-icon-terminal-powershell-font-family: 'codicon'; --vscode-icon-terminal-tmux-content: '\ebc8'; --vscode-icon-terminal-tmux-font-family: 'codicon'; --vscode-icon-terminal-ubuntu-content: '\ebc9'; --vscode-icon-terminal-ubuntu-font-family: 'codicon'; --vscode-icon-terminal-bash-content: '\ebca'; --vscode-icon-terminal-bash-font-family: 'codicon'; --vscode-icon-arrow-swap-content: '\ebcb'; --vscode-icon-arrow-swap-font-family: 'codicon'; --vscode-icon-copy-content: '\ebcc'; --vscode-icon-copy-font-family: 'codicon'; --vscode-icon-person-add-content: '\ebcd'; --vscode-icon-person-add-font-family: 'codicon'; --vscode-icon-filter-filled-content: '\ebce'; --vscode-icon-filter-filled-font-family: 'codicon'; --vscode-icon-wand-content: '\ebcf'; --vscode-icon-wand-font-family: 'codicon'; --vscode-icon-debug-line-by-line-content: '\ebd0'; --vscode-icon-debug-line-by-line-font-family: 'codicon'; --vscode-icon-inspect-content: '\ebd1'; --vscode-icon-inspect-font-family: 'codicon'; --vscode-icon-layers-content: '\ebd2'; --vscode-icon-layers-font-family: 'codicon'; --vscode-icon-layers-dot-content: '\ebd3'; --vscode-icon-layers-dot-font-family: 'codicon'; --vscode-icon-layers-active-content: '\ebd4'; --vscode-icon-layers-active-font-family: 'codicon'; --vscode-icon-compass-content: '\ebd5'; --vscode-icon-compass-font-family: 'codicon'; --vscode-icon-compass-dot-content: '\ebd6'; --vscode-icon-compass-dot-font-family: 'codicon'; --vscode-icon-compass-active-content: '\ebd7'; --vscode-icon-compass-active-font-family: 'codicon'; --vscode-icon-azure-content: '\ebd8'; --vscode-icon-azure-font-family: 'codicon'; --vscode-icon-issue-draft-content: '\ebd9'; --vscode-icon-issue-draft-font-family: 'codicon'; --vscode-icon-git-pull-request-closed-content: '\ebda'; --vscode-icon-git-pull-request-closed-font-family: 'codicon'; --vscode-icon-git-pull-request-draft-content: '\ebdb'; --vscode-icon-git-pull-request-draft-font-family: 'codicon'; --vscode-icon-debug-all-content: '\ebdc'; --vscode-icon-debug-all-font-family: 'codicon'; --vscode-icon-debug-coverage-content: '\ebdd'; --vscode-icon-debug-coverage-font-family: 'codicon'; --vscode-icon-run-errors-content: '\ebde'; --vscode-icon-run-errors-font-family: 'codicon'; --vscode-icon-folder-library-content: '\ebdf'; --vscode-icon-folder-library-font-family: 'codicon'; --vscode-icon-debug-continue-small-content: '\ebe0'; --vscode-icon-debug-continue-small-font-family: 'codicon'; --vscode-icon-beaker-stop-content: '\ebe1'; --vscode-icon-beaker-stop-font-family: 'codicon'; --vscode-icon-graph-line-content: '\ebe2'; --vscode-icon-graph-line-font-family: 'codicon'; --vscode-icon-graph-scatter-content: '\ebe3'; --vscode-icon-graph-scatter-font-family: 'codicon'; --vscode-icon-pie-chart-content: '\ebe4'; --vscode-icon-pie-chart-font-family: 'codicon'; --vscode-icon-bracket-content: '\eb0f'; --vscode-icon-bracket-font-family: 'codicon'; --vscode-icon-bracket-dot-content: '\ebe5'; --vscode-icon-bracket-dot-font-family: 'codicon'; --vscode-icon-bracket-error-content: '\ebe6'; --vscode-icon-bracket-error-font-family: 'codicon'; --vscode-icon-lock-small-content: '\ebe7'; --vscode-icon-lock-small-font-family: 'codicon'; --vscode-icon-azure-devops-content: '\ebe8'; --vscode-icon-azure-devops-font-family: 'codicon'; --vscode-icon-verified-filled-content: '\ebe9'; --vscode-icon-verified-filled-font-family: 'codicon'; --vscode-icon-newline-content: '\ebea'; --vscode-icon-newline-font-family: 'codicon'; --vscode-icon-layout-content: '\ebeb'; --vscode-icon-layout-font-family: 'codicon'; --vscode-icon-layout-activitybar-left-content: '\ebec'; --vscode-icon-layout-activitybar-left-font-family: 'codicon'; --vscode-icon-layout-activitybar-right-content: '\ebed'; --vscode-icon-layout-activitybar-right-font-family: 'codicon'; --vscode-icon-layout-panel-left-content: '\ebee'; --vscode-icon-layout-panel-left-font-family: 'codicon'; --vscode-icon-layout-panel-center-content: '\ebef'; --vscode-icon-layout-panel-center-font-family: 'codicon'; --vscode-icon-layout-panel-justify-content: '\ebf0'; --vscode-icon-layout-panel-justify-font-family: 'codicon'; --vscode-icon-layout-panel-right-content: '\ebf1'; --vscode-icon-layout-panel-right-font-family: 'codicon'; --vscode-icon-layout-panel-content: '\ebf2'; --vscode-icon-layout-panel-font-family: 'codicon'; --vscode-icon-layout-sidebar-left-content: '\ebf3'; --vscode-icon-layout-sidebar-left-font-family: 'codicon'; --vscode-icon-layout-sidebar-right-content: '\ebf4'; --vscode-icon-layout-sidebar-right-font-family: 'codicon'; --vscode-icon-layout-statusbar-content: '\ebf5'; --vscode-icon-layout-statusbar-font-family: 'codicon'; --vscode-icon-layout-menubar-content: '\ebf6'; --vscode-icon-layout-menubar-font-family: 'codicon'; --vscode-icon-layout-centered-content: '\ebf7'; --vscode-icon-layout-centered-font-family: 'codicon'; --vscode-icon-target-content: '\ebf8'; --vscode-icon-target-font-family: 'codicon'; --vscode-icon-indent-content: '\ebf9'; --vscode-icon-indent-font-family: 'codicon'; --vscode-icon-record-small-content: '\ebfa'; --vscode-icon-record-small-font-family: 'codicon'; --vscode-icon-error-small-content: '\ebfb'; --vscode-icon-error-small-font-family: 'codicon'; --vscode-icon-terminal-decoration-error-content: '\ebfb'; --vscode-icon-terminal-decoration-error-font-family: 'codicon'; --vscode-icon-arrow-circle-down-content: '\ebfc'; --vscode-icon-arrow-circle-down-font-family: 'codicon'; --vscode-icon-arrow-circle-left-content: '\ebfd'; --vscode-icon-arrow-circle-left-font-family: 'codicon'; --vscode-icon-arrow-circle-right-content: '\ebfe'; --vscode-icon-arrow-circle-right-font-family: 'codicon'; --vscode-icon-arrow-circle-up-content: '\ebff'; --vscode-icon-arrow-circle-up-font-family: 'codicon'; --vscode-icon-layout-sidebar-right-off-content: '\ec00'; --vscode-icon-layout-sidebar-right-off-font-family: 'codicon'; --vscode-icon-layout-panel-off-content: '\ec01'; --vscode-icon-layout-panel-off-font-family: 'codicon'; --vscode-icon-layout-sidebar-left-off-content: '\ec02'; --vscode-icon-layout-sidebar-left-off-font-family: 'codicon'; --vscode-icon-blank-content: '\ec03'; --vscode-icon-blank-font-family: 'codicon'; --vscode-icon-heart-filled-content: '\ec04'; --vscode-icon-heart-filled-font-family: 'codicon'; --vscode-icon-map-content: '\ec05'; --vscode-icon-map-font-family: 'codicon'; --vscode-icon-map-horizontal-content: '\ec05'; --vscode-icon-map-horizontal-font-family: 'codicon'; --vscode-icon-fold-horizontal-content: '\ec05'; --vscode-icon-fold-horizontal-font-family: 'codicon'; --vscode-icon-map-filled-content: '\ec06'; --vscode-icon-map-filled-font-family: 'codicon'; --vscode-icon-map-horizontal-filled-content: '\ec06'; --vscode-icon-map-horizontal-filled-font-family: 'codicon'; --vscode-icon-fold-horizontal-filled-content: '\ec06'; --vscode-icon-fold-horizontal-filled-font-family: 'codicon'; --vscode-icon-circle-small-content: '\ec07'; --vscode-icon-circle-small-font-family: 'codicon'; --vscode-icon-bell-slash-content: '\ec08'; --vscode-icon-bell-slash-font-family: 'codicon'; --vscode-icon-bell-slash-dot-content: '\ec09'; --vscode-icon-bell-slash-dot-font-family: 'codicon'; --vscode-icon-comment-unresolved-content: '\ec0a'; --vscode-icon-comment-unresolved-font-family: 'codicon'; --vscode-icon-git-pull-request-go-to-changes-content: '\ec0b'; --vscode-icon-git-pull-request-go-to-changes-font-family: 'codicon'; --vscode-icon-git-pull-request-new-changes-content: '\ec0c'; --vscode-icon-git-pull-request-new-changes-font-family: 'codicon'; --vscode-icon-search-fuzzy-content: '\ec0d'; --vscode-icon-search-fuzzy-font-family: 'codicon'; --vscode-icon-comment-draft-content: '\ec0e'; --vscode-icon-comment-draft-font-family: 'codicon'; --vscode-icon-send-content: '\ec0f'; --vscode-icon-send-font-family: 'codicon'; --vscode-icon-sparkle-content: '\ec10'; --vscode-icon-sparkle-font-family: 'codicon'; --vscode-icon-insert-content: '\ec11'; --vscode-icon-insert-font-family: 'codicon'; --vscode-icon-mic-content: '\ec12'; --vscode-icon-mic-font-family: 'codicon'; --vscode-icon-thumbsdown-filled-content: '\ec13'; --vscode-icon-thumbsdown-filled-font-family: 'codicon'; --vscode-icon-thumbsup-filled-content: '\ec14'; --vscode-icon-thumbsup-filled-font-family: 'codicon'; --vscode-icon-coffee-content: '\ec15'; --vscode-icon-coffee-font-family: 'codicon'; --vscode-icon-snake-content: '\ec16'; --vscode-icon-snake-font-family: 'codicon'; --vscode-icon-game-content: '\ec17'; --vscode-icon-game-font-family: 'codicon'; --vscode-icon-vr-content: '\ec18'; --vscode-icon-vr-font-family: 'codicon'; --vscode-icon-chip-content: '\ec19'; --vscode-icon-chip-font-family: 'codicon'; --vscode-icon-piano-content: '\ec1a'; --vscode-icon-piano-font-family: 'codicon'; --vscode-icon-music-content: '\ec1b'; --vscode-icon-music-font-family: 'codicon'; --vscode-icon-mic-filled-content: '\ec1c'; --vscode-icon-mic-filled-font-family: 'codicon'; --vscode-icon-repo-fetch-content: '\ec1d'; --vscode-icon-repo-fetch-font-family: 'codicon'; --vscode-icon-copilot-content: '\ec1e'; --vscode-icon-copilot-font-family: 'codicon'; --vscode-icon-lightbulb-sparkle-content: '\ec1f'; --vscode-icon-lightbulb-sparkle-font-family: 'codicon'; --vscode-icon-robot-content: '\ec20'; --vscode-icon-robot-font-family: 'codicon'; --vscode-icon-sparkle-filled-content: '\ec21'; --vscode-icon-sparkle-filled-font-family: 'codicon'; --vscode-icon-diff-single-content: '\ec22'; --vscode-icon-diff-single-font-family: 'codicon'; --vscode-icon-diff-multiple-content: '\ec23'; --vscode-icon-diff-multiple-font-family: 'codicon'; --vscode-icon-surround-with-content: '\ec24'; --vscode-icon-surround-with-font-family: 'codicon'; --vscode-icon-share-content: '\ec25'; --vscode-icon-share-font-family: 'codicon'; --vscode-icon-git-stash-content: '\ec26'; --vscode-icon-git-stash-font-family: 'codicon'; --vscode-icon-git-stash-apply-content: '\ec27'; --vscode-icon-git-stash-apply-font-family: 'codicon'; --vscode-icon-git-stash-pop-content: '\ec28'; --vscode-icon-git-stash-pop-font-family: 'codicon'; --vscode-icon-vscode-content: '\ec29'; --vscode-icon-vscode-font-family: 'codicon'; --vscode-icon-vscode-insiders-content: '\ec2a'; --vscode-icon-vscode-insiders-font-family: 'codicon'; --vscode-icon-code-oss-content: '\ec2b'; --vscode-icon-code-oss-font-family: 'codicon'; --vscode-icon-run-coverage-content: '\ec2c'; --vscode-icon-run-coverage-font-family: 'codicon'; --vscode-icon-run-all-coverage-content: '\ec2d'; --vscode-icon-run-all-coverage-font-family: 'codicon'; --vscode-icon-coverage-content: '\ec2e'; --vscode-icon-coverage-font-family: 'codicon'; --vscode-icon-github-project-content: '\ec2f'; --vscode-icon-github-project-font-family: 'codicon'; --vscode-icon-map-vertical-content: '\ec30'; --vscode-icon-map-vertical-font-family: 'codicon'; --vscode-icon-fold-vertical-content: '\ec30'; --vscode-icon-fold-vertical-font-family: 'codicon'; --vscode-icon-map-vertical-filled-content: '\ec31'; --vscode-icon-map-vertical-filled-font-family: 'codicon'; --vscode-icon-fold-vertical-filled-content: '\ec31'; --vscode-icon-fold-vertical-filled-font-family: 'codicon'; --vscode-icon-go-to-search-content: '\ec32'; --vscode-icon-go-to-search-font-family: 'codicon'; --vscode-icon-percentage-content: '\ec33'; --vscode-icon-percentage-font-family: 'codicon'; --vscode-icon-sort-percentage-content: '\ec33'; --vscode-icon-sort-percentage-font-family: 'codicon'; --vscode-icon-attach-content: '\ec34'; --vscode-icon-attach-font-family: 'codicon'; --vscode-icon-dialog-error-content: '\ea87'; --vscode-icon-dialog-error-font-family: 'codicon'; --vscode-icon-dialog-warning-content: '\ea6c'; --vscode-icon-dialog-warning-font-family: 'codicon'; --vscode-icon-dialog-info-content: '\ea74'; --vscode-icon-dialog-info-font-family: 'codicon'; --vscode-icon-dialog-close-content: '\ea76'; --vscode-icon-dialog-close-font-family: 'codicon'; --vscode-icon-tree-item-expanded-content: '\eab4'; --vscode-icon-tree-item-expanded-font-family: 'codicon'; --vscode-icon-tree-filter-on-type-on-content: '\eb83'; --vscode-icon-tree-filter-on-type-on-font-family: 'codicon'; --vscode-icon-tree-filter-on-type-off-content: '\eb85'; --vscode-icon-tree-filter-on-type-off-font-family: 'codicon'; --vscode-icon-tree-filter-clear-content: '\ea76'; --vscode-icon-tree-filter-clear-font-family: 'codicon'; --vscode-icon-tree-item-loading-content: '\eb19'; --vscode-icon-tree-item-loading-font-family: 'codicon'; --vscode-icon-menu-selection-content: '\eab2'; --vscode-icon-menu-selection-font-family: 'codicon'; --vscode-icon-menu-submenu-content: '\eab6'; --vscode-icon-menu-submenu-font-family: 'codicon'; --vscode-icon-menubar-more-content: '\ea7c'; --vscode-icon-menubar-more-font-family: 'codicon'; --vscode-icon-scrollbar-button-left-content: '\eb6f'; --vscode-icon-scrollbar-button-left-font-family: 'codicon'; --vscode-icon-scrollbar-button-right-content: '\eb70'; --vscode-icon-scrollbar-button-right-font-family: 'codicon'; --vscode-icon-scrollbar-button-up-content: '\eb71'; --vscode-icon-scrollbar-button-up-font-family: 'codicon'; --vscode-icon-scrollbar-button-down-content: '\eb6e'; --vscode-icon-scrollbar-button-down-font-family: 'codicon'; --vscode-icon-toolbar-more-content: '\ea7c'; --vscode-icon-toolbar-more-font-family: 'codicon'; --vscode-icon-quick-input-back-content: '\ea9b'; --vscode-icon-quick-input-back-font-family: 'codicon'; --vscode-icon-drop-down-button-content: '\eab4'; --vscode-icon-drop-down-button-font-family: 'codicon'; --vscode-icon-symbol-customcolor-content: '\eb5c'; --vscode-icon-symbol-customcolor-font-family: 'codicon'; --vscode-icon-workspace-unspecified-content: '\ebc3'; --vscode-icon-workspace-unspecified-font-family: 'codicon'; --vscode-icon-git-fetch-content: '\ec1d'; --vscode-icon-git-fetch-font-family: 'codicon'; --vscode-icon-lightbulb-sparkle-autofix-content: '\ec1f'; --vscode-icon-lightbulb-sparkle-autofix-font-family: 'codicon'; --vscode-icon-debug-breakpoint-pending-content: '\ebd9'; --vscode-icon-debug-breakpoint-pending-font-family: 'codicon'; --vscode-icon-widget-close-content: '\ea76'; --vscode-icon-widget-close-font-family: 'codicon'; --vscode-icon-goto-previous-location-content: '\eaa1'; --vscode-icon-goto-previous-location-font-family: 'codicon'; --vscode-icon-goto-next-location-content: '\ea9a'; --vscode-icon-goto-next-location-font-family: 'codicon'; --vscode-icon-diff-review-insert-content: '\ea60'; --vscode-icon-diff-review-insert-font-family: 'codicon'; --vscode-icon-diff-review-remove-content: '\eb3b'; --vscode-icon-diff-review-remove-font-family: 'codicon'; --vscode-icon-diff-review-close-content: '\ea76'; --vscode-icon-diff-review-close-font-family: 'codicon'; --vscode-icon-diff-insert-content: '\ea60'; --vscode-icon-diff-insert-font-family: 'codicon'; --vscode-icon-diff-remove-content: '\eb3b'; --vscode-icon-diff-remove-font-family: 'codicon'; --vscode-icon-gutter-lightbulb-content: '\ea61'; --vscode-icon-gutter-lightbulb-font-family: 'codicon'; --vscode-icon-gutter-lightbulb-auto-fix-content: '\eb13'; --vscode-icon-gutter-lightbulb-auto-fix-font-family: 'codicon'; --vscode-icon-gutter-lightbulb-sparkle-content: '\ec1f'; --vscode-icon-gutter-lightbulb-sparkle-font-family: 'codicon'; --vscode-icon-gutter-lightbulb-aifix-auto-fix-content: '\ec1f'; --vscode-icon-gutter-lightbulb-aifix-auto-fix-font-family: 'codicon'; --vscode-icon-gutter-lightbulb-sparkle-filled-content: '\ec21'; --vscode-icon-gutter-lightbulb-sparkle-filled-font-family: 'codicon'; --vscode-icon-inline-suggestion-hints-next-content: '\eab6'; --vscode-icon-inline-suggestion-hints-next-font-family: 'codicon'; --vscode-icon-inline-suggestion-hints-previous-content: '\eab5'; --vscode-icon-inline-suggestion-hints-previous-font-family: 'codicon'; --vscode-icon-hover-increase-verbosity-content: '\ea60'; --vscode-icon-hover-increase-verbosity-font-family: 'codicon'; --vscode-icon-hover-decrease-verbosity-content: '\eb3b'; --vscode-icon-hover-decrease-verbosity-font-family: 'codicon'; --vscode-icon-find-collapsed-content: '\eab6'; --vscode-icon-find-collapsed-font-family: 'codicon'; --vscode-icon-find-expanded-content: '\eab4'; --vscode-icon-find-expanded-font-family: 'codicon'; --vscode-icon-find-selection-content: '\eb85'; --vscode-icon-find-selection-font-family: 'codicon'; --vscode-icon-find-replace-content: '\eb3d'; --vscode-icon-find-replace-font-family: 'codicon'; --vscode-icon-find-replace-all-content: '\eb3c'; --vscode-icon-find-replace-all-font-family: 'codicon'; --vscode-icon-find-previous-match-content: '\eaa1'; --vscode-icon-find-previous-match-font-family: 'codicon'; --vscode-icon-find-next-match-content: '\ea9a'; --vscode-icon-find-next-match-font-family: 'codicon'; --vscode-icon-folding-expanded-content: '\eab4'; --vscode-icon-folding-expanded-font-family: 'codicon'; --vscode-icon-folding-collapsed-content: '\eab6'; --vscode-icon-folding-collapsed-font-family: 'codicon'; --vscode-icon-folding-manual-collapsed-content: '\eab6'; --vscode-icon-folding-manual-collapsed-font-family: 'codicon'; --vscode-icon-folding-manual-expanded-content: '\eab4'; --vscode-icon-folding-manual-expanded-font-family: 'codicon'; --vscode-icon-suggest-more-info-content: '\eab6'; --vscode-icon-suggest-more-info-font-family: 'codicon'; --vscode-icon-marker-navigation-next-content: '\ea9a'; --vscode-icon-marker-navigation-next-font-family: 'codicon'; --vscode-icon-marker-navigation-previous-content: '\eaa1'; --vscode-icon-marker-navigation-previous-font-family: 'codicon'; --vscode-icon-parameter-hints-next-content: '\eab4'; --vscode-icon-parameter-hints-next-font-family: 'codicon'; --vscode-icon-parameter-hints-previous-content: '\eab7'; --vscode-icon-parameter-hints-previous-font-family: 'codicon'; --vscode-icon-extensions-warning-message-content: '\ea6c'; --vscode-icon-extensions-warning-message-font-family: 'codicon'; }
+.monaco-workbench .workbench-hover .hover-row:not(:first-child):not(:empty) { border-top: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-workbench .workbench-hover hr { border-top: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .inputarea.ime-input { background-color: #303030; }
+.monaco-editor .unexpected-closing-bracket { color: rgba(255, 18, 18, 0.8); }
+.monaco-editor .bracket-highlighting-0 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-1 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-2 { color: #179fff; }
+.monaco-editor .bracket-highlighting-3 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-4 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-5 { color: #179fff; }
+.monaco-editor .bracket-highlighting-6 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-7 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-8 { color: #179fff; }
+.monaco-editor .bracket-highlighting-9 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-10 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-11 { color: #179fff; }
+.monaco-editor .bracket-highlighting-12 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-13 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-14 { color: #179fff; }
+.monaco-editor .bracket-highlighting-15 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-16 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-17 { color: #179fff; }
+.monaco-editor .bracket-highlighting-18 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-19 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-20 { color: #179fff; }
+.monaco-editor .bracket-highlighting-21 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-22 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-23 { color: #179fff; }
+.monaco-editor .bracket-highlighting-24 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-25 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-26 { color: #179fff; }
+.monaco-editor .bracket-highlighting-27 { color: #ffd700; }
+.monaco-editor .bracket-highlighting-28 { color: #da70d6; }
+.monaco-editor .bracket-highlighting-29 { color: #179fff; }
+.monaco-editor .line-numbers.dimmed-line-number { color: rgba(199, 199, 199, 0.4); }
+.monaco-editor .view-overlays .current-line { background-color: #303030; }
+.monaco-editor .margin-view-overlays .current-line-margin { background-color: #303030; border: none; }
+.monaco-editor .bracket-indent-guide.lvl-0 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-1 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-2 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-3 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-4 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-5 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-6 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-7 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-8 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-9 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-10 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-11 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-12 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-13 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-14 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-15 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-16 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-17 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-18 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-19 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-20 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-21 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-22 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-23 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-24 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-25 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-26 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .bracket-indent-guide.lvl-27 { --guide-color: rgba(255, 215, 0, 0.3); --guide-color-active: #ffd700; }
+.monaco-editor .bracket-indent-guide.lvl-28 { --guide-color: rgba(218, 112, 214, 0.3); --guide-color-active: #da70d6; }
+.monaco-editor .bracket-indent-guide.lvl-29 { --guide-color: rgba(23, 159, 255, 0.3); --guide-color-active: #179fff; }
+.monaco-editor .vertical { box-shadow: 1px 0 0 0 var(--guide-color) inset; }
+.monaco-editor .horizontal-top { border-top: 1px solid var(--guide-color); }
+.monaco-editor .horizontal-bottom { border-bottom: 1px solid var(--guide-color); }
+.monaco-editor .vertical.indent-active { box-shadow: 1px 0 0 0 var(--guide-color-active) inset; }
+.monaco-editor .horizontal-top.indent-active { border-top: 1px solid var(--guide-color-active); }
+.monaco-editor .horizontal-bottom.indent-active { border-bottom: 1px solid var(--guide-color-active); }
+.monaco-editor .lines-content .core-guide-indent.lvl-0 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-1 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-2 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-3 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-4 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-5 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-6 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-7 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-8 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-9 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-10 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-11 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-12 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-13 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-14 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-15 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-16 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-17 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-18 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-19 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-20 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-21 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-22 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-23 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-24 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-25 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-26 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-27 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-28 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent.lvl-29 { --indent-color: #404040; --indent-color-active: #707070; }
+.monaco-editor .lines-content .core-guide-indent { box-shadow: 1px 0 0 0 var(--indent-color) inset; }
+.monaco-editor .lines-content .core-guide-indent.indent-active { box-shadow: 1px 0 0 0 var(--indent-color-active) inset; }
+.monaco-editor .cursors-layer .cursor { background-color: #aeafad; border-color: #aeafad; color: #515052; }
+.monaco-editor .cursors-layer .cursor-primary { background-color: #aeafad; border-color: #aeafad; color: #515052; }
+.monaco-editor .cursors-layer .cursor-secondary { background-color: #aeafad; border-color: #aeafad; color: #515052; }
+.monaco-editor .squiggly-error { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23f14c4c'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-warning { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23cca700'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-info { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%233794ff'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-hint { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%223%22%20width%3D%2212%22%3E%3Cg%20fill%3D%22rgba(238%2C%20238%2C%20238%2C%200.7)%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%229%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat bottom left; }
+.monaco-editor.showUnused .squiggly-inline-unnecessary { opacity: 0.667; }
+.monaco-editor .quickfix-edit-highlight { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .monaco-hover .hover-row:not(:first-child):not(:empty) { border-top: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .monaco-hover hr { border-top: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .monaco-hover hr { border-bottom: 0px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .selectionHighlight { background-color: rgba(0, 103, 238, 0.25); }
+.monaco-editor, .monaco-diff-editor, .monaco-component { --vscode-foreground: #cccccc;
+--vscode-disabledForeground: rgba(204, 204, 204, 0.5);
+--vscode-errorForeground: #f48771;
+--vscode-descriptionForeground: rgba(204, 204, 204, 0.7);
+--vscode-icon-foreground: #c5c5c5;
+--vscode-focusBorder: #007fd4;
+--vscode-textLink-foreground: #3794ff;
+--vscode-textLink-activeForeground: #3794ff;
+--vscode-textSeparator-foreground: rgba(255, 255, 255, 0.18);
+--vscode-textPreformat-foreground: #d7ba7d;
+--vscode-textPreformat-background: rgba(255, 255, 255, 0.1);
+--vscode-textBlockQuote-background: #222222;
+--vscode-textBlockQuote-border: rgba(0, 122, 204, 0.5);
+--vscode-textCodeBlock-background: rgba(10, 10, 10, 0.4);
+--vscode-sash-hoverBorder: #007fd4;
+--vscode-badge-background: #4d4d4d;
+--vscode-badge-foreground: #ffffff;
+--vscode-scrollbar-shadow: #000000;
+--vscode-scrollbarSlider-background: rgba(121, 121, 121, 0.4);
+--vscode-scrollbarSlider-hoverBackground: rgba(100, 100, 100, 0.7);
+--vscode-scrollbarSlider-activeBackground: rgba(191, 191, 191, 0.4);
+--vscode-progressBar-background: #0e70c0;
+--vscode-editor-background: #191919;
+--vscode-editor-foreground: #d4d4d4;
+--vscode-editorStickyScroll-background: #191919;
+--vscode-editorStickyScrollHover-background: #2a2d2e;
+--vscode-editorStickyScroll-shadow: #000000;
+--vscode-editorWidget-background: #252526;
+--vscode-editorWidget-foreground: #cccccc;
+--vscode-editorWidget-border: #454545;
+--vscode-editorError-foreground: #f14c4c;
+--vscode-editorWarning-foreground: #cca700;
+--vscode-editorInfo-foreground: #3794ff;
+--vscode-editorHint-foreground: rgba(238, 238, 238, 0.7);
+--vscode-editorLink-activeForeground: #4e94ce;
+--vscode-editor-selectionBackground: #264f78;
+--vscode-editor-inactiveSelectionBackground: rgba(0, 103, 238, 0.31);
+--vscode-editor-selectionHighlightBackground: rgba(0, 103, 238, 0.5);
+--vscode-editor-findMatchBackground: #515c6a;
+--vscode-editor-findMatchHighlightBackground: rgba(234, 92, 0, 0.33);
+--vscode-editor-findRangeHighlightBackground: rgba(58, 61, 65, 0.4);
+--vscode-editor-hoverHighlightBackground: rgba(38, 79, 120, 0.25);
+--vscode-editorHoverWidget-background: #252526;
+--vscode-editorHoverWidget-foreground: #cccccc;
+--vscode-editorHoverWidget-border: #454545;
+--vscode-editorHoverWidget-statusBarBackground: #2c2c2d;
+--vscode-editorInlayHint-foreground: #969696;
+--vscode-editorInlayHint-background: rgba(77, 77, 77, 0.1);
+--vscode-editorInlayHint-typeForeground: #969696;
+--vscode-editorInlayHint-typeBackground: rgba(77, 77, 77, 0.1);
+--vscode-editorInlayHint-parameterForeground: #969696;
+--vscode-editorInlayHint-parameterBackground: rgba(77, 77, 77, 0.1);
+--vscode-editorLightBulb-foreground: #ffcc00;
+--vscode-editorLightBulbAutoFix-foreground: #75beff;
+--vscode-editorLightBulbAi-foreground: #ffcc00;
+--vscode-editor-snippetTabstopHighlightBackground: rgba(124, 124, 124, 0.3);
+--vscode-editor-snippetFinalTabstopHighlightBorder: #525252;
+--vscode-diffEditor-insertedTextBackground: rgba(156, 204, 44, 0.2);
+--vscode-diffEditor-removedTextBackground: rgba(255, 0, 0, 0.2);
+--vscode-diffEditor-insertedLineBackground: rgba(155, 185, 85, 0.2);
+--vscode-diffEditor-removedLineBackground: rgba(255, 0, 0, 0.2);
+--vscode-diffEditor-diagonalFill: rgba(204, 204, 204, 0.2);
+--vscode-diffEditor-unchangedRegionForeground: #cccccc;
+--vscode-diffEditor-unchangedCodeBackground: rgba(116, 116, 116, 0.16);
+--vscode-widget-shadow: rgba(0, 0, 0, 0.36);
+--vscode-toolbar-hoverBackground: rgba(90, 93, 94, 0.31);
+--vscode-toolbar-activeBackground: rgba(99, 102, 103, 0.31);
+--vscode-breadcrumb-foreground: rgba(204, 204, 204, 0.8);
+--vscode-breadcrumb-background: #191919;
+--vscode-breadcrumb-focusForeground: #e0e0e0;
+--vscode-breadcrumb-activeSelectionForeground: #e0e0e0;
+--vscode-breadcrumbPicker-background: #252526;
+--vscode-merge-currentHeaderBackground: rgba(64, 200, 174, 0.5);
+--vscode-merge-currentContentBackground: rgba(64, 200, 174, 0.2);
+--vscode-merge-incomingHeaderBackground: rgba(64, 166, 255, 0.5);
+--vscode-merge-incomingContentBackground: rgba(64, 166, 255, 0.2);
+--vscode-merge-commonHeaderBackground: rgba(96, 96, 96, 0.4);
+--vscode-merge-commonContentBackground: rgba(96, 96, 96, 0.16);
+--vscode-editorOverviewRuler-currentContentForeground: rgba(64, 200, 174, 0.5);
+--vscode-editorOverviewRuler-incomingContentForeground: rgba(64, 166, 255, 0.5);
+--vscode-editorOverviewRuler-commonContentForeground: rgba(96, 96, 96, 0.4);
+--vscode-editorOverviewRuler-findMatchForeground: rgba(209, 134, 22, 0.49);
+--vscode-editorOverviewRuler-selectionHighlightForeground: rgba(160, 160, 160, 0.8);
+--vscode-problemsErrorIcon-foreground: #f14c4c;
+--vscode-problemsWarningIcon-foreground: #cca700;
+--vscode-problemsInfoIcon-foreground: #3794ff;
+--vscode-minimap-findMatchHighlight: #d18616;
+--vscode-minimap-selectionOccurrenceHighlight: #676767;
+--vscode-minimap-selectionHighlight: #264f78;
+--vscode-minimap-infoHighlight: #3794ff;
+--vscode-minimap-warningHighlight: #cca700;
+--vscode-minimap-errorHighlight: rgba(255, 18, 18, 0.7);
+--vscode-minimap-foregroundOpacity: #000000;
+--vscode-minimapSlider-background: rgba(121, 121, 121, 0.2);
+--vscode-minimapSlider-hoverBackground: rgba(100, 100, 100, 0.35);
+--vscode-minimapSlider-activeBackground: rgba(191, 191, 191, 0.2);
+--vscode-charts-foreground: #cccccc;
+--vscode-charts-lines: rgba(204, 204, 204, 0.5);
+--vscode-charts-red: #f14c4c;
+--vscode-charts-blue: #3794ff;
+--vscode-charts-yellow: #cca700;
+--vscode-charts-orange: #d18616;
+--vscode-charts-green: #89d185;
+--vscode-charts-purple: #b180d7;
+--vscode-input-background: #3c3c3c;
+--vscode-input-foreground: #cccccc;
+--vscode-inputOption-activeBorder: #007acc;
+--vscode-inputOption-hoverBackground: rgba(90, 93, 94, 0.5);
+--vscode-inputOption-activeBackground: rgba(0, 127, 212, 0.4);
+--vscode-inputOption-activeForeground: #ffffff;
+--vscode-input-placeholderForeground: rgba(204, 204, 204, 0.5);
+--vscode-inputValidation-infoBackground: #063b49;
+--vscode-inputValidation-infoBorder: #007acc;
+--vscode-inputValidation-warningBackground: #352a05;
+--vscode-inputValidation-warningBorder: #b89500;
+--vscode-inputValidation-errorBackground: #5a1d1d;
+--vscode-inputValidation-errorBorder: #be1100;
+--vscode-dropdown-background: #3c3c3c;
+--vscode-dropdown-foreground: #f0f0f0;
+--vscode-dropdown-border: #3c3c3c;
+--vscode-button-foreground: #ffffff;
+--vscode-button-separator: rgba(255, 255, 255, 0.4);
+--vscode-button-background: #0e639c;
+--vscode-button-hoverBackground: #1177bb;
+--vscode-button-secondaryForeground: #ffffff;
+--vscode-button-secondaryBackground: #3a3d41;
+--vscode-button-secondaryHoverBackground: #45494e;
+--vscode-radio-activeForeground: #ffffff;
+--vscode-radio-activeBackground: rgba(0, 127, 212, 0.4);
+--vscode-radio-activeBorder: #007acc;
+--vscode-radio-inactiveBorder: rgba(255, 255, 255, 0.2);
+--vscode-radio-inactiveHoverBackground: rgba(90, 93, 94, 0.5);
+--vscode-checkbox-background: #3c3c3c;
+--vscode-checkbox-selectBackground: #252526;
+--vscode-checkbox-foreground: #f0f0f0;
+--vscode-checkbox-border: #3c3c3c;
+--vscode-checkbox-selectBorder: #c5c5c5;
+--vscode-keybindingLabel-background: rgba(128, 128, 128, 0.17);
+--vscode-keybindingLabel-foreground: #cccccc;
+--vscode-keybindingLabel-border: rgba(51, 51, 51, 0.6);
+--vscode-keybindingLabel-bottomBorder: rgba(68, 68, 68, 0.6);
+--vscode-list-focusOutline: #007fd4;
+--vscode-list-activeSelectionBackground: #04395e;
+--vscode-list-activeSelectionForeground: #ffffff;
+--vscode-list-inactiveSelectionBackground: #37373d;
+--vscode-list-hoverBackground: #2a2d2e;
+--vscode-list-dropBackground: #062f4a;
+--vscode-list-dropBetweenBackground: #c5c5c5;
+--vscode-list-highlightForeground: #2aaaff;
+--vscode-list-focusHighlightForeground: #2aaaff;
+--vscode-list-invalidItemForeground: #b89500;
+--vscode-list-errorForeground: #f88070;
+--vscode-list-warningForeground: #cca700;
+--vscode-listFilterWidget-background: #252526;
+--vscode-listFilterWidget-outline: rgba(0, 0, 0, 0);
+--vscode-listFilterWidget-noMatchesOutline: #be1100;
+--vscode-listFilterWidget-shadow: rgba(0, 0, 0, 0.36);
+--vscode-list-filterMatchBackground: rgba(234, 92, 0, 0.33);
+--vscode-list-deemphasizedForeground: #8c8c8c;
+--vscode-tree-indentGuidesStroke: #585858;
+--vscode-tree-inactiveIndentGuidesStroke: rgba(88, 88, 88, 0.4);
+--vscode-tree-tableColumnsBorder: rgba(204, 204, 204, 0.13);
+--vscode-tree-tableOddRowsBackground: rgba(204, 204, 204, 0.04);
+--vscode-editorActionList-background: #252526;
+--vscode-editorActionList-foreground: #cccccc;
+--vscode-editorActionList-focusForeground: #ffffff;
+--vscode-editorActionList-focusBackground: #04395e;
+--vscode-menu-foreground: #f0f0f0;
+--vscode-menu-background: #3c3c3c;
+--vscode-menu-selectionForeground: #ffffff;
+--vscode-menu-selectionBackground: #04395e;
+--vscode-menu-separatorBackground: #606060;
+--vscode-quickInput-background: #252526;
+--vscode-quickInput-foreground: #cccccc;
+--vscode-quickInputTitle-background: rgba(255, 255, 255, 0.1);
+--vscode-pickerGroup-foreground: #3794ff;
+--vscode-pickerGroup-border: #3f3f46;
+--vscode-quickInputList-focusForeground: #ffffff;
+--vscode-quickInputList-focusBackground: #04395e;
+--vscode-search-resultsInfoForeground: rgba(204, 204, 204, 0.65);
+--vscode-searchEditor-findMatchBackground: rgba(234, 92, 0, 0.22);
+--vscode-editor-lineHighlightBackground: #303030;
+--vscode-editor-lineHighlightBorder: #282828;
+--vscode-editor-rangeHighlightBackground: rgba(255, 255, 255, 0.04);
+--vscode-editor-symbolHighlightBackground: rgba(234, 92, 0, 0.33);
+--vscode-editorCursor-foreground: #aeafad;
+--vscode-editorMultiCursor-primary-foreground: #aeafad;
+--vscode-editorMultiCursor-secondary-foreground: #aeafad;
+--vscode-editorWhitespace-foreground: rgba(227, 228, 226, 0.16);
+--vscode-editorLineNumber-foreground: #c7c7c7;
+--vscode-editorIndentGuide-background: rgba(227, 228, 226, 0.16);
+--vscode-editorIndentGuide-activeBackground: rgba(227, 228, 226, 0.16);
+--vscode-editorIndentGuide-background1: #404040;
+--vscode-editorIndentGuide-background2: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-background3: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-background4: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-background5: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-background6: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-activeBackground1: #707070;
+--vscode-editorIndentGuide-activeBackground2: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-activeBackground3: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-activeBackground4: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-activeBackground5: rgba(0, 0, 0, 0);
+--vscode-editorIndentGuide-activeBackground6: rgba(0, 0, 0, 0);
+--vscode-editorActiveLineNumber-foreground: #c6c6c6;
+--vscode-editorLineNumber-activeForeground: #c6c6c6;
+--vscode-editorRuler-foreground: #5a5a5a;
+--vscode-editorCodeLens-foreground: #999999;
+--vscode-editorBracketMatch-background: rgba(0, 100, 0, 0.1);
+--vscode-editorBracketMatch-border: #888888;
+--vscode-editorOverviewRuler-border: rgba(127, 127, 127, 0.3);
+--vscode-editorGutter-background: #191919;
+--vscode-editorUnnecessaryCode-opacity: rgba(0, 0, 0, 0.67);
+--vscode-editorGhostText-foreground: rgba(255, 255, 255, 0.34);
+--vscode-editorOverviewRuler-rangeHighlightForeground: rgba(0, 122, 204, 0.6);
+--vscode-editorOverviewRuler-errorForeground: rgba(255, 18, 18, 0.7);
+--vscode-editorOverviewRuler-warningForeground: #cca700;
+--vscode-editorOverviewRuler-infoForeground: #3794ff;
+--vscode-editorBracketHighlight-foreground1: #ffd700;
+--vscode-editorBracketHighlight-foreground2: #da70d6;
+--vscode-editorBracketHighlight-foreground3: #179fff;
+--vscode-editorBracketHighlight-foreground4: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-foreground5: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-foreground6: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-unexpectedBracket-foreground: rgba(255, 18, 18, 0.8);
+--vscode-editorBracketPairGuide-background1: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background2: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background3: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background4: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background5: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background6: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground1: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground2: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground3: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground4: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground5: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground6: rgba(0, 0, 0, 0);
+--vscode-editorUnicodeHighlight-border: #cca700;
+--vscode-diffEditor-move-border: rgba(139, 139, 139, 0.61);
+--vscode-diffEditor-moveActive-border: #ffa500;
+--vscode-diffEditor-unchangedRegionShadow: #000000;
+--vscode-multiDiffEditor-headerBackground: #262626;
+--vscode-multiDiffEditor-background: #191919;
+--vscode-editorOverviewRuler-bracketMatchForeground: #a0a0a0;
+--vscode-symbolIcon-arrayForeground: #cccccc;
+--vscode-symbolIcon-booleanForeground: #cccccc;
+--vscode-symbolIcon-classForeground: #ee9d28;
+--vscode-symbolIcon-colorForeground: #cccccc;
+--vscode-symbolIcon-constantForeground: #cccccc;
+--vscode-symbolIcon-constructorForeground: #b180d7;
+--vscode-symbolIcon-enumeratorForeground: #ee9d28;
+--vscode-symbolIcon-enumeratorMemberForeground: #75beff;
+--vscode-symbolIcon-eventForeground: #ee9d28;
+--vscode-symbolIcon-fieldForeground: #75beff;
+--vscode-symbolIcon-fileForeground: #cccccc;
+--vscode-symbolIcon-folderForeground: #cccccc;
+--vscode-symbolIcon-functionForeground: #b180d7;
+--vscode-symbolIcon-interfaceForeground: #75beff;
+--vscode-symbolIcon-keyForeground: #cccccc;
+--vscode-symbolIcon-keywordForeground: #cccccc;
+--vscode-symbolIcon-methodForeground: #b180d7;
+--vscode-symbolIcon-moduleForeground: #cccccc;
+--vscode-symbolIcon-namespaceForeground: #cccccc;
+--vscode-symbolIcon-nullForeground: #cccccc;
+--vscode-symbolIcon-numberForeground: #cccccc;
+--vscode-symbolIcon-objectForeground: #cccccc;
+--vscode-symbolIcon-operatorForeground: #cccccc;
+--vscode-symbolIcon-packageForeground: #cccccc;
+--vscode-symbolIcon-propertyForeground: #cccccc;
+--vscode-symbolIcon-referenceForeground: #cccccc;
+--vscode-symbolIcon-snippetForeground: #cccccc;
+--vscode-symbolIcon-stringForeground: #cccccc;
+--vscode-symbolIcon-structForeground: #cccccc;
+--vscode-symbolIcon-textForeground: #cccccc;
+--vscode-symbolIcon-typeParameterForeground: #cccccc;
+--vscode-symbolIcon-unitForeground: #cccccc;
+--vscode-symbolIcon-variableForeground: #75beff;
+--vscode-actionBar-toggledBackground: rgba(0, 127, 212, 0.4);
+--vscode-peekViewTitle-background: #252526;
+--vscode-peekViewTitleLabel-foreground: #ffffff;
+--vscode-peekViewTitleDescription-foreground: rgba(204, 204, 204, 0.7);
+--vscode-peekView-border: #3794ff;
+--vscode-peekViewResult-background: #252526;
+--vscode-peekViewResult-lineForeground: #bbbbbb;
+--vscode-peekViewResult-fileForeground: #ffffff;
+--vscode-peekViewResult-selectionBackground: rgba(51, 153, 255, 0.2);
+--vscode-peekViewResult-selectionForeground: #ffffff;
+--vscode-peekViewEditor-background: #001f33;
+--vscode-peekViewEditorGutter-background: #001f33;
+--vscode-peekViewEditorStickyScroll-background: #001f33;
+--vscode-peekViewResult-matchHighlightBackground: rgba(234, 92, 0, 0.3);
+--vscode-peekViewEditor-matchHighlightBackground: rgba(255, 143, 0, 0.6);
+--vscode-editor-foldBackground: rgba(38, 79, 120, 0.3);
+--vscode-editor-foldPlaceholderForeground: #808080;
+--vscode-editorGutter-foldingControlForeground: #c5c5c5;
+--vscode-editorSuggestWidget-background: #252526;
+--vscode-editorSuggestWidget-border: #454545;
+--vscode-editorSuggestWidget-foreground: #d4d4d4;
+--vscode-editorSuggestWidget-selectedForeground: #ffffff;
+--vscode-editorSuggestWidget-selectedBackground: #04395e;
+--vscode-editorSuggestWidget-highlightForeground: #2aaaff;
+--vscode-editorSuggestWidget-focusHighlightForeground: #2aaaff;
+--vscode-editorSuggestWidgetStatus-foreground: rgba(212, 212, 212, 0.5);
+--vscode-editorMarkerNavigationError-background: #f14c4c;
+--vscode-editorMarkerNavigationError-headerBackground: rgba(241, 76, 76, 0.1);
+--vscode-editorMarkerNavigationWarning-background: #cca700;
+--vscode-editorMarkerNavigationWarning-headerBackground: rgba(204, 167, 0, 0.1);
+--vscode-editorMarkerNavigationInfo-background: #3794ff;
+--vscode-editorMarkerNavigationInfo-headerBackground: rgba(55, 148, 255, 0.1);
+--vscode-editorMarkerNavigation-background: #191919;
+--vscode-editor-linkedEditingBackground: rgba(255, 0, 0, 0.3);
+--vscode-editor-wordHighlightBackground: rgba(87, 87, 87, 0.72);
+--vscode-editor-wordHighlightStrongBackground: rgba(0, 73, 114, 0.72);
+--vscode-editor-wordHighlightTextBackground: rgba(87, 87, 87, 0.72);
+--vscode-editorOverviewRuler-wordHighlightForeground: rgba(160, 160, 160, 0.8);
+--vscode-editorOverviewRuler-wordHighlightStrongForeground: rgba(192, 160, 192, 0.8);
+--vscode-editorOverviewRuler-wordHighlightTextForeground: rgba(160, 160, 160, 0.8);
+--vscode-editorHoverWidget-highlightForeground: #2aaaff;
+--vscode-editor-placeholder-foreground: rgba(255, 255, 255, 0.34); }
+
+.mtk1 { color: #d4d4d4; }
+.mtk2 { color: #191919; }
+.mtk3 { color: #cc6666; }
+.mtk4 { color: #9cdcfe; }
+.mtk5 { color: #ce9178; }
+.mtk6 { color: #b5cea8; }
+.mtk7 { color: #608b4e; }
+.mtk8 { color: #569cd6; }
+.mtk9 { color: #c657d9; }
+.mtk10 { color: #e67300; }
+.mtk11 { color: #dcdcdc; }
+.mtk12 { color: #808080; }
+.mtk13 { color: #79b51c; }
+.mtk14 { color: #f44747; }
+.mtk15 { color: #c586c0; }
+.mtk16 { color: #00a7e3; }
+.mtk17 { color: #a79873; }
+.mtk18 { color: #dd6a6f; }
+.mtk19 { color: #5bb498; }
+.mtk20 { color: #909090; }
+.mtk21 { color: #778899; }
+.mtk22 { color: #ff00ff; }
+.mtk23 { color: #b46695; }
+.mtk24 { color: #ff0000; }
+.mtk25 { color: #4f76ac; }
+.mtk26 { color: #3dc9b0; }
+.mtk27 { color: #74b0df; }
+.mtk28 { color: #4864aa; }
+.mtki { font-style: italic; }
+.mtkb { font-weight: bold; }
+.mtku { text-decoration: underline; text-underline-position: under; }
+.mtks { text-decoration: line-through; }
+.mtks.mtku { text-decoration: underline line-through; text-underline-position: under; }</style></head>
+  <body class="enable-motion underline-links"><noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2BXL2D&gtm_auth=&gtm_preview=&gtm_cookies_win=x"
+        height="0" width="0" style="display:none;visibility:hidden" id="tag-manager"></iframe></noscript>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      const url = new URL(window.location.href);
+      // Redirect to https
+      if (
+        location.protocol === 'http:' &&
+        (url.hostname === 'editor.nanopy.io' || url.hostname === 'stage.nanopy.io')
+      ) {
+        location.replace(`https:${location.href.substring(location.protocol.length)}`);
+      }
+      // Redirect to nanopy.io
+      if (
+        url.hostname === 'editor.oxoscript.com' ||
+        url.hostname === 'editor.nanopy.ch' ||
+        url.hostname === 'editor.nanopython.ch' ||
+        url.hostname === 'editor.nanopython.io'
+      ) {
+        window.location.replace(url.toString().replace(url.hostname, 'editor.nanopy.io'));
+      } else if (
+        url.hostname === 'stage.oxoscript.com' ||
+        url.hostname === 'stage.nanopy.ch' ||
+        url.hostname === 'stage.nanopython.ch' ||
+        url.hostname === 'stage.nanopython.io'
+      ) {
+        window.location.replace(url.toString().replace(url.hostname, 'stage.nanopy.io'));
+      }
+    </script>
+    <div id="root"><div class="sc-gNJGCZ dpgmyq"><div class="sc-kCazGs dUieJn"><a href="https://nanopy.io/en" target="_blank" rel="noreferrer" class="sc-bdAvkl dQPUTk"><img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'?%3e%3csvg%20id='Ebene_1'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20283.46%2056.69'%3e%3cdefs%3e%3cstyle%3e.cls-1{fill:%23eb6608;}.cls-2{fill:%23fff;}.cls-3{fill:%23e4006d;}%3c/style%3e%3c/defs%3e%3cpath%20class='cls-2'%20d='m141.38,40.8c0,1.95-.62,2.57-2.57,2.57h-3.9c-2,0-2.76-.57-3.33-2.43l-3.52-11.19c-2.28-7.38-3.9-14.66-4.05-15.28.09.86.81,9.38.81,14.76v11.66c0,1.86-.57,2.48-2.43,2.48h-.86c-1.86,0-2.48-.62-2.48-2.48V14.15c0-1.95.62-2.57,2.57-2.57h3.95c1.95,0,2.76.57,3.33,2.43l3.43,10.95c2.24,7.38,3.95,14.85,4.09,15.52-.05-.86-.81-9.57-.81-14.99v-11.47c0-1.81.62-2.43,2.48-2.43h.86c1.86,0,2.43.62,2.43,2.43v26.8Z'/%3e%3cpath%20class='cls-2'%20d='m169.13,40.94c.43,1.76-.14,2.43-1.9,2.43h-1.28c-1.9,0-2.62-.57-3-2.43l-.86-4.09h-8.52l-.9,4.09c-.38,1.86-1.05,2.43-2.95,2.43h-1.29c-1.81,0-2.38-.67-1.95-2.43l6.09-26.84c.43-1.95,1.14-2.52,3.09-2.52h4.28c2,0,2.71.57,3.14,2.52l6.05,26.84Zm-8.76-12.09c-1.9-8.9-2.52-13.8-2.62-14.56-.09.71-.57,5.57-2.48,14.52l-.57,2.62h6.19l-.52-2.57Z'/%3e%3cpath%20class='cls-2'%20d='m196.54,40.8c0,1.95-.62,2.57-2.57,2.57h-3.9c-2,0-2.76-.57-3.33-2.43l-3.52-11.19c-2.28-7.38-3.9-14.66-4.05-15.28.09.86.81,9.38.81,14.76v11.66c0,1.86-.57,2.48-2.43,2.48h-.86c-1.86,0-2.48-.62-2.48-2.48V14.15c0-1.95.62-2.57,2.57-2.57h3.95c1.95,0,2.76.57,3.33,2.43l3.43,10.95c2.24,7.38,3.95,14.85,4.09,15.52-.05-.86-.81-9.57-.81-14.99v-11.47c0-1.81.62-2.43,2.48-2.43h.86c1.86,0,2.43.62,2.43,2.43v26.8Z'/%3e%3cpath%20class='cls-2'%20d='m203.01,21.14c0-6.04,4.33-9.8,10.28-9.8s10.28,3.76,10.28,9.8v12.66c0,6.05-4.33,9.81-10.28,9.81s-10.28-3.76-10.28-9.81v-12.66Zm6,12.66c0,2.62,1.57,4.28,4.28,4.28s4.28-1.67,4.28-4.28v-12.66c0-2.62-1.57-4.28-4.28-4.28s-4.28,1.67-4.28,4.28v12.66Z'/%3e%3cpath%20class='cls-2'%20d='m231.19,13.48c0-1.48.43-1.9,1.9-1.9h6.09c5.43,0,9.14,3.76,9.14,9v3.81c0,5.24-3.71,9-9.14,9h-4.81v8.42c0,1.24-.33,1.57-1.52,1.57h-.1c-1.24,0-1.57-.33-1.57-1.57V13.48Zm8,16.85c3.76,0,5.95-2.48,5.95-5.95v-3.81c0-3.47-2.19-5.95-6-5.95h-4.76v15.71h4.81Z'/%3e%3cpath%20class='cls-2'%20d='m268.08,11.58c1.19,0,1.43.43,1.05,1.52l-7.38,20.56v8.14c0,1.24-.33,1.57-1.52,1.57h-.1c-1.24,0-1.57-.33-1.57-1.57v-8.14l-7.43-20.51c-.43-1.09-.09-1.57,1.14-1.57h.09c1.28,0,1.71.33,2.14,1.57l2.81,8.14c1.62,4.57,2.86,8.38,2.86,8.42,0-.05,1.24-3.9,2.81-8.42l2.81-8.14c.43-1.24.86-1.57,2.19-1.57h.1Z'/%3e%3cpath%20class='cls-3'%20d='m77.24,31.18l-2.75,2.37h22.71c1.31,0,2.37-1.06,2.37-2.37h-22.33Z'/%3e%3cpath%20class='cls-1'%20d='m67.64,35.52l13.63,6.07h-24.19c-5.99,0-11.6-2.9-15.06-7.78l-5.58-7.79h-3.88l7.7,15.57H14.17c0-15.59,12.64-28.24,28.24-28.24h42.55l3.17,4.49-20.49,17.68Zm-2.58-13.19c0-2.91-2.36-5.28-5.28-5.28s-5.28,2.36-5.28,5.28,2.36,5.28,5.28,5.28,5.28-2.36,5.28-5.28Z'/%3e%3c/svg%3e" alt="Logo NanoPy" id="logo_nanopy" class="sc-ebYDgy iqfnby"></a><div class="sc-fSUijn fNbvOL"></div><button class="sc-gaZyOd cVQIcC MuiButtonBase-root sc-imkxvJ kXkFZx MuiIconButton-root MuiIconButton-sizeLarge sc-dItInd erxPCI" tabindex="0" type="button" id="user_menu" aria-label="delete"><svg class="sc-KXCwU cqILrA MuiSvgIcon-root MuiSvgIcon-fontSizeInherit" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"></path></svg></button></div><div class="sc-jHlbmG fHkfqE"><div id="left_menu" class="sc-jgZlNi gvaKuz"><div id="left_menu_nav" class="sc-ecUaqI dRwcFw"><button id="btn_devices" aria-label="Devices" class="sc-hNMcCY dzJHbH"><svg class="svg_icon" data-name="devices" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="My Devices"><path d="M28.5,24v3h3V24Zm4-2a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1h-5a1,1,0,0,1-1-1V23a1,1,0,0,1,1-1ZM30,35a1,1,0,1,0-1-1A1,1,0,0,0,30,35Zm0,2a3,3,0,1,1,3-3A3,3,0,0,1,30,37ZM24.5,22V38h11V22Zm11-2a2,2,0,0,1,2,2V38a2,2,0,0,1-2,2h-11a2,2,0,0,1-2-2V22a2,2,0,0,1,2-2Z"></path></svg></button><button id="btn_examples" aria-label="Examples" class="sc-hNMcCY dzJHbH"><svg class="svg_icon" data-name="examples" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Examples"><path d="M33,21.22l-4,18a1,1,0,0,1-2-.44l4-18a1,1,0,1,1,2,.44Zm7.73,8.06a1,1,0,0,1,0,1.41l-4,4a1,1,0,0,1-1.42-1.42L38.59,30l-3.3-3.29a1,1,0,0,1,1.42-1.42Zm-21.42,0,4-4a1,1,0,0,1,1.42,1.42L21.41,30l3.3,3.29a1,1,0,0,1-1.42,1.42l-4-4A1,1,0,0,1,19.29,29.28Z"></path></svg></button><button id="btn_user_codes" class="sc-hNMcCY dzJHbH active" aria-label="User codes"><svg class="svg_icon" data-name="user_code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="My Scripts"><path d="M24,30a.68.68,0,0,0-.49.31l-3,6.69H36.32a.7.7,0,0,0,.49-.31l3-6.69Zm-2.32-.5A2.67,2.67,0,0,1,24,28H36V26H29a2,2,0,0,1-1.67-.91L26,23H20V33.28ZM40.32,28a1.6,1.6,0,0,1,1.51,2.32L38.64,37.5A2.68,2.68,0,0,1,36.32,39H20a1.88,1.88,0,0,1-.49-.06A2,2,0,0,1,18,37V23a2,2,0,0,1,2-2h6.05a2.08,2.08,0,0,1,1.55.83L29,24h7a2,2,0,0,1,2,2v2Z"></path></svg></button><div class="sc-jaCFhe bMtHFc"></div><img class="sc-bcEYab iVYAxc open" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2025.4.1,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%209%2016'%20style='enable-background:new%200%200%209%2016;'%20xml:space='preserve'%3e%3cstyle%20type='text/css'%3e%20.st0{fill:%23FFFFFF;}%20%3c/style%3e%3cg%20id='Layer_2_00000065787590347772687870000003407780505526017195_'%3e%3cg%20id='Icons'%3e%3cpath%20class='st0'%20d='M0.3,1.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7,7c0.4,0.4,0.4,1,0,1.4c0,0,0,0,0,0l-7,7c-0.4,0.4-1,0.4-1.4,0%20c-0.4-0.4-0.4-1,0-1.4c0,0,0,0,0,0L6.6,8L0.3,1.7z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Toggle left menu"></div><div class="sc-huscIB lbkxsO"><div class="sc-bxqOiJ hAZjGz"><div class="sc-iaWLKS ckUZpI"><h1>My Scripts:</h1><div class="sc-hAOJoF dwQnLF"><label for="upload_script"><input style="display: none;" id="upload_script" name="upload_script" type="file" accept=".npy"><span data-tooltip-id="main-tooltip" data-tooltip-content="Load from PC" class="sc-ejqGWM fVhslE"><svg class="sc-KXCwU dQFgaj MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UploadFileIcon"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm4 18H6V4h7v5h5zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z"></path></svg></span></label><button data-tooltip-id="main-tooltip" data-tooltip-content="New script" class="sc-bjbEGf kMMRfd"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21 23" xml:space="preserve"><style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+</style><g id="Layer_2_00000152966265009962900570000002101507909825308819_"><g id="Icons"><path class="st0" d="M19,15.5c0-3-2.5-5.5-5.5-5.5S8,12.5,8,15.5s2.5,5.5,5.5,5.5S19,18.5,19,15.5z M16,6.7c0-0.3-0.1-0.6-0.4-0.8 l-5.5-5.5C9.9,0.1,9.6,0,9.3,0H2C0.9,0,0,0.9,0,2v16c0,1.1,0.9,2,2,2h5.5c2.5,3.3,7.2,4,10.5,1.5s4-7.2,1.5-10.5 c-0.9-1.2-2.1-2.1-3.5-2.6V6.7z M14.5,13c0-0.6-0.4-1-1-1s-1,0.4-1,1v1.5H11c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h1.5V18 c0,0.6,0.4,1,1,1s1-0.4,1-1v-1.5H16c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1h-1.5V13z M14,7H9V2L14,7z M2,2v16h4.4 C6.1,17.2,6,16.4,6,15.5c0-2.7,1.4-5.2,3.8-6.5H8C7.4,9,7,8.6,7,8V2H2z"></path></g></g></svg></button></div></div><ul id="user_code_list" class="sc-foEYJr hdTpSi"><li class="sc-eqfhQo gCOSFv"><form id="name_form"><input aria-label="Script name input" id="top_bar_input" type="text" autocomplete="off" class="sc-ejIBkk bGANRF" value="Ampelsteuerung"></form><button class="sc-gahMuq KfnsJ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path class="st0" d="M15.7,1.7c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L8,6.6L1.7,0.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L6.6,8 l-6.3,6.3c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0L8,9.4l6.3,6.3c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4L9.4,8L15.7,1.7z"></path></svg></button><button type="submit" form="name_form" class="sc-gahMuq hfOgQN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15"><path class="st0" d="M1.7,7.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6,6c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0l13-13c0.4-0.4,0.4-1,0-1.4 c-0.4-0.4-1-0.4-1.4,0c0,0,0,0,0,0L7,12.6L1.7,7.3z"></path></svg></button></li><li class="sc-eqfhQo gCOSFv"><form id="name_form"><input aria-label="Script name input" id="top_bar_input" type="text" autocomplete="off" class="sc-ejIBkk bGANRF" value="Button Steuerung"></form><button class="sc-gahMuq KfnsJ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path class="st0" d="M15.7,1.7c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L8,6.6L1.7,0.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L6.6,8 l-6.3,6.3c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0L8,9.4l6.3,6.3c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4L9.4,8L15.7,1.7z"></path></svg></button><button type="submit" form="name_form" class="sc-gahMuq hfOgQN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15"><path class="st0" d="M1.7,7.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6,6c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0l13-13c0.4-0.4,0.4-1,0-1.4 c-0.4-0.4-1-0.4-1.4,0c0,0,0,0,0,0L7,12.6L1.7,7.3z"></path></svg></button></li><li class="sc-eqfhQo gCOSFv"><div class="sc-bDNuON bDLOgT user_code">LED blinken</div><div class="sc-dnPZsP efsZZY"></div><div class="controls"><button class="sc-gahMuq caowsw material_icon" data-tooltip-id="main-tooltip" data-tooltip-content="Load on cartridge"><svg class="sc-KXCwU dQFgaj MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MoveToInboxIcon"><path d="M19 3H4.99c-1.11 0-1.98.9-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19zm-3-5h-2V7h-4v3H8l4 4z"></path></svg></button><button data-tooltip-id="main-tooltip" data-tooltip-content="Load on card" class="sc-gahMuq hfOgQN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20"><path class="cls-1" d="M14,18V15a1,1,0,0,1,2,0v3a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V15a1,1,0,0,1,2,0v3ZM5.89,11.46,7,12.58V1A1,1,0,0,1,9,1V12.58l1.12-1.12a1,1,0,1,1,1.42,1.41L8.71,15.7A1,1,0,0,1,8,16a1,1,0,0,1-.7-.29L4.47,12.87a1,1,0,1,1,1.42-1.41Z"></path></svg></button><button class="sc-gahMuq caowsw material_icon" data-tooltip-id="main-tooltip" data-tooltip-content="Save on PC"><svg class="sc-KXCwU dQFgaj MuiSvgIcon-root MuiSvgIcon-fontSizeMedium" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="BrowserUpdatedIcon"><path d="M22 13v3c0 1.1-.9 2-2 2h-3l1 1v2H6v-2l1-1H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h8v2H4v11h16v-3zm-7 2-5-5h4V3h2v7h4z"></path></svg></button><button data-tooltip-id="main-tooltip" data-tooltip-content="Rename" class="sc-gahMuq caowsw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M15.74,6.54,14.33,5.12,9,10.42l1.41,1.42ZM9,13.25,7.61,11.84l-.67.67-.47,1.88,1.88-.46ZM17.86,1.58,19.28,3a2,2,0,0,1,0,2.83l-9.9,9.9-3.72.93c-1.08.27-1.73-.38-1.46-1.45l.94-3.73L15,1.59A2,2,0,0,1,17.86,1.58ZM0,19.86a1,1,0,0,1,1-1H19a1,1,0,0,1,0,2H1A1,1,0,0,1,0,19.86Z"></path></svg></button><button data-tooltip-id="main-tooltip" data-tooltip-content="Delete" class="sc-gahMuq KfnsJ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 19"><path d="M5,7A1,1,0,0,1,7,7v7a1,1,0,0,1-2,0ZM9,7a1,1,0,0,1,2,0v7a1,1,0,0,1-2,0Zm6,10a2,2,0,0,1-2,2H3a2,2,0,0,1-2-2V4A1,1,0,0,1,1,2H6a2,2,0,0,1,4,0h5a1,1,0,0,1,0,2ZM3,17H13V4H3Z"></path></svg></button></div></li></ul></div></div></div><div class="sc-vWBUz hSljfv"><div id="tool_bar" class="sc-bJnufD itcnUr"><button id="btn_run_code" class="sc-hNMcCY PFqUc" aria-label="Run code"><svg class="svg_icon" id="svg_run_code" data-name="run_code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Run code"><path d="M33.32,27.73h4.23c1.1,0,1.41.68.69,1.52l-9,10.44c-1.08,1.26-1.95.94-1.95-.72V32.73H23.08c-1.1,0-1.41-.68-.69-1.52l9-10.44c1.08-1.26,2-.94,2,.72Zm-2-3.85-5.89,6.85h2.88a1,1,0,0,1,1,1v4.85l5.89-6.85H32.32a1,1,0,0,1-1-1Z"></path></svg></button><button id="btn_debug_code" class="sc-hNMcCY PFqUc" aria-label="Debug code"><svg class="svg_icon" id="svg_debug_code" data-name="debug_code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Debug code"><path d="M26,30.1c0.8,0.3,1.2,1.1,0.9,1.9c-0.2,0.6-0.8,1-1.4,1c-0.2,0-0.3,0-0.5,0c0,0.6,0.1,1.1,0.3,1.7c0.2-0.1,0.5-0.2,0.7-0.2	c0.8,0,1.5,0.7,1.5,1.5c0,0.4-0.2,0.8-0.4,1c0.6,0.4,1.2,0.7,1.9,0.8v-3.2c-1-0.6-1.3-1.8-0.7-2.7c0.2-0.3,0.4-0.6,0.7-0.7v-1.8	c-0.6-0.1-1.2-0.3-1.7-0.5h-0.1C26.7,29.2,26.3,29.6,26,30.1z M32,27c0-1.1-0.9-2-2-2c-1.1,0-2,0.9-2,2c0,0,0,0,0,0.1h0.1	C29.3,27.6,30.7,27.6,32,27L32,27C32,27,32,27,32,27z M32.8,28.9c-0.6,0.3-1.2,0.4-1.8,0.5v1.8c1,0.6,1.3,1.8,0.7,2.7	c-0.2,0.3-0.4,0.6-0.7,0.7v3.2c0.7-0.1,1.4-0.4,1.9-0.8c-0.3-0.3-0.4-0.7-0.4-1.1c0-0.8,0.7-1.5,1.5-1.5c0.2,0,0.5,0.1,0.7,0.2 c0.2-0.5,0.3-1.1,0.3-1.7c-0.2,0-0.3,0-0.5,0c-0.8,0-1.5-0.7-1.5-1.5c0-0.7,0.4-1.2,1-1.4C33.7,29.6,33.3,29.2,32.8,28.9L32.8,28.9z M31.1,22c0.8-1.3,2.3-2.1,3.9-2c0.6,0,1,0.4,1,1s-0.4,1-1,1c-0.9-0.1-1.7,0.3-2.2,1c-0.1,0.2-0.2,0.5-0.3,0.7c0,0,0,0.1,0,0.1 c1,0.8,1.5,2.1,1.5,3.4c0.3,0.2,0.5,0.4,0.8,0.6l1.2-1.3c0.4-0.4,1.1-0.3,1.4,0.1c0.3,0.4,0.3,0.9,0,1.3L36,29.4	c0.5,0.8,0.8,1.7,0.9,2.6H39c0.6,0,1,0.4,1,1s-0.4,1-1,1h-2.1c-0.1,0.9-0.4,1.8-0.9,2.6l1.4,1.4c0.4,0.4,0.4,1,0,1.4 c-0.4,0.4-1,0.4-1.4,0l-1.3-1.3c-2.7,2.5-6.8,2.5-9.5,0L24,39.4c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4l1.4-1.4 c-0.5-0.8-0.8-1.7-0.9-2.6H21c-0.6,0-1-0.4-1-1s0.4-1,1-1h2.1c0.1-0.9,0.4-1.8,0.9-2.6L22.6,28c-0.4-0.4-0.3-1.1,0.1-1.4	c0.4-0.3,0.9-0.3,1.3,0l1.3,1.3c0.2-0.2,0.5-0.4,0.8-0.6c-0.1-1.3,0.5-2.6,1.5-3.4c0,0,0-0.1,0-0.1c-0.2-1.2-1.3-1.9-2.4-1.7 c0,0-0.1,0-0.1,0c-0.6,0-1-0.4-1-1s0.4-1,1-1c1.6-0.1,3.1,0.6,3.9,2c0.2,0.3,0.3,0.7,0.4,1c0.2,0,0.4,0,0.6,0c0.2,0,0.4,0,0.7,0 C30.8,22.6,30.9,22.3,31.1,22z"></path></svg></button><button id="btn_debug_run" class="sc-hNMcCY dzJHbH disabled" aria-label="Debug run"><svg class="svg_icon" id="svg_debug_run" data-name="run" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content=""><path d="M27,36h1l4.79-6L28,24H27ZM25,24a2,2,0,0,1,2-2h1a2.34,2.34,0,0,1,1.62.78l5.11,6.44a1.31,1.31,0,0,1,0,1.56l-5.11,6.44A2.32,2.32,0,0,1,28,38H27a2,2,0,0,1-2-2Z"></path></svg></button><button id="btn_debug_observe" class="sc-hNMcCY dzJHbH disabled" aria-label="Debug observe"><svg class="svg_icon" id="svg_debug_observe" data-name="observe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content=""><path d="M34,31l4.1,3h.8V26h-.8L34,29ZM23,33a.94.94,0,0,1,1-1h5a1,1,0,0,1,0,2H24A.94.94,0,0,1,23,33Zm-2-9V36H32V24Zm13,2.5,3.1-2.3a1.4,1.4,0,0,1,.9-.3h2a.94.94,0,0,1,1,1v10a.94.94,0,0,1-1,1H38a1.4,1.4,0,0,1-.9-.3L34,33.5V36a2,2,0,0,1-2,2H21a2,2,0,0,1-2-2V24a2,2,0,0,1,2-2H32a2,2,0,0,1,2,2Z"></path></svg></button><button id="btn_debug_pause" class="sc-hNMcCY ekmyzd disabled" aria-label="Debug pause"><svg class="svg_icon" id="svg_debug_pause" data-name="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content=""><path d="M28,38H24a1,1,0,0,1-1-1V23a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V37A1,1,0,0,1,28,38Zm-3-2h2V24H25Z"></path><path d="M36,38H32a1,1,0,0,1-1-1V23a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V37A1,1,0,0,1,36,38Zm-3-2h2V24H33Z"></path></svg></button><button id="btn_debug_step" class="sc-hNMcCY PFqUc disabled" aria-label="Debug step"><svg class="svg_icon" id="svg_debug_step" data-name="step" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content=""><path d="M25,36h1l4.79-6L26,24H25ZM23,24a2,2,0,0,1,2-2h1a2.34,2.34,0,0,1,1.62.78l5.11,6.44a1.31,1.31,0,0,1,0,1.56l-5.11,6.44A2.32,2.32,0,0,1,26,38H25a2,2,0,0,1-2-2Z"></path><path d="M35,23a1,1,0,0,1,2,0V37a1,1,0,0,1-2,0Z"></path></svg></button><button id="btn_debug_run_breakpoint" class="sc-hNMcCY jVQaTb disabled" aria-label="Debug run breakpoint"><svg class="svg_icon" id="svg_debug_run_breakpoint" data-name="run_breakpoint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content=""><path d="M38.46,32.7c.55,0,.75.35.44.81l-2.72,4.08c-.61.91-1.11.76-1.08-.33V34.7H33.69c-.55,0-.75-.37-.44-.83L36,29.79c.61-.91,1.11-.75,1.11.34V32.7Z"></path><path d="M23,36h1l4.79-6L24,24H23ZM21,24a2,2,0,0,1,2-2h1a2.34,2.34,0,0,1,1.62.78l5.11,6.44a1.31,1.31,0,0,1,0,1.56l-5.11,6.44A2.32,2.32,0,0,1,24,38H23a2,2,0,0,1-2-2Z"></path></svg></button><button id="btn_debug_snapshot" class="sc-hNMcCY PFqUc disabled" aria-label="Snapshot"><svg class="svg_icon" id="svg_debug_snapshot" data-name="snapshot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content=""><path d="M25,31c0-2.76,2.24-5,5-5s5,2.24,5,5-2.24,5-5,5-5-2.24-5-5Zm-4-5.5v12s18,0,18,0v-12s-3.65,0-3.65,0c-.28,0-.58-.21-.69-.46l-1.02-2.54h-7.29s-1.01,2.53-1.01,2.53c-.1,.26-.41,.47-.69,.47h-3.65Zm2.8-2l.83-2.07c.21-.51,.82-.93,1.37-.93h8.01c.55,0,1.16,.42,1.37,.93l.83,2.07h2.8c1.11,0,2,.89,2,2v12c0,1.11-.9,2-2,2H21c-1.11,0-2-.89-2-2v-12c0-1.11,.9-2,2-2h2.8Zm6.2,4.5c-1.66,0-3,1.34-3,3s1.34,3,3,3,3-1.34,3-3c0-.31-.05-.6-.13-.88-.24,.52-.76,.88-1.37,.88-.83,0-1.5-.67-1.5-1.5,0-.61,.36-1.13,.88-1.37-.28-.09-.58-.13-.88-.13Z"></path></svg></button></div><div id="editor" class="sc-eQqXpM gbnknG"><div id="monaco-container" data-keybinding-context="1" data-mode-id="nanopy" style="--vscode-editorCodeLens-lineHeight: 18px; --vscode-editorCodeLens-fontSize: 12px; --vscode-editorCodeLens-fontFeatureSettings: &quot;liga&quot; off, &quot;calt&quot; off;"><div class="monaco-editor no-user-select  showUnused showDeprecated vs-dark focused" role="code" style="width: 1266px; height: 866px;" data-uri="inmemory://model/1"><div data-mprt="3" class="overflow-guard" style="width: 1266px; height: 866px;"><div class="margin" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; height: 1130px; width: 71px;" role="presentation" aria-hidden="true"><div class="glyph-margin" style="left: 0px; width: 22px; height: 1130px;"></div><div class="margin-view-zones" style="position: absolute; width: 71px;" role="presentation" aria-hidden="true"></div><div class="margin-view-overlays focused" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; font-variation-settings: normal; line-height: 22px; letter-spacing: 0px; width: 71px; height: 1042px;" role="presentation" aria-hidden="true"><div style="top:22px;height:22px;"><div class="line-numbers" style="left:22px;width:23px;">1</div></div><div style="top:44px;height:22px;"><div class="line-numbers" style="left:22px;width:23px;">2</div></div><div style="top:66px;height:22px;"><div class="line-numbers" style="left:22px;width:23px;">3</div></div><div style="top:88px;height:22px;"><div class="line-numbers" style="left:22px;width:23px;">4</div></div><div style="top:110px;height:22px;"><div class="line-numbers" style="left:22px;width:23px;">5</div></div><div style="top:132px;height:22px;"><div class="line-numbers" style="left:22px;width:23px;">6</div></div><div style="top:154px;height:22px;"><div class="cldr codicon codicon-folding-expanded" title="Click to collapse the range." style="left:45px;width:26px;"></div><div class="line-numbers" style="left:22px;width:23px;">7</div></div><div style="top:176px;height:22px;"><div class="current-line current-line-margin-both" style="width:71px"></div><div class="line-numbers active-line-number" style="left:22px;width:23px;">8</div></div></div><div class="glyph-margin-widgets" style="position: absolute; top: 0px;"></div></div><div class="monaco-scrollable-element editor-scrollable vs-dark" role="presentation" style="position: absolute; overflow: hidden; left: 71px; width: 1195px; height: 866px;" data-mprt="6"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 16777200px; height: 16777200px; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; left: 0px;"><div class="view-overlays focused" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; font-variation-settings: normal; line-height: 22px; letter-spacing: 0px; height: 0px; width: 1061px;" role="presentation" aria-hidden="true"><div style="top:22px;height:22px;"></div><div style="top:44px;height:22px;"></div><div style="top:66px;height:22px;"></div><div style="top:88px;height:22px;"></div><div style="top:110px;height:22px;"></div><div style="top:132px;height:22px;"></div><div style="top:154px;height:22px;"><div class="cdr wordHighlightText" style="left:46px;width:31px;"></div></div><div style="top:176px;height:22px;"><div class="current-line current-line-exact" style="width:1061px;"></div><div class="core-guide core-guide-indent lvl-0 indent-active vertical" style="left:0px;width:7.69921875px"></div><div class="cdr wordHighlightText" style="left:185px;width:31px;"></div></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" style="position: absolute; width: 1061px;" role="presentation" aria-hidden="true"><div style="position: absolute; width: 100%; display: block; top: 0px; height: 22px;" monaco-view-zone="b1" monaco-visible-view-zone="true"></div></div><div class="view-lines monaco-mouse-cursor-text" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; font-variation-settings: normal; line-height: 22px; letter-spacing: 0px; width: 1061px; height: 1042px;" role="presentation" aria-hidden="true" data-mprt="8"><div style="top:22px;height:22px;" class="view-line"><span><span class="mtk16">const</span><span class="mtk1">&nbsp;GREEN_DURATION&nbsp;=&nbsp;</span><span class="mtk6">2</span></span></div><div style="top:44px;height:22px;" class="view-line"><span><span class="mtk16">const</span><span class="mtk1">&nbsp;YELLOW_DURATION&nbsp;=&nbsp;</span><span class="mtk6">1</span></span></div><div style="top:66px;height:22px;" class="view-line"><span><span class="mtk13">initGPIO</span><span class="mtk11">(</span><span class="mtk9">C_PIN_01</span><span class="mtk11">,</span><span class="mtk1">&nbsp;</span><span class="mtk9">OUTPUT</span><span class="mtk11">)</span></span></div><div style="top:88px;height:22px;" class="view-line"><span><span class="mtk13">initGPIO</span><span class="mtk11">(</span><span class="mtk9">C_PIN_02</span><span class="mtk11">,</span><span class="mtk1">&nbsp;</span><span class="mtk9">OUTPUT</span><span class="mtk11">)</span></span></div><div style="top:110px;height:22px;" class="view-line"><span><span class="mtk13">initGPIO</span><span class="mtk11">(</span><span class="mtk9">C_PIN_03</span><span class="mtk11">,</span><span class="mtk1">&nbsp;</span><span class="mtk9">OUTPUT</span><span class="mtk11">)</span></span></div><div style="top:132px;height:22px;" class="view-line"><span><span class="mtk13">initGPIO</span><span class="mtk11">(</span><span class="mtk9">C_PIN_06</span><span class="mtk11">,</span><span class="mtk1">&nbsp;</span><span class="mtk9">INPUT</span><span class="mtk11">)</span></span></div><div style="top:154px;height:22px;" class="view-line"><span><span class="mtk16">while</span><span class="mtk1">&nbsp;</span><span class="mtk16">true</span><span class="mtk11">:</span></span></div><div style="top:176px;height:22px;" class="view-line"><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="mtk13">writeGPIO</span><span class="mtk11">(</span><span class="mtk9">C_PIN_01</span><span class="mtk11">,</span><span class="mtk1">&nbsp;</span><span class="mtk16">true</span><span class="mtk11">)</span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"><div class="lightBulbWidget" role="listbox" style="position: absolute; display: none; visibility: hidden; max-width: 1061px; top: 176px; left: 0px;" widgetid="LightBulbWidget" title="Show Code Actions (Ctrl+.)"></div></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor  monaco-mouse-cursor-text " style="height: 22px; top: 176px; left: 216px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; font-variation-settings: normal; line-height: 22px; letter-spacing: 0px; display: block; visibility: inherit; padding-left: 0px; width: 1.11667px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 1047px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 1047px;"></div></div><canvas class="decorationsOverviewRuler" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 866px; display: block;" aria-hidden="true" width="12" height="775"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical fade" style="position: absolute; width: 14px; height: 866px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 719px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 1252px;"></div><textarea data-mprt="7" class="inputarea monaco-mouse-cursor-text" wrap="off" style="tab-size: 30.7969px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; font-variation-settings: normal; line-height: 22px; letter-spacing: 0px; top: 176px; left: 287px; width: 0px; height: 0px;" autocorrect="off" autocapitalize="none" autocomplete="off" spellcheck="false" aria-label="Editor content" aria-required="false" tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-autocomplete="both" aria-haspopup="false">const GREEN_DURATION = 2
+const YELLOW_DURATION = 1
+initGPIO(C_PIN_01, OUTPUT)
+initGPIO(C_PIN_02, OUTPUT)
+initGPIO(C_PIN_03, OUTPUT)
+initGPIO(C_PIN_06, INPUT)
+while true:
+    writeGPIO(C_PIN_01, true)</textarea><div style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;" class="monaco-editor-background textAreaCover margin"></div><div data-mprt="4" class="overlayWidgets" style="width: 1266px;"><div class="monaco-hover hidden" tabindex="0" role="tooltip" style="position: absolute;" widgetid="editor.contrib.modesGlyphHoverWidget"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-hover-content" style="overflow: hidden;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow"></div></div></div><div class="sticky-widget" style="width: 1252px; position: absolute; right: 50%; top: 0px; display: none;" widgetid="editor.contrib.stickyScrollWidget"><div class="sticky-widget-line-numbers" role="none" style="width: 71px;"></div><div class="sticky-widget-lines-scrollable" style="--vscode-editorStickyScroll-scrollableWidth: 1047px;"><div class="sticky-widget-lines" role="list" style="left: 0px;"></div></div></div></div><div data-mprt="9" class="minimap slider-always" style="position: absolute; left: 1118px; width: 134px; height: 866px;" role="presentation" aria-hidden="true"><div class="minimap-shadow-hidden" style="height: 866px;"></div><canvas style="position: absolute; left: 0px; width: 134px; height: 865.417px;" width="120" height="775"></canvas><canvas style="position: absolute; left: 0px; width: 134px; height: 865.417px;" class="minimap-decorations-layer" width="120" height="775"></canvas><div style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 134px; display: block; top: 0px; height: 87px;" class="minimap-slider"><div style="position: absolute; left: 0px; width: 134px; top: 0px; height: 87px;" class="minimap-slider-horizontal"></div></div></div><div role="presentation" aria-hidden="true" class="blockDecorations-container"></div></div><div data-mprt="2" class="overflowingContentWidgets"><div style="position: absolute; height: 34px; width: 139px; z-index: 50; display: none; visibility: hidden; max-width: 2144px; top: 54px; left: 71px;" widgetid="editor.contrib.resizableContentHoverWidget"><div class="monaco-sash vertical" style="left: 137px;"></div><div class="monaco-sash vertical disabled" style="left: -2px;"></div><div class="monaco-sash orthogonal-edge-north horizontal" style="top: -2px;"><div class="orthogonal-drag-handle end"></div></div><div class="monaco-sash orthogonal-edge-south horizontal disabled" style="top: 32px;"><div class="orthogonal-drag-handle end"></div></div><div class="monaco-hover hidden" tabindex="0" role="tooltip" style="max-width: 835.56px; max-height: 250px; --vscode-hover-maxWidth: 835.5600000000001px; width: 139px; height: 34px;"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-hover-content" style="overflow: hidden; font-size: 14px; line-height: 1.57143; max-width: 835.56px; max-height: 250px; width: 139px; height: 34px;"><div class="hover-row" tabindex="0"><div class="hover-row-contents"><div class="markdown-hover"><div class="hover-contents"><div class="rendered-markdown"><p>New line expected.</p></div></div></div></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 129px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 129px;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 10px; height: 34px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 34px;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow"></div></div></div></div><div class="editor-widget suggest-widget" style="position: absolute; display: none; visibility: hidden; max-width: 2144px; height: 24px; width: 430px; top: 198px; left: 279px;" widgetid="editor.widget.suggestWidget"><div class="monaco-sash vertical" style="left: 428px;"></div><div class="monaco-sash vertical disabled" style="left: -2px;"></div><div class="monaco-sash orthogonal-edge-north horizontal disabled" style="top: -2px;"><div class="orthogonal-drag-handle end"></div></div><div class="monaco-sash orthogonal-edge-south horizontal" style="top: 22px;"><div class="orthogonal-drag-handle end"></div></div><div class="message" style="display: none;" aria-hidden="true"></div><div class="tree" style="height: 24px; display: none;" aria-hidden="true"><div class="monaco-list list_id_1 selection-none" tabindex="0" role="listbox" aria-label="Suggest"><div class="monaco-scrollable-element " role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-list-rows" style="transform: translate3d(0px, 0px, 0px); overflow: hidden; contain: strict; height: 0px; left: 0px; top: 0px;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 0px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 10px; height: 24px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 24px;"></div></div></div><style type="text/css" media="screen">.monaco-list.list_id_1:focus .monaco-list-row.focused { background-color: var(--vscode-list-focusBackground); }
+.monaco-list.list_id_1:focus .monaco-list-row.focused:hover { background-color: var(--vscode-list-focusBackground); }
+.monaco-list.list_id_1:focus .monaco-list-row.focused { color: var(--vscode-list-focusForeground); }
+.monaco-list.list_id_1:focus .monaco-list-row.selected { background-color: var(--vscode-list-activeSelectionBackground); }
+.monaco-list.list_id_1:focus .monaco-list-row.selected:hover { background-color: var(--vscode-list-activeSelectionBackground); }
+.monaco-list.list_id_1:focus .monaco-list-row.selected { color: var(--vscode-list-activeSelectionForeground); }
+.monaco-list.list_id_1:focus .monaco-list-row.selected .codicon { color: var(--vscode-list-activeSelectionIconForeground); }
+
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.selected.focused { background-color: var(--vscode-list-activeSelectionBackground); }
+			
+
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.selected.focused { color: var(--vscode-list-activeSelectionForeground); }
+			
+.monaco-list.list_id_1 .monaco-list-row.focused .codicon { color:  var(--vscode-list-inactiveSelectionIconForeground); }
+.monaco-list.list_id_1 .monaco-list-row.focused { background-color:  var(--vscode-editorSuggestWidget-selectedBackground); }
+.monaco-list.list_id_1 .monaco-list-row.focused:hover { background-color:  var(--vscode-editorSuggestWidget-selectedBackground); }
+.monaco-list.list_id_1 .monaco-list-row.selected { background-color:  var(--vscode-list-inactiveSelectionBackground); }
+.monaco-list.list_id_1 .monaco-list-row.selected:hover { background-color:  var(--vscode-list-inactiveSelectionBackground); }
+.monaco-list.list_id_1 .monaco-list-row.selected { color: var(--vscode-list-inactiveSelectionForeground); }
+.monaco-list.list_id_1:not(.drop-target):not(.dragging) .monaco-list-row:hover:not(.selected):not(.focused) { background-color: var(--vscode-list-hoverBackground); }
+.monaco-list.list_id_1:not(.drop-target):not(.dragging) .monaco-list-row:hover:not(.selected):not(.focused) { color:  var(--vscode-list-hoverForeground); }
+.monaco-list.list_id_1:focus .monaco-list-row.focused.selected { outline: 1px solid var(--vscode-list-focusAndSelectionOutline, var(--vscode-contrastActiveBorder, var(--vscode-list-focusOutline))); outline-offset: -1px;}
+
+				.monaco-drag-image,
+				.monaco-list.list_id_1:focus .monaco-list-row.focused { outline: 1px solid var(--vscode-list-focusOutline); outline-offset: -1px; }
+				.monaco-workbench.context-menu-visible .monaco-list.list_id_1.last-focused .monaco-list-row.focused { outline: 1px solid var(--vscode-list-focusOutline); outline-offset: -1px; }
+			
+.monaco-list.list_id_1 .monaco-list-row.focused.selected { outline: 1px dotted var(--vscode-contrastActiveBorder, var(--vscode-contrastActiveBorder)); outline-offset: -1px; }
+.monaco-list.list_id_1 .monaco-list-row.selected { outline: 1px dotted var(--vscode-contrastActiveBorder); outline-offset: -1px; }
+.monaco-list.list_id_1 .monaco-list-row.focused { outline: 1px dotted var(--vscode-contrastActiveBorder); outline-offset: -1px; }
+.monaco-list.list_id_1 .monaco-list-row:hover { outline: 1px dashed var(--vscode-contrastActiveBorder); outline-offset: -1px; }
+
+				.monaco-list.list_id_1.drop-target,
+				.monaco-list.list_id_1 .monaco-list-rows.drop-target,
+				.monaco-list.list_id_1 .monaco-list-row.drop-target { background-color: var(--vscode-list-dropBackground) !important; color: inherit !important; }
+			
+
+			.monaco-list.list_id_1 .monaco-list-rows.drop-target-before .monaco-list-row:first-child::before,
+			.monaco-list.list_id_1 .monaco-list-row.drop-target-before::before {
+				content: ""; position: absolute; top: 0px; left: 0px; width: 100%; height: 1px;
+				background-color: var(--vscode-list-dropBetweenBackground);
+			}
+
+			.monaco-list.list_id_1 .monaco-list-rows.drop-target-after .monaco-list-row:last-child::after,
+			.monaco-list.list_id_1 .monaco-list-row.drop-target-after::after {
+				content: ""; position: absolute; bottom: 0px; left: 0px; width: 100%; height: 1px;
+				background-color: var(--vscode-list-dropBetweenBackground);
+			}
+
+				.monaco-table > .monaco-split-view2,
+				.monaco-table > .monaco-split-view2 .monaco-sash.vertical::before,
+				.monaco-workbench:not(.reduce-motion) .monaco-table:hover > .monaco-split-view2,
+				.monaco-workbench:not(.reduce-motion) .monaco-table:hover > .monaco-split-view2 .monaco-sash.vertical::before {
+					border-color: var(--vscode-tree-tableColumnsBorder);
+				}
+
+				.monaco-workbench:not(.reduce-motion) .monaco-table > .monaco-split-view2,
+				.monaco-workbench:not(.reduce-motion) .monaco-table > .monaco-split-view2 .monaco-sash.vertical::before {
+					border-color: transparent;
+				}
+			
+
+				.monaco-table .monaco-list-row[data-parity=odd]:not(.focused):not(.selected):not(:hover) .monaco-table-tr,
+				.monaco-table .monaco-list:not(:focus) .monaco-list-row[data-parity=odd].focused:not(.selected):not(:hover) .monaco-table-tr,
+				.monaco-table .monaco-list:not(.focused) .monaco-list-row[data-parity=odd].focused:not(.selected):not(:hover) .monaco-table-tr {
+					background-color: var(--vscode-tree-tableOddRowsBackground);
+				}
+			</style></div></div><div class="suggest-status-bar" style="height: 22px; display: none;" aria-hidden="true"><div class="monaco-action-bar left"><ul class="actions-container" role="toolbar"><li class="action-item menu-entry text-only use-comma" role="presentation" custom-hover="true"><a class="action-label" role="button" aria-label="Insert (Enter)" tabindex="0">Insert (⏎)</a></li></ul></div><div class="monaco-action-bar right"><ul class="actions-container" role="toolbar"><li class="action-item menu-entry text-only use-comma" role="presentation" custom-hover="true"><a class="action-label" role="button" aria-label="Show More (Ctrl+Space)" tabindex="0">Show More (Ctrl+Space)</a></li></ul></div></div></div></div><div data-mprt="5" class="overflowingOverlayWidgets"></div></div><div class="context-view" style="display: none;" aria-hidden="true"></div></div></div></div><div id="right_menu" class="sc-dSzxrH kFacEx"><div id="right_menu_nav" class="sc-ezTAUT gqJGAB"><img class="sc-SyKHY ifBTZA open" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2025.4.1,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%209%2016'%20style='enable-background:new%200%200%209%2016;'%20xml:space='preserve'%3e%3cstyle%20type='text/css'%3e%20.st0{fill:%23FFFFFF;}%20%3c/style%3e%3cg%20id='Layer_2_00000065787590347772687870000003407780505526017195_'%3e%3cg%20id='Icons'%3e%3cpath%20class='st0'%20d='M0.3,1.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7,7c0.4,0.4,0.4,1,0,1.4c0,0,0,0,0,0l-7,7c-0.4,0.4-1,0.4-1.4,0%20c-0.4-0.4-0.4-1,0-1.4c0,0,0,0,0,0L6.6,8L0.3,1.7z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Toggle Menu"><img class="sc-cJupKN hVHYlw closed" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3e%3cdefs%3e%3cstyle%3e.cls-1{fill:%23fff;}%3c/style%3e%3c/defs%3e%3cg%20id='Layer_2'%20data-name='Layer%202'%3e%3cg%20id='Layer_1-2'%20data-name='Layer%201'%3e%3cpath%20class='cls-1'%20d='M8.79,3.21,13.59,8l-4.8,4.79a1,1,0,0,0,1.42,1.42l5.5-5.5a1,1,0,0,0,0-1.42l-5.5-5.5A1,1,0,0,0,8.79,3.21ZM.29,1.71,6.59,8,.29,14.29a1,1,0,0,0,1.42,1.42l7-7a1,1,0,0,0,0-1.42l-7-7A1,1,0,0,0,.29,1.71Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Expand Menu"><div class="sc-cCBpma cZHRaZ"></div><button id="btn_constants" class="sc-hNMcCY dzJHbH" aria-label="Constants"><svg class="svg_icon" data-name="constants" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Constants"><path d="M22,38H38V22H22Zm0,2a2,2,0,0,1-2-2V22a2,2,0,0,1,2-2H38a2,2,0,0,1,2,2V38a2,2,0,0,1-2,2Zm4-7.5V32a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1v.5h6a1,1,0,0,1,0,2H29V35a1,1,0,0,1-1,1H27a1,1,0,0,1-1-1v-.5H25a1,1,0,0,1,0-2ZM31,25a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1v.5h1a1,1,0,0,1,0,2H34V28a1,1,0,0,1-1,1H32a1,1,0,0,1-1-1v-.5H25a1,1,0,0,1,0-2h6Z"></path></svg></button><button id="btn_variables" aria-label="Variables" class="sc-hNMcCY dzJHbH active"><svg class="svg_icon" data-name="variables" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Variables"><path d="M30.1,36.6c-4.3,0.1-8.3-2.3-10.3-6.1L19.5,30l0.2-0.5c3.1-5.7,10.2-7.8,15.9-4.7c2,1.1,3.6,2.7,4.7,4.7
+		c0.3,0.5,0.1,1.1-0.4,1.3c-0.5,0.3-1.1,0.1-1.3-0.4c-2.6-4.7-8.5-6.4-13.2-3.9c-1.5,0.8-2.7,2-3.6,3.4c1.7,2.9,4.9,4.6,8.3,4.6
+		c2.2,0,4.4-0.7,6.1-2.2c0.4-0.4,1.1-0.3,1.4,0.1c0.4,0.4,0.3,1.1-0.1,1.4C35.4,35.7,32.8,36.6,30.1,36.6z"></path><path d="M30,34c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S32.2,34,30,34L30,34z M30,28c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2
+		C32,28.9,31.1,28,30,28z"></path></svg></button><button id="btn_tutorial" aria-label="Tutorial" class="sc-hNMcCY dzJHbH"><svg class="svg_icon" data-name="tutorial" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Tutorial"><path d="M29.27,23.1,21.08,27l8.19,3.92a1.51,1.51,0,0,0,.94,0L38.42,27l-8.21-3.9A1.38,1.38,0,0,0,29.27,23.1ZM22.74,30l-4.41-2.1a1,1,0,0,1,0-1.81L28.41,21.3a3.37,3.37,0,0,1,2.66,0l10.12,4.8a1,1,0,0,1,0,1.81l-.45.21v4.77a1.47,1.47,0,0,1,.5,1.11,1.5,1.5,0,0,1-3,0,1.47,1.47,0,0,1,.5-1.11V29.06l-2,1v5.46a.93.93,0,0,1-.15.53,3.07,3.07,0,0,1-.42.55,6.46,6.46,0,0,1-1.19,1A9.3,9.3,0,0,1,29.74,39a9.29,9.29,0,0,1-5.23-1.41,6.55,6.55,0,0,1-1.2-1,3.68,3.68,0,0,1-.42-.54,1,1,0,0,1-.15-.54Zm2,5.16a5.75,5.75,0,0,0,.87.75A7.36,7.36,0,0,0,29.74,37a7.32,7.32,0,0,0,4.13-1.08,3.58,3.58,0,0,0,.87-.75V31l-3.67,1.74a3.33,3.33,0,0,1-2.66,0L24.74,31Z"></path></svg></button><button id="btn_terminal" aria-label="Terminal" class="sc-hNMcCY dzJHbH"><svg class="svg_icon" data-name="terminal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Terminal"><path d="M27.14,31.06a1,1,0,0,1-.71-.29l-6-6a1,1,0,1,1,1.42-1.42l6,6a1,1,0,0,1,0,1.42A1,1,0,0,1,27.14,31.06Z"></path><path d="M21.1,37.1a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l6-6a1,1,0,0,1,1.42,1.42l-6,6A1,1,0,0,1,21.1,37.1Z"></path><path d="M39.05,37.5H29a1,1,0,0,1,0-2h10a1,1,0,0,1,0,2Z"></path></svg></button><button id="btn_docs" aria-label="Documentation" class="sc-hNMcCY dzJHbH"><svg class="svg_icon" data-name="documentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" data-tooltip-id="main-tooltip" data-tooltip-content="Documentation"><path d="M37.76,24.21a4.78,4.78,0,0,0-3.5-1.39,4.43,4.43,0,0,0-3.5,2.26V36.15a8,8,0,0,1,7,0Zm-16,0v11.9a8.52,8.52,0,0,1,3.51-.79,8.44,8.44,0,0,1,3.49.83V25.08a4.33,4.33,0,0,0-3.5-2.26A4.73,4.73,0,0,0,21.76,24.21Zm3.51,13.11a8.12,8.12,0,0,0-3.92,1.31,1,1,0,0,1-1.59-.81v-14a1,1,0,0,1,.2-.6,6.64,6.64,0,0,1,5.3-2.4,5.89,5.89,0,0,1,4.5,2.23,5.92,5.92,0,0,1,4.5-2.23,6.81,6.81,0,0,1,5.31,2.4,1.07,1.07,0,0,1,.19.6v14a1,1,0,0,1-1.58.81,7.49,7.49,0,0,0-3.93-1.31,7.55,7.55,0,0,0-3.95,1.34,1,1,0,0,1-1.08,0A7.22,7.22,0,0,0,25.27,37.32Z"></path></svg></button></div><div class="sc-cIXVSe fIevAw"><div id="variable_viewer" class="sc-brGZft chfKxT"><div id="variable_viewer" class="sc-digkpz jHUZHH"><h1>Variables:</h1><h2>Globals:</h2><div class="sc-edYMgU leYgnR"></div><h2>Locals:</h2><div class="sc-edYMgU leYgnR"></div><h2>Objects:</h2><div class="sc-edYMgU leYgnR"></div></div></div></div></div></div><div class="sc-fhQWhB fLcUyO"><div id="footer_device" class="sc-jtFXdA gzBQaO">Oxocard  Connect<span data-cy="oxocard_uuid" class="uuid_short">C66461</span><div data-cy="oxocard_state" class="sc-ypOAf jAxLuz connected">connected</div></div><div id="footer_editor" class="sc-jMWyIz jHkeJM">Editor<div class="sc-ypOAf jAxLuz connected">connected</div></div></div></div><div id="popup_container" class="sc-efgocT haHqPq"></div><div class="react-joyride"></div><div class="Toastify"></div></div>
+  
+
+<div class="context-view" style="display: none;" aria-hidden="true"></div><div class="monaco-aria-container"><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-status" aria-live="polite" aria-atomic="true"></div><div class="monaco-status" aria-live="polite" aria-atomic="true"></div></div></body></html>

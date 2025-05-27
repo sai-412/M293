@@ -1,0 +1,100 @@
+/*=========== TABLE OF CONTENTS ===========
+1. CSS Variables
+2. Utility CSS
+3. Common CSS
+==========================================*/
+
+/*-------------------------------------
+  1. CSS Variables
+--------------------------------------*/
+:root {
+  /*------Color variables------*/
+  --white_a700: #ffffff;
+  --black_900: #000000;
+  --white_a700_cc: #ffffffcc;
+
+  /*------Border radius variables------*/
+  --radius-xs: 36px;
+
+  /*------Spacing variables------*/
+  --space-xs: 18px;
+  --space-sm: 26px;
+  --space-md: 48px;
+  --space-lg: 86px;
+}
+
+/*-------------------------------------
+  2. Utility CSS
+--------------------------------------*/
+.flex-col-end-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/*-------------------------------------
+  3. Common CSS
+--------------------------------------*/
+.header {
+  margin-top: 50px;
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.header-2 {
+  margin-top: 50px;
+  padding-left: 6px;
+  padding-right: 6px;
+  gap: var(--space-xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.header__logo {
+  height: 60px;
+  align-self: center;
+  width: 200px;
+  object-fit: contain;
+}
+
+.header__menu {
+  color: var(--white_a700);
+  font-size: 30px;
+  gap: var(--space-sm);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bermich_one-link {
+  margin-bottom: 4px;
+}
+
+.begrssung__welcome-text {
+  font-size: 80px;
+  font-weight: 400;
+  @media only screen and (max-width: 1050px) {
+    font-size: 48px;
+  }
+}
+
+.portfolio__description {
+  text-align: center;
+  line-height: 38px;
+}

@@ -1,0 +1,170 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Common CSS
+2. Page CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Common CSS
+--------------------------------------*/
+.kontakt__email {
+  font-size: 28px !important;
+  @media only screen and (max-width: 1050px) {
+    font-size: 26px !important;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 24px !important;
+  }
+}
+
+.kontakt__icon--info {
+  height: 74px;
+  width: 74px;
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+/*-------------------------------------
+  2. Page CSS
+--------------------------------------*/
+.kontakt-two {
+  height: 100%;
+  gap: 98px;
+  background-color: var(--black_900);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (max-width: 1050px) {
+    gap: 73px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    gap: 49px;
+  }
+}
+
+.kontakt {
+  margin-left: 50px;
+  margin-right: 114px;
+  align-self: stretch;
+  @media only screen and (max-width: 1050px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.kontakt__content {
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+  }
+}
+
+.kontakt__form {
+  gap: 96px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  @media only screen and (max-width: 1050px) {
+    gap: 72px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    gap: var(--space-md);
+  }
+}
+
+.kontakt__fields {
+  margin-left: 8px;
+  width: 80%;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+.kontakt__field--name {
+  color: var(--white_a700) !important;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 74px;
+  border-bottom: 1px solid var(--white_a700_cc) !important;
+}
+
+.kontakt__field--message {
+  color: var(--white_a700) !important;
+  margin-top: 60px;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 76px;
+  border-bottom: 1px solid var(--white_a700_cc) !important;
+}
+
+.kontakt__submit {
+  color: var(--black_900) !important;
+  margin-top: 140px;
+  padding-left: 34px;
+  padding-right: 34px;
+  background-color: var(--white_a700) !important;
+  height: 74px;
+  border-radius: 36px !important;
+}
+
+.kontakt__info {
+  gap: 144px;
+  align-self: flex-end;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  @media only screen and (max-width: 1050px) {
+    gap: 108px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    gap: 72px;
+  }
+}
+
+.kontakt__contact-details {
+  margin-right: 112px;
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+
+.kontakt__location-container {
+  margin-top: 34px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.kontakt__label--location {
+  z-index: 1;
+  position: relative;
+}
+
+.kontakt__social-icons {
+  gap: 66px;
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-end;
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+}
