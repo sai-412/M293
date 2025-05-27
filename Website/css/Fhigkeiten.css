@@ -8,19 +8,104 @@
   align-items: center;
 }
 
-.header-3 {
-  margin-top: 50px;
-  padding-left: 6px;
-  padding-right: 6px;
-  gap: var(--space-xs);
+.header {
+  width: 98%;
+  margin: 10px; 
+  background: #000;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  @media only screen and (max-width: 1050px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px; 
+  height: 64px;
+  border-bottom: 3px solid #fff;
+  box-sizing: border-box;
+  position: fixed;
+  top: 10px; 
+  z-index: 100;
+}
+
+.header__logo {
+  display: none;
+}
+
+.header__name {
+  font-family: 'Georgia', serif;
+  font-size: 30px;
+  color: #fff;
+  font-weight: normal;
+  margin-left: 0;
+  margin-right: 40px;
+  padding-left: 10px;
+  line-height: 64px;
+  flex-shrink: 0;
+}
+
+.header .header__menu {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  /* Neu hinzugefügt: */
+  width: 82%;
+}
+
+.header__menu li {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu li:last-child {
+  margin-right: 0;
+}
+
+.header__menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  transition: color 0.2s;
+  padding: 0;
+  background: none;
+  border: none;
+  display: block;
+}
+
+.header__menu li a:hover {
+  color: #000;
+}
+
+.rowwillkommenau {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+  text-align: center;
+  margin-top: 64px;
+}
+
+.begrssung__column {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.begrssung__welcome-text {
+  font-size: 56px;
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  margin: 20px 0 16px 0;
+}
+
+.size-text9xl {
+  font-size: 32px;
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  margin: 0;
 }
 
 .skills-section {

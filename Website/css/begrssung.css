@@ -13,14 +13,14 @@ body, html {
 
 .begr-ssung {
   min-height: 100vh;
-  background: #111 url('../Black_Background.jpeg') no-repeat center center fixed;
+  background: #111 url('../Black_Background.jpeg') center center fixed;
   background-size: cover;
   position: relative;
 }
 
 .header {
-  width: 1400px;
-  margin: 0 10px; 
+  width: 98%;
+  margin: 10px; 
   background: #111;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@ body, html {
 
 .header__name {
   font-family: 'Georgia', serif;
-  font-size: 24px;
+  font-size: 30px;
   color: #fff;
   font-weight: normal;
   margin-left: 0;
@@ -52,13 +52,16 @@ body, html {
 
 .header .header__menu {
   display: flex;
-  gap: 36px;
+  gap: 50px;
   list-style: none;
-  margin: 0 20px 0 auto;
+  margin-left: auto;
+  margin-right: 0;
   padding: 0;
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 0;
+  /* Neu hinzugefügt: */
+  width: 82%;
 }
 
 .header__menu li {
