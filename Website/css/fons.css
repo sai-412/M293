@@ -1,13 +1,4 @@
-/*=========== TABLE OF CONTENTS ===========
-1. Button CSS
-2. Input CSS
-3. Text CSS
-4. Container CSS
-==========================================*/
 
-/*-------------------------------------
-  1. Button CSS
---------------------------------------*/
 .ui.button.round {
   border-radius: var(--radius-xs);
 }
@@ -48,9 +39,6 @@
   }
 }
 
-/*-------------------------------------
-  2. Input CSS
---------------------------------------*/
 .ui.input.square {
   border-radius: 0px;
 }
@@ -77,9 +65,7 @@
   border-bottom: 1px solid var(--white_a700_cc);
 }
 
-/*-------------------------------------
-  3. Text CSS
---------------------------------------*/
+
 .ui.text.size-text6xl {
   font-size: 30px;
   font-weight: 400;
@@ -121,9 +107,7 @@
   font-family: Joan;
 }
 
-/*-------------------------------------
-  4. Container CSS
---------------------------------------*/
+
 .container-xs {
   max-width: 1320px;
   width: 100%;

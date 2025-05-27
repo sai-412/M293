@@ -13,7 +13,7 @@ body, html {
 
 .begr-ssung {
   min-height: 100vh;
-  background: #111 url('../Black_Background.jpeg') center center fixed;
+  background: #111 url('../img/Black_Background.jpeg') center center fixed;
   background-size: cover;
   position: relative;
 }

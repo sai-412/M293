@@ -1,26 +1,28 @@
 .f-higkeiten {
-  height: 100%;
-  gap: 40px;
-  background-color: var(--black_900);
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: 'Georgia', serif;
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding-top: 100px;
 }
 
 .header {
   width: 98%;
-  margin: 10px; 
+  margin: 10px;
   background: #000;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px; 
+  padding: 10px;
   height: 64px;
   border-bottom: 3px solid #fff;
   box-sizing: border-box;
   position: fixed;
-  top: 10px; 
+  top: 10px;
   z-index: 100;
 }
 
@@ -50,7 +52,6 @@
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 0;
-  /* Neu hinzugefügt: */
   width: 82%;
 }
 
@@ -76,7 +77,7 @@
 }
 
 .header__menu li a:hover {
-  color: #000;
+  color: #bdbdbd;
 }
 
 .rowwillkommenau {
@@ -109,129 +110,80 @@
 }
 
 .skills-section {
-  margin-left: auto;
-  margin-right: auto;
-  gap: var(--space-md);
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
-  align-self: stretch;
   flex-direction: column;
   align-items: center;
-  max-width: 1056px;
-  width: 100%;
-  @media only screen and (max-width: 1050px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 }
 
 .skills-section__title {
-  font-size: 100px;
+  font-size: 80px;
+  font-family: 'Georgia', serif;
   font-weight: 400;
-  @media only screen and (max-width: 1050px) {
-    font-size: 48px;
-  }
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .skills-section__list {
-  gap: var(--space-lg);
   display: flex;
-  align-self: stretch;
-  @media only screen and (max-width: 1050px) {
-    flex-direction: column;
-  }
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  margin-top: 70px;
 }
 
-.skills-section__item {
-  margin-bottom: 44px;
-  gap: var(--space-md);
+.skills-section__item, .skills-section__item-1, .columnuntitled {
   display: flex;
-  width: 278px;
   flex-direction: column;
   align-items: center;
-  @media only screen and (max-width: 1050px) {
-    margin-bottom: 0px;
-  }
+  width: 320px;
+  background: none;
 }
 
-.skills-section__image {
-  height: 228px;
-  width: 228px;
+.skills-section__item img, .skills-section__item-1 img, .columnuntitled img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
 }
 
-.skills-section__text {
+.skills-section__text, .portfolio__description {
+  color: #fff;
+  font-size: 22px;
+  font-family: 'Georgia', serif;
   text-align: center;
-  align-self: stretch;
-  line-height: 38px;
+  line-height: 1.4;
+  margin: 0;
 }
 
-.skills-section__item-1 {
-  margin-top: 18px;
-  margin-bottom: 22px;
-  gap: 88px;
-  display: flex;
-  width: 290px;
-  flex-direction: column;
-  @media only screen and (max-width: 1050px) {
-    gap: 66px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+@media only screen and (max-width: 1050px) {
+  .skills-section__title {
+    font-size: 48px;
   }
-
-  @media only screen and (max-width: 550px) {
-    gap: 44px;
+  .skills-section__list {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .skills-section__item, .skills-section__item-1, .columnuntitled {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
-.skills-section__stack {
-  height: 190px;
-  margin-left: 64px;
-  margin-right: 50px;
-  position: relative;
-  @media only screen and (max-width: 1050px) {
-    height: auto;
-    margin-left: 0px;
-    margin-right: 0px;
+@media only screen and (max-width: 600px) {
+  .skills-section__title {
+    font-size: 32px;
+  }
+  .skills-section__list {
+    gap: 20px;
+  }
+  .skills-section__item img, .skills-section__item-1 img, .columnuntitled img {
+    width: 90px;
+    height: 90px;
   }
 }
 
-.skills-section__icon {
-  height: 20px;
-  margin-top: 76px;
-  margin-right: 70px;
-  width: 20px;
-  @media only screen and (max-width: 1050px) {
-    margin-right: 0px;
-  }
-}
-
-.skills-section__decorative-icon {
-  height: 190px;
-  flex: 1;
-  width: 100%;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  top: 0px;
-  margin: auto;
-}
-
-.columnuntitled {
-  gap: 92px;
-  display: flex;
-  width: 264px;
-  flex-direction: column;
-  @media only screen and (max-width: 1050px) {
-    gap: 69px;
-  }
-
-  @media only screen and (max-width: 550px) {
-    gap: 46px;
-  }
-}
-
-.untitled_one {
-  height: 228px;
-  width: 228px;
-  object-fit: cover;
-}

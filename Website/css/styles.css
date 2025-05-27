@@ -89,6 +89,7 @@
 .begrssung__welcome-text {
   font-size: 80px;
   font-weight: 400;
+  margin-top: 50px;
   @media only screen and (max-width: 1050px) {
     font-size: 48px;
   }
