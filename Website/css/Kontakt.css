@@ -12,9 +12,7 @@ body, html {
 .kontakt__icon--info {
   height: 74px;
   width: 74px;
-  @media only screen and (max-width: 550px) {
-    width: 100%;
-  }
+
 }
 
 .kontakt-two {
@@ -27,13 +25,6 @@ body, html {
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
-  @media only screen and (max-width: 1050px) {
-    gap: 73px;
-  }
-
-  @media only screen and (max-width: 550px) {
-    gap: 49px;
-  }
 }
 
 .kontakt {
@@ -41,19 +32,12 @@ body, html {
   margin-right: 114px;
   align-self: stretch;
   overflow: hidden;
-  @media only screen and (max-width: 1050px) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
 }
 
 .kontakt__content {
   display: flex;
   align-items: center;
   overflow: hidden;
-  @media only screen and (max-width: 1050px) {
-    flex-direction: column;
-  }
 }
 
 .kontakt__form {
@@ -63,15 +47,6 @@ body, html {
   width: 480px;
   margin-top: 0px;
   gap: 96px;
-  @media only screen and (max-width: 1050px) {
-    gap: 72px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @media only screen and (max-width: 550px) {
-    gap: var(--space-md);
-  }
 }
 
 .kontakt__fields {
@@ -79,12 +54,7 @@ body, html {
   width: 420px;
   max-width: 420px;
   min-width: 420px;
-  @media only screen and (max-width: 1050px) {
-    width: 100%;
-    margin-left: 0px;
-    max-width: 100%;
-    min-width: 0;
-  }
+
 }
 
 .kontakt__field--name {
@@ -166,28 +136,12 @@ body, html {
   flex-direction: column;
   align-items: flex-end;
   margin-top: 300px;
-  @media only screen and (max-width: 1050px) {
-    gap: 108px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @media only screen and (max-width: 550px) {
-    gap: 72px;
-  }
 }
 
 .kontakt__contact-details {
   width: 45%;
   display: flex;
   flex-direction: column;
-
-  @media only screen and (max-width: 1050px) {
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0;
-
-  }
 }
 
 .kontakt__location-container {
@@ -208,9 +162,6 @@ body, html {
   align-self: stretch;
   display: flex;
   justify-content: flex-end;
-  @media only screen and (max-width: 550px) {
-    flex-direction: column;
-  }
 }
 
 .header {
@@ -325,75 +276,4 @@ body, html {
   background: none;
 }
 
-@media only screen and (max-width: 1050px) {
-  .header {
-    width: 100%;
-    margin: 0;
-    left: 0;
-    right: 0;
-    padding: 6px;
-  }
-  .header__name {
-    font-size: 22px;
-    margin-right: 16px;
-    padding-left: 4px;
-  }
-  .header__menu {
-    gap: 24px;
-    width: 100%;
-  }
-  .kontakt__form, .kontakt__info-block {
-    width: 100%;
-    max-width: 95vw;
-    min-width: 0;
-  }
-  .kontakt__fields, .kontakt__input, .kontakt__submit {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-  .kontakt__content {
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    margin-top: 80px;
-  }
-  .kontakt__info-block {
-    margin-top: 40px;
-    width: 100%;
-  }
-  .kontakt__socials {
-    gap: 24px;
-    margin-top: 32px;
-    justify-content: center;
-  }
-}
 
-@media only screen and (max-width: 600px) {
-  .kontakt__title {
-    font-size: 32px;
-  }
-  .kontakt__label {
-    font-size: 16px;
-  }
-  .kontakt__input, .kontakt__submit {
-    font-size: 16px;
-    height: 44px;
-    border-radius: 18px;
-  }
-  .kontakt__info-title {
-    font-size: 18px;
-  }
-  .kontakt__info-block {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .kontakt__socials {
-    gap: 12px;
-    margin-top: 16px;
-  }
-  .kontakt__icon-social {
-    width: 32px;
-    height: 32px;
-  }
-}

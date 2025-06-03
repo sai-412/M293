@@ -118,41 +118,4 @@ body, html {
   margin: 0;
 }
 
-@media only screen and (max-width: 1050px) {
-  .header {
-    width: 100%;
-    margin: 0;
-    left: 0;
-    right: 0;
-    padding: 6px;
-  }
-  .header__name {
-    font-size: 22px;
-    margin-right: 16px;
-    padding-left: 4px;
-  }
-  .header__menu {
-    gap: 24px;
-    width: 100%;
-  }
-  .begr-ssung {
-    padding-top: 80px;
-  }
-  .begrssung__welcome-text {
-    font-size: 32px;
-  }
-  .size-text9xl {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .begrssung__welcome-text {
-    font-size: 18px;
-  }
-  .size-text9xl {
-    font-size: 12px;
-  }
-}
-
 

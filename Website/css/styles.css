@@ -44,11 +44,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-  @media only screen and (max-width: 1050px) {
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+
 }
 
 .header-2 {
@@ -59,11 +55,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  @media only screen and (max-width: 1050px) {
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 }
 
 .header__logo {
@@ -90,9 +81,6 @@
   font-size: 80px;
   font-weight: 400;
   margin-top: 50px;
-  @media only screen and (max-width: 1050px) {
-    font-size: 48px;
-  }
 }
 
 .portfolio__description {
