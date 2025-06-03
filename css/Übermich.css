@@ -1,3 +1,7 @@
+html, body {
+  overflow: hidden;
+}
+
 .ber-mich {
   min-height: 100vh;
   background-color: #000;
