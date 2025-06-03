@@ -1,31 +1,20 @@
-/*=========== TABLE OF CONTENTS ===========
-1. CSS Variables
-2. Utility CSS
-3. Common CSS
-==========================================*/
 
-/*-------------------------------------
-  1. CSS Variables
---------------------------------------*/
 :root {
-  /*------Color variables------*/
+
   --white_a700: #ffffff;
   --black_900: #000000;
   --white_a700_cc: #ffffffcc;
 
-  /*------Border radius variables------*/
+
   --radius-xs: 36px;
 
-  /*------Spacing variables------*/
+
   --space-xs: 18px;
   --space-sm: 26px;
   --space-md: 48px;
   --space-lg: 86px;
 }
 
-/*-------------------------------------
-  2. Utility CSS
---------------------------------------*/
 .flex-col-end-center {
   display: flex;
   flex-direction: column;
@@ -33,9 +22,6 @@
   justify-content: flex-end;
 }
 
-/*-------------------------------------
-  3. Common CSS
---------------------------------------*/
 .header {
   margin-top: 50px;
   padding-left: 6px;

@@ -1,4 +1,4 @@
-/* Begrüssungsseite Styles */
+
 body, html {
   margin: 0;
   padding: 0;
@@ -60,7 +60,6 @@ body, html {
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 0;
-  /* Neu hinzugefügt: */
   width: 82%;
 }
 

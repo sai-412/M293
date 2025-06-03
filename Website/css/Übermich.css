@@ -9,8 +9,8 @@
 }
 
 .header {
-  width: 100%; /* Breite auf 100% angepasst */
-  margin: 0; /* Margin entfernt */
+  width: 100%; 
+  margin: 0;
   background: #111;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@
   border-bottom: 3px solid #fff;
   box-sizing: border-box;
   position: fixed;
-  top: 0; /* Position oben fixiert */
+  top: 0;
   z-index: 100;
 }
 
@@ -42,7 +42,7 @@
 
 .about__description {
   color: #fff;
-  text-align: left; /* Text linksbündig */
+  text-align: left;
   width: 50%;
   font-family: 'EB Garamond', serif;
   font-size: 1.2rem;
@@ -99,7 +99,6 @@
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 0;
-  /* Neu hinzugefügt: */
   width: 82%;
 }
 
