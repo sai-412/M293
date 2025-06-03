@@ -326,54 +326,74 @@ body, html {
 }
 
 @media only screen and (max-width: 1050px) {
-  .kontakt__content {
-    flex-direction: column;
-    gap: 60px;
-    align-items: center;
-    margin-top: 120px;
+  .header {
+    width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+    padding: 6px;
+  }
+  .header__name {
+    font-size: 22px;
+    margin-right: 16px;
+    padding-left: 4px;
+  }
+  .header__menu {
+    gap: 24px;
+    width: 100%;
   }
   .kontakt__form, .kontakt__info-block {
     width: 100%;
-    max-width: 500px;
+    max-width: 95vw;
+    min-width: 0;
+  }
+  .kontakt__fields, .kontakt__input, .kontakt__submit {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  .kontakt__content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .kontakt__info-block {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .kontakt__socials {
+    gap: 24px;
+    margin-top: 32px;
+    justify-content: center;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .kontakt__title {
-    font-size: 36px;
+    font-size: 32px;
   }
   .kontakt__label {
-    font-size: 20px;
+    font-size: 16px;
   }
-  .kontakt__input {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    font-size: 22px;
-    height: 56px;
-    border-radius: 28px;
-  }
-  .kontakt__submit {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    font-size: 22px;
-    height: 56px;
-    border-radius: 28px;
+  .kontakt__input, .kontakt__submit {
+    font-size: 16px;
+    height: 44px;
+    border-radius: 18px;
   }
   .kontakt__info-title {
-    font-size: 22px;
+    font-size: 18px;
   }
   .kontakt__info-block {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .kontakt__socials {
-    gap: 24px;
-    margin-top: 32px;
+    gap: 12px;
+    margin-top: 16px;
   }
   .kontakt__icon-social {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 }
